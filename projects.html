@@ -1,0 +1,14 @@
+---
+permalink: /projects/
+layout: page
+---
+<div class="outer-container background">
+<div class="horizontal-container">
+    {% for project in site.projects %}
+    <div class="card">
+        <div class="title">{{ project.title }}</div>
+        <div class="bloop">{{ project.excerpt | truncate: 120 }}</div>
+    </div>
+    {% endfor %}
+</div>
+</div>

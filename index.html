@@ -1,0 +1,43 @@
+---
+permalink: /
+layout: snapPage
+---
+<div class="outer-container background snap-child">
+  <div id="titleCard">
+    <div class="icon top"></div>
+    <div class="title">{{ site.title }}</div>
+    <div class="cardContainer">{{ site.description }}</div>
+  </div>
+
+  <span>
+    <!--<div class="bottom scroll-down">
+      <div class="arrow"></div>
+    </div>-->
+  </span>
+  <div class="social">
+    <a href="{{ site.discord_link }}"><span class="icon" id="discord"></span></a>
+    <a href="{{ site.twitter_link }}"><span class="icon" id="twitter"></span></a>
+    <a href="{{ site.youtube_link }}"><span class="icon" id="youtube"></span></a>
+    <a href="{{ site.github_link }}"><span class="icon" id="github"></span></a>
+  </div>
+</div>
+
+<!--
+<div class="outer-container snap-child alt3-background">
+  <div class="container expandable">
+    <div class="title">Featured Project</div>
+    <div class="text">
+      {% for project in site.projects %}
+        {% if project.featured %}
+      <div class="container block">
+          <a class="projectPreview" href="{{ site.base }}{{ project.url }}">
+          <img class="background-image" src="{{ project.background-image }}"/>
+          <div class="title">{{ project.title }}</div>
+          <div class="description">{{ project.description | truncate: 120 }}</div>
+        </a>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>-->
