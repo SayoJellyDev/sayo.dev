@@ -3,9 +3,10 @@
 # https://learnxinyminutes.com/docs/yaml/
 
 title: King Jellycycle
-email: noEmail@email.com
+email: jelly@kingjellycycle.com
 description: >-
   I like creating random projects and never finishing them, and procrastination too! (don't wanna forget that one!)
+  <br>Hope you enjoy! <3
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 

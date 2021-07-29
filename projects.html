@@ -2,13 +2,24 @@
 permalink: /projects/
 layout: page
 ---
-<div class="outer-container background">
-<div class="horizontal-container">
-    {% for project in site.projects %}
-    <div class="card">
-        <div class="title">{{ project.title }}</div>
-        <div class="bloop">{{ project.excerpt | truncate: 120 }}</div>
+<div class="outer-container">
+  <div class="container expandable background">
+      <div class="title center">Projects</div>
+    
+      <hr>
+    <div class="container center flex">
+      {% for project in site.projects reversed %}
+      <a class="project" href="{{ site.base }}{{ project.url }}">
+        <article class="project">
+          <div class="image" style="background-image: url('/{{ site.base }}{{ project.background-image }}');"></div>
+          <div class="sub title">{{ project.title }}</div>
+          <div class="status {{ project.status }}">{{ project.status }}</div>
+          <div class="date">{{ project.date | date: "%B %e, %Y" }}</div>
+          <div class="category">{{ project.categories }}</div>
+          <div class="text">{{ project.description | truncate: 150 }}</div>
+        </article>
+      </a>
+      {% endfor %}
     </div>
-    {% endfor %}
-</div>
+  </div>
 </div>

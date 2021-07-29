@@ -30,10 +30,12 @@ a {
 }
 
 hr {
-    width: 50%;
+    width: 60%;
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     padding-top: 0;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
 .footer-space {
@@ -242,6 +244,13 @@ a:hover {
     border: 1px solid var(--standard-colour);
 }
 
+.container.center.flex {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
 .container.medium {
     width: 75% !important;
 }
@@ -290,7 +299,7 @@ a:hover {
 .container .title {
     padding-top: 25px;
     padding-bottom: 25px;
-    font-size: 48px;
+    font-size: 72px;
     line-height: 1em;
     color: white;
 }
@@ -309,7 +318,7 @@ a:hover {
 
 .container .sub.title {
     padding: 0;
-    font-size: 36px;
+    font-size: 32px;
     color: white;
     line-height: 1em;
 }
@@ -361,6 +370,112 @@ a:hover {
 
 .container.block:hover .background-image {
     filter: blur(5px);
+}
+
+article.project {
+    display: block;
+    background-color: rgba( 100, 100, 100, 0.2);
+    padding: 25px;
+    min-height: 200px;
+    position: relative;
+    
+    border: 1px solid rgba( 255, 255, 255, 0.4);
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+a.project  {
+    width: 45%;
+    margin:25px;
+}
+
+article.project div.image {
+    position: absolute;
+    width:100%;
+    height: 100%;
+    margin:-25px;
+    border-radius: 5px;
+    z-index: -1;
+    background: center;
+    background-size: 100%;
+    transition: background-size 0.5s ease-out;
+
+}
+
+article.project:hover div.image {
+    background-size: 115%;
+}
+
+article.project:hover {
+    transition: all 0.2s;
+    background-color: rgba( 50, 50, 50, 0.8);
+
+
+}
+
+article.project div.sub.title {
+    max-width: 75%;
+}
+
+article.project div.status {
+    position: absolute;
+    bottom:10px;
+    right: 10px;
+    border-radius: 5px;
+    padding:5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(150,150,150, 0.6);
+    color:black;
+    text-transform: capitalize;
+}
+article.project div.status.in.development {
+
+    background-color: rgba(50, 10, 10, 0.6);
+    border: 1px solid rgba(150, 10, 10, 0.6);
+    color:white;
+}
+
+article.project div.status.halted {
+
+    background-color: rgba(50, 50, 50, 0.9);
+    border: 1px solid rgba(10, 10, 10, 0.9);
+    color:white;
+}
+
+article.project div.category {
+    position: absolute;
+    bottom:10px;
+    left:10px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    padding:5px;
+    color:white;
+    background-color: rgba(15, 15, 15, 0.6);
+    border: 1px solid rgba(54, 54, 54, 0.6);
+}
+
+article.project div.date {
+    position: absolute;
+    top:10px;
+    right:10px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    padding:5px;
+    color:white;
+    background-color: rgba(15, 15, 15, 0.6);
+    border: 1px solid rgba(54, 54, 54, 0.6);
+}
+
+article.project div.text {
+    padding-top: 15px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-decoration: none;
+    color:white;
+}
+
+article.project:hover div.text {
+    opacity: 1;
 }
 
 article.post {
@@ -651,6 +766,19 @@ span#github {
 /* END SOCIALS */
 
 @media (max-width:1360px) {
+    hr {
+        width: 80%;
+    }
+    a.project  {
+        width: 100%;
+        margin:15px;
+    }
+    article.project div.text {
+        opacity: 1;
+    }
+    article.project div.sub.title {
+        font-size: 28px;
+    }
     .container > .text {
         flex-flow: column;
         padding: 0;
@@ -659,7 +787,7 @@ span#github {
     .container .title {
         padding-top: 25px;
         padding-bottom: 25px;
-        font-size: 48px;
+        font-size: 64px;
         color: white;
     }
     .container.block {
