@@ -193,6 +193,13 @@ article.post .content .category {
 
         margin: auto;
         width: 75%;
+    }    
+    
+    article.post {
+
+        width: 80%;
+        height: 30%;
+
     }
 
     
