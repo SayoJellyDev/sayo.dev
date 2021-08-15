@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: bound_project
 title: "Bound"
 date: 2020-12-15 00:00:00 +1000
 categories: Game
@@ -9,4 +9,50 @@ featured: true
 status: in development
 permalink: projects/Bound/
 ---
-LGASDASD)OW)
+<div class="status {{ page.status }}">{{ page.status }}</div>
+
+<div class="bound-container">
+    <div class="title"></div>
+    <div class="content">
+        <div class="subtitle">Welcome</div>
+        <br>
+        <div class="justifytextbox">
+            <div class="text">{{ page.description }} At this current point in time, there isn't all that much to show!</div>
+            <br>
+            <div class="text">Bound is being developed in the <a class="link" href="https://godotengine.org/">Godot Game Engine!</a> At this current point in time, there isn't all that much to show!</div>
+            <br>
+            <div class="text">But don't worry, I should have something to show soon! Why not check the discord just in case! Who knows... maybe I'll be posting some snippets on progress! <a class="link" href="{{ site.discord_link }}">Discord</a></div>    
+        </div>
+        <br>
+        <br>
+        <div class="subtitle">News and Post!</div>
+        <br>
+        {% for post in site.posts %}
+            {% if post.game == "Bound" %}
+        <a href="{{ site.base }}{{ post.url }}">
+          <article class="post">
+            <div class="image" style="background-image: url({{ site.base }}{{ post.image }});"></div>
+            <div class="content">
+                <div class="posttitle">{{ post.title }}</div>
+                <div class="date">{{ post.date | date: "%B %e, %Y" }}</div>
+                <div class="category">{{ post.categories }}</div>
+            <div class="text">{{ post.excerpt | truncate: 120 }}</div>
+        </div>
+          </article>
+        </a>
+        {% endif %}
+        {% endfor %}
+        <br>
+        <br>
+        <div class="subtitle">Who's behind the development?</div>
+        <br>
+        <div class="justifytextbox">
+            <div class="text">Just the lovely and good old <a class="link" href="/">Jelly!</a></div>
+            <br>
+            <div class="text">I mostly work on this project when I have free time available, if it's not already being spent on playing games or other activities!</div>
+            <br>
+            <div class="text">On the other hand, the weekends are when I do sit down and get atleast alittle bit of work done, on Bound!</div>    
+        </div>
+        <br>
+    </div>
+</div>

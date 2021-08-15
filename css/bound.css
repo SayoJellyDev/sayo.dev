@@ -1,0 +1,212 @@
+html {
+    color: white;
+    background-color: #080808;
+    background-image: -moz-linear-gradient(45deg, #080808, #111111);
+    background-image: -webkit-linear-gradient(45deg, #080808, #111111);
+    background-image: -ms-linear-gradient(45deg, #080808, #111111);
+    background-image: linear-gradient(25deg, #080808, #111111);
+}
+
+a { 
+    text-decoration: none;
+}
+
+a.link {
+    color:rgb(255, 200,200);
+    text-decoration: none;
+    background-image: linear-gradient(to right, #b6004c, #b6004c);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 50% 2px;
+    transition: all .2s ease;
+
+}
+
+a.link:hover {
+    color: #b6004c;
+    background-size: 100% 2px;
+}
+
+div.status {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    font-size: 1.5em;
+    background-color: rgba(25,25,25, 0.5);
+    border: 1px solid rgba(200,200,200, 0.75);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1;
+    text-transform: capitalize;
+
+}
+
+div.bound-container {
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+div.title {
+    position: relative;
+    margin: auto;
+
+    left: 0;
+    right:0;
+    width: 500px;
+    height: 300px;
+    background-image: url(/images/projects/bound/title.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+div.content {
+    padding-bottom: 25px;
+    align-content: center;
+
+}
+
+div.justifytextbox {
+
+    margin: auto;
+    width: 800px;
+
+}
+
+
+div.subtitle {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+div.text {
+    font-size: 1.5em;
+}
+
+div.status.in.development {
+    background-color: rgba(50, 10, 10, 0.6);
+    border: 1px solid rgba(150, 10, 10, 0.6);
+    color:white;
+}
+
+div.status.halted {
+
+    background-color: rgba(50, 50, 50, 0.9);
+    border: 1px solid rgba(10, 10, 10, 0.9);
+    color:white;
+}
+
+
+article.post {
+    position: relative;
+    background-color: rgba(25,25,25, 0.5);
+    border-radius: 5px;
+    border: 1px solid rgba(50, 50, 50, 0.9);
+    margin: auto;
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    z-index: 0;
+    gap: 25px;
+    text-decoration: none;
+    color: white;
+
+}
+
+article.post .image {
+    width: 25%;
+    background: center;
+    background-size: 100%;
+    transition: background-size 0.5s ease-out;
+}
+
+article.post .content {
+    text-decoration: none;
+    width: 75%;
+}
+
+article.post .content .posttitle {
+    font-size: 2.2em;
+}
+article.post .content .date {
+    float: right;
+    position: absolute;
+    top: 5px;
+    display: inline;
+    right: 5px;
+}
+
+article.post .content .category {
+    font-size: 1.2em;
+}
+
+
+@media (max-width:1360px) {
+
+    div.content {
+        padding-bottom: 25px;
+    }
+    
+    div.justifytextbox {
+        margin: auto;
+        width: 65%;
+    }
+
+    article.post {
+
+        width: 600px;
+        height: 400px;
+
+    }
+    article.post .content {
+        padding: 25px;
+        background-color: rgba(20, 20, 20, 0.7);
+        width: 100%;
+    }
+    article.post .image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: center;
+        background-size: 100%;
+        z-index: 998;
+        display: inline;
+        z-index: -1;
+        
+
+
+    }
+}
+
+
+@media (max-width:720px) {
+
+    div.content {
+        padding-bottom: 25px;
+
+    }
+    
+    div.justifytextbox {
+
+        margin: auto;
+        width: 75%;
+    }
+
+    
+div.title {
+    position: relative;
+    margin: auto;
+
+    left: 0;
+    right:0;
+    width: 75%;
+    height: 300px;
+    background-image: url(/images/projects/bound/title.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+}
