@@ -103,6 +103,42 @@ a:hover {
     position: relative;
 }
 
+
+#featuredProject {
+    width: 200px;
+    height: 90px;
+    position: absolute;
+    margin: auto;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    text-align: center;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background-color: rgba(0,0,0,0.1);
+    backdrop-filter: blur(var(--blur-amount));
+}
+
+#featuredProject .projectImage {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+}
+
+#featuredProject .project {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+}
+
 .bottom.scroll-down {
     position: absolute;
     margin: auto;
@@ -690,6 +726,29 @@ span#github {
 }
 
 /* END SOCIALS */
+
+
+@media (max-height:830px) {
+    #featuredProject {
+        width: 150px;
+        height: 50px;
+        position: absolute;
+        margin: auto;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        bottom: 10%;
+        text-align: center;
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 5px;
+        border: 1px solid rgba(255,255,255,0.18);
+        background-color: rgba(0,0,0,0.1);
+        backdrop-filter: blur(var(--blur-amount));
+    }
+    
+}
 
 @media (max-width:1360px) {
     a.project  {
