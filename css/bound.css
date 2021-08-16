@@ -9,6 +9,7 @@ html {
 
 a { 
     text-decoration: none;
+    color: white;
 }
 
 a.link {
@@ -98,7 +99,7 @@ div.status.halted {
 }
 
 
-article.post {
+a.post {
     position: relative;
     background-color: rgba(25,25,25, 0.5);
     border-radius: 5px;
@@ -116,22 +117,22 @@ article.post {
 
 }
 
-article.post .image {
+a.post .image {
     width: 25%;
     background: center;
     background-size: 100%;
     transition: background-size 0.5s ease-out;
 }
 
-article.post .content {
+a.post .content {
     text-decoration: none;
     width: 75%;
 }
 
-article.post .content .posttitle {
+a.post .content .posttitle {
     font-size: 2.2em;
 }
-article.post .content .date {
+a.post .content .date {
     float: right;
     position: absolute;
     top: 5px;
@@ -139,7 +140,7 @@ article.post .content .date {
     right: 5px;
 }
 
-article.post .content .category {
+a.post .content .category {
     font-size: 1.2em;
 }
 
@@ -155,18 +156,18 @@ article.post .content .category {
         width: 65%;
     }
 
-    article.post {
+    a.post {
 
         width: 600px;
         height: 400px;
 
     }
-    article.post .content {
+    a.post .content {
         padding: 25px;
         background-color: rgba(20, 20, 20, 0.7);
         width: 100%;
     }
-    article.post .image {
+    a.post .image {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -195,7 +196,7 @@ article.post .content .category {
         width: 75%;
     }    
     
-    article.post {
+    a.post {
 
         width: 80%;
         height: 30%;
