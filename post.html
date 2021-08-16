@@ -6,9 +6,8 @@ layout: page
 <div class="container expandable background">
 
   <div class="title center">Posts</div>
-
-  <hr>
-  <div class="container center">
+  <div class="bar"></div>
+  <div class="container center animate__animated animate__fadeIn">
     {% for post in site.posts %}
     <a href="{{ site.base }}{{ post.url }}">
       <article class="post">

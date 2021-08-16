@@ -173,8 +173,10 @@ a:hover {
 }
 
 .background {
-    background-image: url("https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    background-image: url("https://images.unsplash.com/photo-1487621167305-5d248087c724?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=paul-gilmore-KT3WlrL_bsg-unsplash.jpg");
     /*\
+    https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80
+    https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
     background-image: url("https://i.pinimg.com/originals/c2/a2/13/c2a213a5143de05750d9a4d49b1c393e.jpg");
     background-image: url("/images/profilePic.jpg");
     */
@@ -231,7 +233,7 @@ a:hover {
 }
 
 .container.center {
-    width: 75%;
+    width: 900px;
     display: block;
     position: relative;
     margin: auto;
@@ -241,6 +243,10 @@ a:hover {
     backdrop-filter: blur(var(--blur-amount));
     border-radius: var(--border-radius-value);
     border: 1px solid var(--standard-colour);
+}
+
+.container.center.projects {
+    width: 75%;
 }
 
 .container.center.flex {
@@ -407,7 +413,7 @@ article.project:hover div.image {
 
 article.project:hover {
     transition: all 0.2s;
-    background-color: rgba( 50, 50, 50, 0.8);
+    background-color: rgba( 50, 50, 50, 0.6);
 
 
 }
@@ -475,6 +481,15 @@ article.project div.text {
 
 article.project:hover div.text {
     opacity: 1;
+}
+
+div.bar {
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    border-radius: 5px;
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 25px;
 }
 
 article.post {
@@ -678,18 +693,29 @@ span#github {
 /* END SOCIALS */
 
 @media (max-width:1360px) {
-    hr {
-        width: 80%;
-    }
     a.project  {
         width: 100%;
         margin:15px;
+
+    }
+
+    div.bar {
+        width: 500px;
+    }
+    article.project {
+        background-color: rgba( 50, 50, 50, 0.6);
     }
     article.project div.text {
         opacity: 1;
     }
     article.project div.sub.title {
         font-size: 28px;
+    }
+    .container.center {
+        width: 650px !important;
+    }
+    .conatiner.center.projects {
+        width: 650px;
     }
     .container > .text {
         flex-flow: column;
@@ -727,9 +753,17 @@ span#github {
 }
 
 @media (max-width:720px) {
-    .container.center {
-        width: 90%;
+    div.bar {
+        width: 70%;
     }
+    .container.center {
+        width: 90% !important;
+    }
+
+    .container .title {
+        font-size: 48px;
+    }
+
     #titleCard {
         width: 90%;
         min-height: 300px;

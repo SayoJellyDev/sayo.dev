@@ -2,12 +2,11 @@
 permalink: /projects/
 layout: page
 ---
-<div class="outer-container">
+<div class="outer-container ">
   <div class="container expandable background">
       <div class="title center">Projects</div>
-    
-      <hr>
-    <div class="container center flex">
+      <div class="bar"></div>
+    <div class="container center projects flex animate__animated animate__fadeIn">
       {% for project in site.projects reversed %}
       <a class="project" href="{{ site.base }}{{ project.url }}">
         <article class="project">

@@ -15,10 +15,10 @@ permalink: projects/Bound/
 <div class="bound-container">
     <div class="title"></div>
     <div class="content">
-        <div class="subtitle">Welcome</div>
+        <div class="subtitle">{{ page.description }}</div>
         <br>
         <div class="justifytextbox">
-            <div class="text">{{ page.description }}</div>
+            <div class="text"></div>
             <br>
             <div class="text">Bound is being developed in the <a class="link" href="https://godotengine.org/">Godot Game
                     Engine!</a> At this current point in time, there isn't all that much to show!</div>
@@ -32,7 +32,7 @@ permalink: projects/Bound/
         <div class="subtitle">News and Post!</div>
         <br>
         {% for post in site.posts %}
-        {% if post.game == "Bound" %}
+        {% if post.project == "Bound" %}
         <div class="news">
             <a class="post" href="{{ site.base }}{{ post.url }}">
                     <div class="image" style="background-image: url({{ site.base }}{{ post.image }});"></div>
@@ -44,9 +44,10 @@ permalink: projects/Bound/
                     </div>
             </a>
         </div>
+        <br>
         {% endif %}
         {% endfor %}
-        <br>
+
         <br>
         <div class="subtitle">Who's behind the development?</div>
         <br>
