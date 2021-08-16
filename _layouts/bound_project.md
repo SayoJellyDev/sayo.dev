@@ -2,7 +2,7 @@
 <html lang="en">
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
     <head prefix="og: {{ site.url }}">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{% if page.icon %}{{ page.icon }}{% endif %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/global.css?v=0.2">
     <link rel="stylesheet" href="/css/bound.css?v=0.3">
@@ -14,7 +14,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     -->
 </head>
-    {% include meta.html %}
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{% if page.url %}{{ page.url }}{% endif %}" />
+    <meta property="og:image" content="/images/projects/bound/GameIcon.png" />
+    <meta property="og:description" content="{% if page.description %}{{ page.description }} {% elsif page.categories %}{{ page.excerpt | truncate: 120 | strip_html }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="theme-color" content="#141414">
+    <meta name="twitter:card" content="summary_large_image">
     <body>
         {% include navbar.html %}
         {{ content }}
