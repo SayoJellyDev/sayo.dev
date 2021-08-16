@@ -11,7 +11,7 @@ layout: snapPage
 
   {% for project in site.projects %}
   {% if project.featured == true %}
-  <a id="featuredProject"href="{{ site.base }}{{ project.url }}">
+  <a id="featuredProject" class="animate__animated animate__fadeIn" href="{{ site.base }}{{ project.url }}">
     {% if project.titleimage %}
     <div class="projectImage" style="background-image: url({{ project.titleimage }});"></div>
     {% else %}
