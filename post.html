@@ -1,11 +1,12 @@
 ---
-permalink: /posts/
+permalink: /blog/
 layout: page
+title: Blog
 ---
 <div class="outer-container">
 <div class="container expandable background">
 
-  <div class="title center">Posts</div>
+  <div class="title center">{{ page.title }}</div>
   <div class="bar"></div>
   <div class="container center animate__animated animate__fadeIn">
     {% for post in site.posts %}

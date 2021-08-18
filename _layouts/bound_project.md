@@ -4,7 +4,7 @@
     <head prefix="og: {{ site.url }}">
     <link rel="shortcut icon" href="{% if page.icon %}{{ page.icon }}{% endif %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/global.css?v=0.3">
+    <link rel="stylesheet" href="/css/global.css?v=0.4">
     <link rel="stylesheet" href="/css/bound.css?v=0.4">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>-->
