@@ -1,18 +1,31 @@
-$(document).ready(function (e) {
-    $(".hide").click(function (e) {
-        $(".hide").removeClass("visible")
-        $(".cover").removeClass("visible")
-    })
+var shown = false
 
-    $(".cover").click(function (e) {
-        $(".hide").removeClass("visible")
-        $(".cover").removeClass("visible")
-    })
+var hide = document.getElementById("hide")
+var cover = document.getElementById("cover")
+var peeker = document.getElementById("peeker")
 
-    $(".peeker").click(function (e) {
-        if (document.documentElement.clientWidth < 720) {
-            $(".hide").addClass("visible")
-            $(".cover").addClass("visible")
+hide.addEventListener('click', navBarFunc);
+cover.addEventListener('click', navBarFunc);
+peeker.addEventListener('click', navBarFunc);
+
+
+
+function navBarFunc()
+{
+    var w = window.innerWidth;
+    if (w <= 720) {
+        if (shown === true) {
+            // Hide stuff
+            //console.log(shown)
+            shown = false
+            hide.classList.remove("visible")
+            cover.classList.remove("visible")
+        } else if (shown  === false){
+            // Show stuff
+            //console.log(shown)
+            hide.classList.add("visible")
+            cover.classList.add("visible")
+            shown = true
         }
-    })
-});
+    }
+}
