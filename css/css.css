@@ -71,7 +71,7 @@ a:hover {
 }
 
 #titleCard .icon.top {
-    background-image: url("/images/profilePic.jpg");
+    background-image: url("/images/profilePic.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -208,7 +208,7 @@ a:hover {
 }
 
 .background {
-    background-image: url("https://images.unsplash.com/photo-1487621167305-5d248087c724?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=paul-gilmore-KT3WlrL_bsg-unsplash.jpg");
+    background-image: url("/images/backgroundImage.webp");
     /*\
     https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80
     https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
