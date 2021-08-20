@@ -25,8 +25,14 @@ permalink: projects/Bound/
                     Engine!</a> At this current point in time, there isn't all that much to show!</div>
             <br>
             <div class="text">But don't worry, I should have something to show soon! Why not check the discord just in
-                case! Who knows... maybe I'll be posting some snippets on progress! <a class="link"
+                case! Who knows... maybe I've been posting some snippets on progress! <a class="link"
                     href="{{ site.discord_link }}">Discord</a></div>
+            <br>
+            <div class="text">In addition to the Discord, there is also a Trello page for Bound! The trello page can be a
+                little bit random at times BUT, it does show some progress and little bits of the game's direction as the game progresses!
+
+                <a class="link" href="https://trello.com/b/SieEloKO/bound">Trello</a>
+            </div>
         </div>
         <br>
         <br>
@@ -36,13 +42,13 @@ permalink: projects/Bound/
         {% if post.project == "Bound" %}
         <div class="news">
             <a class="post" href="{{ site.base }}{{ post.url }}">
-                    <div class="image" style="background-image: url({{ site.base }}{{ post.image }});"></div>
-                    <div class="content">
-                        <div class="posttitle">{{ post.title }}</div>
-                        <div class="date">{{ post.date | date: "%B %e, %Y" }}</div>
-                        <div class="category">{{ post.categories }}</div>
-                        <div class="text">{{ post.excerpt | truncate: 120 }}</div>
-                    </div>
+                <div class="image" style="background-image: url({{ site.base }}{{ post.image }});"></div>
+                <div class="postcontent">
+                    <div class="posttitle">{{ post.title }}</div>
+                    <div class="date">{{ post.date | date: "%B %e, %Y" }}</div>
+                    <div class="category">{{ post.categories }}</div>
+                    <div class="text">{{ post.excerpt | truncate: 120 | strip_html }}</div>
+                </div>
             </a>
         </div>
         <br>

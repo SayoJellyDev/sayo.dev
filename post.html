@@ -17,7 +17,7 @@ title: Blog
         <div class="date">{{ post.date | date: "%B %e, %Y" }}</div>
         <div class="category">{{ post.categories }}</div>
 
-        <div class="text">{{ post.excerpt | truncate: 120 }}</div>
+        <div class="text">{{ post.excerpt | truncate: 120 | strip_html }}</div>
       </article>
     </a>
     {% endfor %}

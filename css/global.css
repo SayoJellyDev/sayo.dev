@@ -1,8 +1,7 @@
----
-layout: stylesheet
----
+--- 
+layout: stylesheet 
+--- 
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
 html {
     font-family: 'Noto Sans', sans-serif;
 }
@@ -14,25 +13,25 @@ body {
 }
 
 /* width */
+
 ::-webkit-scrollbar {
     width: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: rgba(25,25,25,1);
+}
 
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(100,100,100,0.5);
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: rgba(25, 25, 25, 1);
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 100, 0.5);
     border-radius: 5px;
-  }
+}
 
-
-
-  .nav {
+.nav {
     pointer-events: visible;
     position: fixed;
     display: flex;
@@ -41,7 +40,7 @@ body {
     vertical-align: middle;
     /*justify-content: space-evenly;*/
     background-color: rgba(25, 25, 25, 0.781);
-    color:white;
+    color: white;
     text-decoration: none;
     width: 50px;
     margin: 0;
@@ -93,7 +92,7 @@ body {
 
 .nav span .tooltip {
     visibility: hidden;
-    color:white;
+    color: white;
     width: 120px;
     backdrop-filter: blur(var(--blur-amount));
     background-color: rgba(25, 25, 25, 0.781);
@@ -123,67 +122,71 @@ body {
     border-radius: 5px;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
 
 @media (max-width:720px) {
-  .cover {
-      visibility: hidden;
-      opacity: 0;
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom:0;
-      width:100vw;
-      height:100vh;
-      z-index: 100;
-      background: rgba( 25, 25, 25, 0.5);
-      transition: opacity 1s;
-  }
-  .peeker {
-      background-image: url("/images/icons/Menu-Icon.svg");
-      pointer-events: visible;
-      background-color: rgba(25, 25, 25, 0.781);
-      z-index: 101;
-  }
-  .peeker:hover div.nav {
-      transform: translateX(0);
-  }
-  .peeker:hover  {
-      background-image: url();
-  }
-  .hide {
-      visibility: hidden;
-      position: fixed;
-      background-image: url("/images/icons/Close-Icon.svg");
-      left: 10px;
-      bottom: 15px;
-      width: 50px;
-      height: 50px;
-      background-repeat: no-repeat;
-      background-position: center;
-      z-index: 102;
-  }
-  .visible {
-      opacity: 1;
-      visibility: visible !important;
-  }
-  .nav {
-      transition: all 0.1s ease-in;
-      position: fixed;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      vertical-align: middle;
-      background-color: rgba(25, 25, 25, 0.781);
-      width: 50px;
-      margin: 0;
-      left: 10px;
-      right: 0;
-      top: initial !important;
-      bottom: 70px;
-      transform: translateX(-60px);
-      border-radius: 5px;
-      z-index: 10;
-      backdrop-filter: blur(var(--blur-amount));
-  }
+    .cover {
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        background: rgba( 25, 25, 25, 0.5);
+        transition: opacity 1s;
+    }
+    .peeker {
+        background-image: url("/images/icons/Menu-Icon.svg");
+        pointer-events: visible;
+        background-color: rgba(25, 25, 25, 0.781);
+        z-index: 101;
+    }
+    .peeker:hover div.nav {
+        transform: translateX(0);
+    }
+    .peeker:hover {
+        background-image: url();
+    }
+    .hide {
+        visibility: hidden;
+        position: fixed;
+        background-image: url("/images/icons/Close-Icon.svg");
+        left: 10px;
+        bottom: 15px;
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 102;
+    }
+    .visible {
+        opacity: 1;
+        visibility: visible !important;
+    }
+    .nav {
+        transition: all 0.1s ease-in;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        vertical-align: middle;
+        background-color: rgba(25, 25, 25, 0.781);
+        width: 50px;
+        margin: 0;
+        left: 10px;
+        right: 0;
+        top: initial !important;
+        bottom: 70px;
+        transform: translateX(-60px);
+        border-radius: 5px;
+        z-index: 10;
+        backdrop-filter: blur(var(--blur-amount));
+    }
 }
