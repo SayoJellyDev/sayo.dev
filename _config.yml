@@ -8,7 +8,7 @@ description: >-
   I like creating random projects and never finishing them, and procrastination too! (don't wanna forget that one!)
   <br>Hope you enjoy! <3
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.kingjellycycle.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 twitter_link: https://www.twitter.com/KingJellycycle
 youtube_link: https://www.youtube.com/channel/UCk5PWasAw6vOOvHiIFG5wVQ
