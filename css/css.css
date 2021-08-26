@@ -4,7 +4,8 @@ layout: stylesheet
 :root {
     --blur-amount: 15px;
     --border-radius-value: 5px;
-    --standard-colour: rgba(0, 0, 0, 0.18);
+    --standard-colour: rgba(0, 0, 0, 0.20);
+    --standard-border-colour: rgba( 0,0,0, 0.18);
     --standard-text-colour: white;
     --dimmed-text: rgba(200, 200, 200, 0.9);
 }
@@ -15,6 +16,7 @@ html {
     margin: 0;
     color: white;
     overflow-x: hidden;
+    font-size: 1.1em;
 }
 
 body {
@@ -63,10 +65,10 @@ a:hover {
     bottom: 0;
     width: 600px;
     height: 300px;
-    border: 1px solid rgba( 255, 255, 255, 0.18);
     border-radius: 5px;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--standard-border-colour);
+    background-color: var(--standard-colour);
     backdrop-filter: blur(var(--blur-amount));
 }
 
@@ -118,8 +120,8 @@ a:hover {
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 5px;
-    border: 1px solid rgba(255,255,255,0.18);
-    background-color: rgba(0,0,0,0.1);
+    border: 1px solid var(--standard-border-colour);
+    background-color: var(--standard-colour);
     backdrop-filter: blur(var(--blur-amount));
 }
 
@@ -268,7 +270,7 @@ a:hover {
 }
 
 .container.center {
-    width: 900px;
+    width: 800px;
     display: block;
     position: relative;
     margin: auto;
@@ -277,7 +279,7 @@ a:hover {
     background: var(--standard-colour);
     backdrop-filter: blur(var(--blur-amount));
     border-radius: var(--border-radius-value);
-    border: 1px solid var(--standard-colour);
+    border: 1px solid var(--standard-border-colour);
 }
 
 .container.center.projects {
@@ -339,7 +341,7 @@ a:hover {
 .container .title {
     padding-top: 25px;
     padding-bottom: 25px;
-    font-size: 72px;
+    font-size: 3.5em;
     line-height: 1em;
     color: white;
 }
@@ -758,7 +760,7 @@ span#github {
     }
 
     div.bar {
-        width: 500px;
+        width: 70%;
     }
     article.project {
         background-color: rgba( 50, 50, 50, 0.6);
@@ -770,7 +772,7 @@ span#github {
         font-size: 28px;
     }
     .container.center {
-        width: 650px !important;
+        width: 80%;
     }
     .conatiner.center.projects {
         width: 650px;
@@ -812,10 +814,14 @@ span#github {
 
 @media (max-width:720px) {
     div.bar {
-        width: 70%;
+        width: 80%;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        border-radius: 5px;
     }
+
     .container.center {
-        width: 90% !important;
+        width: 90%;
     }
 
     .container .title {

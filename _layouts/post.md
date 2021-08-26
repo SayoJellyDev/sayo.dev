@@ -1,7 +1,6 @@
 --- 
 layout: page 
 ---
-<link rel="stylesheet" href="/css/post.css?v=0.1">
 <div class="outer-container">
     <div class="container expandable background">
         <div class="title center">{{ page.title }}</div>
