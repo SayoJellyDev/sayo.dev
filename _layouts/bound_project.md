@@ -4,8 +4,8 @@
     <head prefix="og: {{ site.url }}">
     <link rel="shortcut icon" href="{% if page.icon %}{{ page.icon }}{% endif %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/global.css?v=0.5">
-    <link rel="stylesheet" href="/css/bound.css?v=0.5">
+    <link rel="stylesheet" href="/css/global.css?v=0.6">
+    <link rel="stylesheet" href="/css/bound.css?v=0.6">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Required meta tags -->
     <meta charset="utf-8">

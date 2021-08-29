@@ -3,7 +3,7 @@
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
     {% include header.html %}
     {% if page.layout == "post" %}
-        <link rel="stylesheet" href="/css/post.css?v=0.2">
+        <link rel="stylesheet" href="/css/post.css?v=0.3">
     {% endif %}
     {% include meta.html %}
     <body>
