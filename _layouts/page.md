@@ -7,6 +7,7 @@
     {% endif %}
     {% include meta.html %}
     <body>
+        {% include copyright.html %}
         {% include navbar.html %}
         {{ content }}
     </body>

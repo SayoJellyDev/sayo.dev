@@ -5,6 +5,7 @@
     {% include header.html %}
     {% include meta.html %}
     <body class="snap">
+        {% include copyright.html %}
         {% include navbar.html %}
         {{ content }}
     </body>

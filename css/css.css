@@ -298,7 +298,7 @@ a:hover {
 }
 
 .outer-container {
-    overflow-x: hidden;
+   
     height: 100%;
     width: 100%;
     background-color: rgb(50, 50, 50);
