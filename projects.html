@@ -3,23 +3,91 @@ permalink: /projects/
 layout: page
 title: Projects
 ---
-<div class="outer-container ">
+
+<div class="outer-container">
+  <div class="container page expandable background">
+    <div class="title center">Projects</div>
+    <div class="bar"></div>
+    <div class="container center projects animate__animated animate__fadeIn">
+      <div class="subcontainer sidemenu">
+        {% for project in site.projects reversed %}
+          {% if project.featured %}
+          <div class="project tablinks" onclick="openTab(event, '{{ project.title }}')">
+            <div class="name">{{ project.title }}</div>
+          </div>
+          {% endif %}
+        {% endfor %}
+
+        {% for project in site.projects reversed %}
+          {% if project.featured == false %}
+            <div class="project tablinks" onclick="openTab(event, '{{ project.title }}')">
+              <div class="name">{{ project.title }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="container">
+        {% for project in site.projects reversed %}
+          {% if project.featured %}
+          <div class="tabcontent" id="content-{{ project.title }}">
+            <h1 class="tabtitle">{{ project.title }}</h1>
+            <div class="status featuredIcon">FEATURED</div>
+            <p>{{ project.description }}</p>
+            <div class="status {{ project.status }}">{{ project.status }}</div>
+            <div class="date">{{ project.date | date: "%B %e, %Y" }}</div>
+            <div class="category">{{ project.categories }}</div>
+            <a href="{{ site.base }}{{ project.url }}" class="button">
+              <div class="text">MORE...</div>
+            </a>
+          </div>
+          {% endif %}
+      {% endfor %}
+
+
+      {% for project in site.projects reversed %}
+        {% if project.featured == false %}
+          <div class="tabcontent" id="content-{{ project.title }}">
+            <h1 class="tabtitle">{{ project.title }}</h1>
+            <p>{{ project.description }}</p>
+            <div class="status {{ project.status }}">{{ project.status }}</div>
+            <div class="date">{{ project.date | date: "%B %e, %Y" }}</div>
+            <div class="category">{{ project.categories }}</div>
+            <a href="{{ site.base }}{{ project.url }}" class="button">
+              <div class="text">MORE...</div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+      </div>
+    </div>  
+  </div>
+</div>
+
+<script>
+
+  </script>
+
+
+
+
+<!--
+<div class="outer-container">
   <div class="container expandable background">
       <div class="title center">Projects</div>
       <div class="bar"></div>
     <div class="container center projects flex animate__animated animate__fadeIn">
       {% for project in site.projects reversed %}
       <a class="project" href="{{ site.base }}{{ project.url }}">
-        <article class="project">
-          <div class="image" style="background-image: url('/{{ site.base }}{{ project.background-image }}');"></div>
-          <div class="sub title">{{ project.title }}</div>
-          <div class="status {{ project.status }}">{{ project.status }}</div>
-          <div class="date">{{ project.date | date: "%B %e, %Y" }}</div>
-          <div class="category">{{ project.categories }}</div>
-          <div class="text">{{ project.description | truncate: 150 }}</div>
-        </article>
+        <div class="image" style="background-image: url('/{{ site.base }}{{ project.background-image }}');"></div>
+        <div class="sub title">{{ project.title }}</div>
+        <div class="status {{ project.status }}">{{ project.status }}</div>
+        <div class="date">{{ project.date | date: "%B %e, %Y" }}</div>
+        <div class="category">{{ project.categories }}</div>
+        <div class="text">{{ project.description | truncate: 150 }}</div>
       </a>
       {% endfor %}
     </div>
   </div>
 </div>
+-->
