@@ -16,47 +16,13 @@ html {
     margin: 0;
     color: white;
     overflow-x: hidden;
-
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-hr {
-    width: 60%;
-    margin-top: 0;
-    margin-bottom: 25px;
-    padding-top: 0;
-    border: 2px solid white;
-    border-radius: 5px;
-}
-
-.footer-space {
-    width: 100%;
-    height: 25px;
-    min-height: 25px;
-    position: relative;
-    margin: 0;
-    bottom: 0;
-}
-
-a:hover {
-    text-decoration: none;
-    color: white;
 }
 
 #titleCard {
-    color: white;
-    z-index: 0;
     position: relative;
     margin: auto;
-    left: 0;
-    right: 0;
     top: 50%;
     transform: translateY(-50%);
-    bottom: 0;
     width: 600px;
     height: 300px;
     border-radius: 5px;
@@ -87,7 +53,6 @@ a:hover {
     margin-right: 10px;
     padding: 15px;
     text-align: center;
-    align-content: center;
     position: relative;
     top: 70px;
 }
@@ -218,19 +183,6 @@ a:hover {
     background-size: cover;
 }
 
-.alt-background {
-    background-image: url("https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
-    /*\
-    background-image: url("https://i.pinimg.com/originals/c2/a2/13/c2a213a5143de05750d9a4d49b1c393e.jpg");
-    background-image: url("/images/profilePic.jpg");
-    */
-    background-color: rgb(50, 50, 50);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
 .alt2-background {
     z-index: -1;
     background-image: url("https://images.unsplash.com/photo-1470104240373-bc1812eddc9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
@@ -285,19 +237,7 @@ a:hover {
     display: block;
 }
 
-.container.center.flex {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    justify-content:space-evenly;
-}
-
-.container.medium {
-    width: 75% !important;
-}
-
 .outer-container {
-   
     height: 100%;
     width: 100%;
     background-color: rgb(50, 50, 50);
@@ -335,12 +275,6 @@ a:hover {
     border-radius: 5px;
 }
 
-.projectPreview {
-    flex-grow: 1;
-}
-
-.container {}
-
 .container .title {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -353,7 +287,7 @@ a:hover {
     text-align: center;
 }
 
-.container >.text {
+.container > .text {
     display: flex;
     flex-flow: row;
     flex-grow: 1;
@@ -368,10 +302,6 @@ a:hover {
     line-height: 1em;
 }
 
-
-.container > .text .container.block {
-
-}
 .container.block {
     flex-grow: 1;
     width: 50%;
@@ -591,170 +521,11 @@ div.bar {
     margin-bottom: 25px;
 }
 
-article.post {
-    padding: 0;
-    background-color: rgba( 100, 100, 100, 0.2);
-    margin-top: 5px;
-    margin-bottom: 5px;
-    height: 175px;
-    position: relative;
-    padding: 25px;
-    border-top: 1px solid rgba( 255, 255, 255, 0.4);
-    border-bottom: 1px solid rgba( 255, 255, 255, 0.4);
-}
+/* 
+START
+    SOCIALS 
 
-article.post:hover {
-    transition: all 0.2s;
-    background-color: rgba( 100, 100, 100, 0.5);
-}
-
-article.post .date {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    color: rgb(255, 255, 255)
-}
-
-article.post .category {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    
-}
-
-article.post .text {
-    font-size: 16px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-article.post .button {
-    background-color: rgba( 150, 150, 150, 0.2);
-    border-radius: 5px;
-    border: var(--standard-colour) 1px solid;
-    width: 100px;
-    height: 25px;
-    float: right;
-    text-align: center;
-    line-height: 25px;
-    position: absolute;
-    bottom: 15px;
-    right: 25px;
-}
-
-article.post .button:hover {
-    background-color: rgba( 150, 150, 150, 0.2);
-}
-
-div.post .entry {
-    padding: 25px;
-}
-.post a {
-    text-decoration: initial;
-    color: rgb(0, 162, 255);
-}
-
-div.post .date {
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-}
-
-
-.topbar {
-    clear: both;
-    z-index: 1;
-    position: fixed;
-    padding: 0 !important;
-    user-select: none;
-    box-sizing: border-box;
-    display: table;
-    width: 100%;
-    height: 50px;
-    background-color: var(--standard-colour);
-    border-bottom: 2px solid rgba( 255, 255, 255, 0.18);
-    border-collapse: separate;
-    white-space: nowrap;
-    backdrop-filter: blur(var(--blur-amount));
-}
-
-.topbar .item {
-    box-sizing: border-box;
-    vertical-align: middle;
-    display: table-cell;
-    line-height: 0px;
-}
-
-.topbar .item.title {
-    text-align: center;
-    padding: 10px;
-    font-size: 20px;
-    display: table-cell;
-    box-sizing: border-box;
-}
-
-.topbar .itemlist {
-    box-sizing: border-box;
-    width: auto;
-    height: 100%;
-    display: table;
-}
-
-.topbar .itemlist .item.button {
-    height: 100%;
-    padding: 10px;
-    cursor: pointer;
-    color: white;
-    border-bottom: 0px solid white;
-}
-
-.topbar .itemlist .item.button:hover {
-    color: var(--dimmed-text);
-    transition: ease-in 0.1s;
-}
-
-.topbar .itemlist .item.button.active {
-    border-bottom: 3px solid white;
-    color: var(--dimmed-text);
-    transition: ease 0.05s;
-}
-
-.topbar .space {
-    width: 100%;
-    height: 100%;
-    display: table-cell;
-}
-
-h1 {
-    font-size: 24px;
-}
-
-.horizontal-container {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    height: 100%;
-    width: 100%;
-}
-
-.card {
-    margin-left: 25px;
-    margin-right: 25px;
-    display: inline-block;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    z-index: 0;
-    position: relative;
-    width: 45vw;
-    height: 75%;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 5px;
-    box-sizing: border-box;
-    backdrop-filter: blur(var(--blur-amount));
-}
-
-/* SOCIALS */
+*/
 
 div.social {
     position: absolute;
@@ -789,7 +560,11 @@ span#github {
     background-image: url("/images/icons/Github-Logo.svg"); 
 }
 
-/* END SOCIALS */
+/* 
+END
+    SOCIALS 
+
+*/
 
 
 @media (max-height:830px) {
@@ -826,6 +601,7 @@ span#github {
     div.bar {
         width: 70% !important;
     }
+    
     .container.center {
         width: 80%;
     }
@@ -960,13 +736,4 @@ span#github {
     #titleCard .cardContainer {
         top: 70px;
     }
-    .card {
-        margin-left: 25px;
-        width: 80vw;
-    }
-}
-
-ul.nobullet {
-    list-style-type: none;
-    padding: 0;
 }

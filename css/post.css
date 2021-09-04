@@ -1,3 +1,28 @@
+/* 
+START
+    POST PAGE STUFF
+
+*/
+div.post .entry {
+    padding: 25px;
+}
+
+div.post a {
+    text-decoration: initial;
+    color: rgb(0, 162, 255);
+}
+
+div.post .date {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+/* 
+END
+    POST PAGE STUFF
+
+*/
+
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
     text-align: center;

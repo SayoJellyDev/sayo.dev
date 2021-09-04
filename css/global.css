@@ -1,6 +1,11 @@
 --- 
 layout: stylesheet 
 --- 
+/*
+START 
+    FORMATTING
+
+*/
 html {
     font-family: 'Nunito', sans-serif;
     font-size: 1.1em;
@@ -13,6 +18,34 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+/*
+END
+    FORMATTING
+
+*/
+
+
+/*
+START 
+    SCROLLBAR
+
+*/
 /* width */
 
 ::-webkit-scrollbar {
@@ -32,6 +65,11 @@ body {
     border-radius: 5px;
 }
 
+/*
+END
+    SCROLLBAR
+
+*/
 
 #copyright {
     position: absolute;
@@ -41,6 +79,12 @@ body {
     left: 10px;
 }
 
+
+/*
+START
+    NAV
+
+*/
 .nav {
     pointer-events: visible;
     position: fixed;
@@ -131,10 +175,11 @@ body {
     background-position: center;
     border-radius: 5px;
 }
+/*
+END
+    NAV
 
-h1,h2,h3,h4,h5,h6 {
-    margin: 0;
-}
+*/
 
 
 @media (max-width:720px) {
