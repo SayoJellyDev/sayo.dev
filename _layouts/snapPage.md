@@ -1,3 +1,6 @@
+--- 
+layout: compress
+---
 <!doctype html>
 <html lang="en">
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
