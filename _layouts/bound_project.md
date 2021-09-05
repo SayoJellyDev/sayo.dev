@@ -8,8 +8,8 @@ layout: compress
     <link rel="shortcut icon" href="{% if page.icon %}{{ page.icon }}{% endif %}" type="image/x-icon">
     <link rel="stylesheet" href="/css/bound.css?v=0.7">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="/css/global.css?v=0.9" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/global.css?v=0.9"></noscript>
+    <link rel="preload" href="/css/global.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/global.css?v=1.0"></noscript>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

@@ -3,7 +3,7 @@ layout: stylesheet
 ---
 :root {
     --blur-amount: 15px;
-    --border-radius-value: 5px;
+    --border-radius-value: 10px;
     --standard-colour: rgba(0, 0, 0, 0.20);
     --standard-border-colour: rgba( 0,0,0, 0.18);
     --standard-text-colour: white;
@@ -25,7 +25,7 @@ html {
     transform: translateY(-50%);
     width: 600px;
     height: 300px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     box-sizing: border-box;
     border: 1px solid var(--standard-border-colour);
     background-color: var(--standard-colour);
@@ -78,7 +78,7 @@ html {
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     border: 1px solid var(--standard-border-colour);
     background-color: var(--standard-colour);
     backdrop-filter: blur(var(--blur-amount));
@@ -272,7 +272,7 @@ html {
     margin: auto;
     background-color: rgba(75, 75, 75, .5);
     border: 1px solid rgba( 255, 255, 255, 0.18);
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
 }
 
 .container .title {
@@ -309,7 +309,7 @@ html {
     margin-bottom: 25px;
     position: relative;
     border: 1px solid rgba( 255, 255, 255, 0.18);
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     z-index: 0;
 }
 
@@ -359,6 +359,7 @@ html {
     border-right: 1px solid var(--standard-colour);
     overflow-y: auto;
 
+    overflow: hidden;
 
 }
 
@@ -391,6 +392,14 @@ html {
     transform: translateY(-50%);
 }
 
+
+
+.subcontainer.sidemenu .project:first-child {
+    border-left: 0px;
+    border-top-left-radius: var(--border-radius-value);
+}
+
+
 .tabcontent { 
     display: none;
     height: 100%;
@@ -417,6 +426,7 @@ html {
 
 .tabcontent:first-child {
     display: block;
+
 }
 
 .tabcontent .button {
@@ -467,7 +477,7 @@ div.status {
     position: absolute;
     bottom:10px;
     left: 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     padding:5px;
     background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(150,150,150, 0.6);
@@ -493,7 +503,7 @@ div.status.halted {
     bottom:55px;
     left:10px;
     text-transform: capitalize;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     padding:5px;
     color:white;
     background-color: rgba(15, 15, 15, 0.6);
@@ -505,7 +515,7 @@ div.status.halted {
     top:10px;
     right:10px;
     text-transform: capitalize;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     padding:5px;
     color:white;
     background-color: rgba(15, 15, 15, 0.6);
@@ -515,7 +525,7 @@ div.status.halted {
 div.bar {
     border-top: 3px solid white;
     border-bottom: 3px solid white;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     width: 700px;
     margin: 0 auto;
     margin-bottom: 25px;
@@ -581,7 +591,7 @@ END
         padding: 10px;
         padding-left: 30px;
         padding-right: 30px;
-        border-radius: 5px;
+        border-radius: var(--border-radius-value);
         border: 1px solid var(--standard-border-colour);
         background-color: var(--standard-colour);
         backdrop-filter: blur(var(--blur-amount));
@@ -624,7 +634,7 @@ END
         height: 100%;
         position: relative;
         border: 1px solid rgba( 255, 255, 255, 0.18);
-        border-radius: 5px;
+        border-radius: var(--border-radius-value);
         z-index: 0;
     }
     .container.block .title {
@@ -675,12 +685,11 @@ END
         padding-left: 30px;
         border-left:  1px solid var(--standard-border-colour);
     }
-
-
-
-    .subcontainer.sidemenu .project:first-child {
-        border-left: 0px;
+    
+    .subcontainer.sidemenu .project:last-child {
+        border-top-right-radius: var(--border-radius-value);
     }
+
 
     .subcontainer.sidemenu~.container {
         left: 0;
@@ -701,7 +710,7 @@ END
         width: 80% !important;
         border-top: 2px solid white;
         border-bottom: 2px solid white;
-        border-radius: 5px;
+        border-radius: var(--border-radius-value);
     }
 
     .container.center {

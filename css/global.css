@@ -102,7 +102,7 @@ START
     right: 0;
     transform: translateY(-50%);
     top: 50%;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     z-index: 10;
     backdrop-filter: blur(var(--blur-amount));
 }
@@ -117,12 +117,38 @@ START
     bottom: 0;
     vertical-align: middle;
     text-align: center;
-    border-radius: 5px;
+
     display: block;
     background-repeat: no-repeat;
     background-position: center;
     transition: background-color 0.2s ease;
 }
+
+
+
+.nav a:first-child {
+    border-radius: var(--border-radius-value);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nav a:last-child {
+    border-radius: var(--border-radius-value);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.nav a:first-child span {
+    border-radius: var(--border-radius-value);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nav a:last-child span {
+    border-radius: var(--border-radius-value);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
 
 .nav span.home {
     background-image: url("/images/icons/Home-Icon.svg");
@@ -151,7 +177,7 @@ START
     backdrop-filter: blur(var(--blur-amount));
     background-color: rgba(25, 25, 25, 0.781);
     text-align: center;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
     left: 55px;
     /* Position the tooltip */
     position: absolute;
@@ -173,7 +199,7 @@ START
     background-color: rgba(25, 25, 25, 0);
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 5px;
+    border-radius: var(--border-radius-value);
 }
 /*
 END
@@ -240,7 +266,7 @@ END
         top: initial !important;
         bottom: 70px;
         transform: translateX(-60px);
-        border-radius: 5px;
+        border-radius: var(--border-radius-value);
         z-index: 10;
         backdrop-filter: blur(var(--blur-amount));
     }
