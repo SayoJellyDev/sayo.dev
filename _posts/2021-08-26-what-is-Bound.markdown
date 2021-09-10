@@ -5,18 +5,19 @@ date:   2021-08-26 15:00:00 +1000
 image: /images/projects/bound/GameIcon.png
 categories: Personal
 project: Bound
+excerpt_separator: <!-- excerpt_end -->
 ---
 
 # What is Bound?
 <h1 class="subtitle">(and the state of the game I want to aim for!)</h1>
-
+<!-- excerpt_start -->
 Bound is the game I've been "looking for". That would be how I want to say it.
 It is a game with an excellent combat system, with multiple classes, each with its abilities and play styles. 
 
 I'd love A few different weapon types, a variety of abilities and being able to explore a world and have some fun. I want a lot in this game, and I hope to detail a lot of it here so it can be a base for you (and me) to see what this game will become!
 
 We are starting with the Combat System!
-
+<!-- excerpt_end -->
 ## Combat System
 
 ### Weapons:

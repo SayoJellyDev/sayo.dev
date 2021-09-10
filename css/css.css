@@ -165,7 +165,6 @@ html {
 
 .button {
     cursor: pointer;
-    user-select: none;
 }
 
 .background {
@@ -451,8 +450,8 @@ html {
 
 .tabcontent .button:hover {
     transition: all 0.2s ease;
-    background-color: rgba(0, 0, 0, 0.30);
-
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba( 0,0,0, 0.4);
 }
 
 
@@ -576,6 +575,88 @@ END
 
 */
 
+/*
+START
+    POST ARTICLES
+
+*/
+
+article.post {
+    margin: 15px;
+    padding:15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    background-color: var(--standard-colour);
+    border-radius: var(--border-radius-value);
+    border: 1px solid var(--standard-border-colour);
+}
+
+article.post div.info {
+    position: absolute;
+    bottom:20px;
+    text-align: left;
+}
+
+article.post div.text {
+    padding: 5px;
+    flex-grow: 1;
+    
+}
+
+article.post div.container {
+    width: 100%;
+    position: relative;
+}
+
+
+article.post div.container a.button {
+    position: relative;
+    float:right;
+    right: 0;
+    min-width: 100px;
+    height: 40px;
+    transition: all 0.2s ease;
+    background-color: var(--standard-colour);
+    border-radius: var(--border-radius-value);
+    border: 1px solid var(--standard-border-colour);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+article.post div.container a.button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba( 0,0,0, 0.4);
+}
+
+article.post div.seperator {
+    border-top: 3px solid rgba(255, 255, 255, 0.555);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.555);
+    border-radius: var(--border-radius-value);
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 15px;
+
+}
+
+article.post:last-child div.seperator {
+    border-top: 0px solid rgba(255, 255, 255, 0.555);
+    border-bottom: 0px solid rgba(255, 255, 255, 0.555);
+    border-radius: var(--border-radius-value);
+    width: 0;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+/*
+END
+    POST ARTICLES
+
+*/
+
+
 
 @media (max-height:830px) {
     #featuredProject {
@@ -608,13 +689,9 @@ END
         transform: translateY(-50%);
     }
 
-    div.bar {
-        width: 70% !important;
-    }
+
     
-    .container.center {
-        width: 80%;
-    }
+
     .container > .text {
         flex-flow: column;
         padding: 0;
@@ -647,6 +724,15 @@ END
     }
     .container .sub.title {
         font-size: 32px;
+    }
+}
+
+@media (max-width:900px) {
+    .container.center {
+        width: 75%;
+    }
+    div.bar {
+        width: 70% !important;
     }
 }
 

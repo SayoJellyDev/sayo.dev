@@ -10,16 +10,23 @@ title: Blog
   <div class="bar"></div>
   <div class="container center animate__animated animate__fadeIn">
     {% for post in site.posts %}
-    <a href="{{ site.base }}{{ post.url }}">
+
       <article class="post">
         <div class="image" style="background-image: url({{ site.base }}{{ post.picture }});"></div>
-        <div class="sub title">{{ post.title }}</div>
-        <div class="date">{{ post.date | date: "%B %e, %Y" }}</div>
-        <div class="category">{{ post.categories }}</div>
+        <div class="sub title"><a href="{{ site.base }}{{ post.url }}">{{ post.title }}</a></div>
+        <div class="info">
+          <div class="date">{{ post.date | date: "%B %e, %Y" }}</div>
+          <div class="category">{{ post.categories }}</div>
+        </div>
+        {% assign excerptParts = post.excerpt | split: "<!-- excerpt_start -->" %}
+        <div class="text">{{ excerptParts[1] | truncate: 450 }}</div>
 
-        <div class="text">{{ post.excerpt | truncate: 120 | strip_html }}</div>
+        <div class="container">
+          <a class="button" href="{{ site.base }}{{ post.url }}">Read...</a>
+        </div>
+        
+
       </article>
-    </a>
     {% endfor %}
   </div>
 </div>
