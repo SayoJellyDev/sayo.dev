@@ -1,15 +1,6 @@
 --- 
 layout: stylesheet 
 ---
-:root {
-    --blur-amount: 15px;
-    --border-radius-value: 10px;
-    --standard-colour: rgba(0, 0, 0, 0.20);
-    --standard-border-colour: rgba( 0,0,0, 0.18);
-    --standard-text-colour: white;
-    --dimmed-text: rgba(200, 200, 200, 0.9);
-}
-
 html {
     height: 100%;
     width: 100%;
