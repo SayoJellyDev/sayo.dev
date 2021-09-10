@@ -23,6 +23,7 @@ layout: compress
     <meta name="theme-color" content="#141414">
     <!-- Twitter stuffs -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{% if page.icon %}{{ page.icon}} {% else %} /images/profilePic.webp {% endif %}">
 </head>
     <body>
         {% include copyright.html %}
