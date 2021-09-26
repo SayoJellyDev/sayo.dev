@@ -51,8 +51,10 @@ permalink: projects/Bound/
         <br />
         <div class="subtitle">Latest News!</div>
         <br />
-        {% for post in site.posts %} {% if post.project == "Bound" %}
         <div class="news">
+            {% for post in site.posts limit:1 %} 
+            {% if post.project == "Bound" %}
+
             <a class="post" href="{{ site.base }}{{ post.url }}">
                 <div class="image" style="background-image: url({{ site.base }}{{ post.image }});"></div>
                 <div class="postcontent">
@@ -60,12 +62,14 @@ permalink: projects/Bound/
                     <div class="date">{{ post.date | date: "%B %e, %Y" }}</div>
                     <div class="category">{{ post.categories }}</div>
                     {% assign excerptParts = post.excerpt | split: "<!-- excerpt_start -->" %}
-                    <div class="text">{{ excerptParts[1] | truncate: 120 | strip_html }}</div>
+                    <div class="text">{{ excerptParts[1] | truncate: 200 | strip_html }}</div>
                 </div>
             </a>
+            
+            {% endif %} 
+            {% endfor %}
         </div>
         <br />
-        {% endif %} {% endfor %}
 
         <div class="subtitle">Who's behind the development?</div>
         <br />

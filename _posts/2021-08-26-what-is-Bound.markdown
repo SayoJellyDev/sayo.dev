@@ -3,7 +3,7 @@ layout: post
 title:  "What is Bound?"
 date:   2021-08-26 15:00:00 +1000
 image: /images/projects/bound/GameIcon.png
-categories: Personal
+categories: Development
 project: Bound
 excerpt_separator: <!-- excerpt_end -->
 ---
