@@ -4,61 +4,46 @@ layout: page
 title: Projects
 ---
 <div class="outer-container">
-  <div class="container page expandable background">
-    <div class="title center">Projects</div>
-    <div class="bar"></div>
-    <div class="container center projects animate__animated animate__fadeIn">
-      <div class="subcontainer sidemenu">
-        {% for project in site.projects reversed %}
-          {% if project.featured %}
-          <div class="project tablinks" onclick="openTab(event, '{{ project.title }}')">
-            <div class="name">{{ project.title }}</div>
-          </div>
-          {% endif %}
-        {% endfor %}
-
-        {% for project in site.projects reversed %}
-          {% if project.featured == false %}
-            <div class="project tablinks" onclick="openTab(event, '{{ project.title }}')">
-              <div class="name">{{ project.title }}</div>
+    <div class="container page expandable background">
+        <div class="title center">Projects</div>
+        <div class="bar"></div>
+        <div class="container center projects animate__animated animate__fadeIn">
+            <div class="vcontainer">
+                {% for project in site.projects reversed %}
+                {% if project.featured %}
+                <div class="pItem" id="{{ project.title }}"
+                    style="background-image: url('{{ project.background-image }}');">
+                    <a href="{{ site.base }}{{ project.url }}" class="pTitle">
+                        {{ project.title }}
+                    </a>
+                    <div class="pDescription">{{ project.description }}</div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                {% for project in site.projects reversed %}
+                {% if project.featured == false %}
+                <div class="pItem" id="{{ project.title }}"
+                    style="background-image: url('{{ project.background-image }}');">
+                    <a href="{{ site.base }}{{ project.url }}" class="pTitle">
+                        {{ project.title }}
+                    </a>
+                    <div class="pDescription">{{ project.description }}</div>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-      <div class="container">
-        {% for project in site.projects reversed %}
-          {% if project.featured %}
-          <div class="tabcontent" id="content-{{ project.title }}">
-            <h1 class="tabtitle">{{ project.title }}</h1>
-            <div class="status featuredIcon">FEATURED</div>
-            <p>{{ project.description }}</p>
-            <div class="status {{ project.status }}">{{ project.status }}</div>
-            <div class="date">{{ project.date | date: "%B %e, %Y" }}</div>
-            <div class="category">{{ project.categories }}</div>
-            <a href="{{ site.base }}{{ project.url }}" class="button">
-              <div class="text">MORE...</div>
-            </a>
-          </div>
-          {% endif %}
-      {% endfor %}
-
-
-      {% for project in site.projects reversed %}
-        {% if project.featured == false %}
-          <div class="tabcontent" id="content-{{ project.title }}">
-            <h1 class="tabtitle">{{ project.title }}</h1>
-            <p>{{ project.description }}</p>
-            <div class="status {{ project.status }}">{{ project.status }}</div>
-            <div class="date">{{ project.date | date: "%B %e, %Y" }}</div>
-            <div class="category">{{ project.categories }}</div>
-            <a href="{{ site.base }}{{ project.url }}" class="button">
-              <div class="text">MORE...</div>
-            </a>
-          </div>
-        {% endif %}
-      {% endfor %}
-      </div>
-    </div>  
-  </div>
+            <div class="pCount">
+                {% for project in site.projects reversed %}
+                {% if project.featured %}
+                <a class="bubble" href="#{{ project.title }}" focus></a>
+                {% endif %}
+                {% endfor %}
+                {% for project in site.projects reversed %}
+                {% if project.featured == false %}
+                <a  class="bubble" href="#{{ project.title }}"></a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
