@@ -188,8 +188,8 @@ div.text {
 }
 
 div.status.in.development {
-    background-color: rgba(50, 10, 10, 0.6);
-    border: 1px solid rgba(150, 10, 10, 0.6);
+    background-color: rgba(160, 25, 25, 0.8);
+    border: 1px solid rgba(110, 14, 14, 0.8);
     color:white;
 }
 
