@@ -1,0 +1,340 @@
+html {
+    color: #292929;
+    background-color: white;
+    background-image: -moz-linear-gradient(45deg, #e3e3e3, white);
+    background-image: -webkit-linear-gradient(45deg, #e3e3e3, white);
+    background-image: -ms-linear-gradient(45deg, #e3e3e3, white);
+    background-image: linear-gradient(25deg, #e3e3e3, white);
+    
+}
+
+a { 
+    text-decoration: none;
+    color: white;
+}
+
+a.link {
+    color:rgb(26, 26, 26);
+    text-decoration: none;
+    background-image: linear-gradient(to right, #b6004c, #b6004c);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 50% 2px;
+    transition: all .2s ease;
+
+}
+
+a.link:hover {
+    color: #b6004c;
+    background-size: 100% 2px;
+}
+
+div.status {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    background-color: rgba(25,25,25, 0.5);
+    border: 1px solid rgba(200,200,200, 0.75);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1;
+    text-transform: capitalize;
+
+}
+
+div.deimos-container {
+}
+
+
+
+  .carousel {
+    position: relative;
+    width: 770px;
+    height: 450px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  .carousel:hover .slide:after,
+  .carousel:hover .counter,
+  .carousel:hover .slide:before {
+    opacity: 1;
+  }
+  .slide {
+    float: right;
+    position: absolute;
+    z-index: 1;
+    width: 770px;
+    height: 450px;
+    background-color: #eee;
+    text-align: center;
+    transition: opacity 0.4s;
+    opacity: 1;
+  }
+  .slide div {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+  .slide:before {
+    content: attr(annot);
+    display: block;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+
+    z-index: 12;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+  }
+  .slide:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.3s;
+    width: 100%;
+    height: 80px;
+    opacity: 0;
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.5));
+  }
+
+  .slideInput {
+    top: 0;
+    right: 0;
+    float: right;
+    position: absolute;
+    margin-top: 0;
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .slideInput:checked {
+    z-index: 8;
+  }
+  .slideInput:checked + .slide {
+    opacity: 0;
+  }
+  .slideInput:checked:nth-child(1):checked {
+    z-index: 9;
+  }
+  .slideInput:nth-child(1):checked {
+    float: left;
+    z-index: 9;
+  }
+  .slideInput:nth-child(1):checked + .slide {
+    opacity: 1;
+  }
+  .slideInput:nth-child(1):checked ~ .slideInput {
+    float: left;
+    z-index: 8;
+  }
+  .slideInput:nth-child(1):checked ~ .slideInput + .slide {
+    opacity: 0;
+  }
+  .slideInput:nth-child(1):checked ~ .slideInput:checked {
+    z-index: 9;
+  }
+  .slideInput:nth-child(1):checked ~ .slideInput:checked + .slide {
+    opacity: 1;
+  }
+
+li{
+    margin: 5px 0;
+  }
+
+div.title {
+    position: relative;
+    margin: auto;
+
+    left: 0;
+    right:0;
+    width: 500px;
+    height: 300px;
+    background-image: url(/images/projects/deimos/DeimosTitle.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+div.content {
+    padding-bottom: 25px;
+    align-content: center;
+
+}
+
+div.justifytextbox {
+
+    margin: auto;
+    width: 800px;
+
+}
+
+
+div.subtitle {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+div.text {
+    font-size: 1.2em;
+    letter-spacing: -0.02em;
+}
+
+div.status.in.development {
+    background-color: rgba(50, 10, 10, 0.6);
+    border: 1px solid rgba(150, 10, 10, 0.6);
+    color:white;
+}
+
+div.status.halted {
+
+    background-color: rgba(50, 50, 50, 0.9);
+    border: 1px solid rgba(10, 10, 10, 0.9);
+    color:white;
+}
+
+
+a.post {
+    position: relative;
+    background-color: rgba(25,25,25, 0.5);
+    border-radius: 5px;
+    border: 1px solid rgba(50, 50, 50, 0.9);
+    margin: auto;
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    z-index: 0;
+    gap: 15px;
+    text-decoration: none;
+    color: white;
+
+}
+
+a.post .image {
+    width: 25%;
+    background: center;
+    background-size: 100%;
+    transition: background-size 0.5s ease-out;
+}
+
+a.post:hover .image {
+    background-size: 115%;
+}
+
+a.post .postcontent {
+    text-decoration: none;
+    width: 75%;
+    padding-top: 5px;
+}
+
+a.post .postcontent .posttitle {
+    font-size: 2em;
+}
+a.post .postcontent .date {
+    float: right;
+    position: absolute;
+    top: 5px;
+    display: inline;
+    right: 5px;
+}
+
+a.post .postcontent .category {
+    font-size: 1.1em;
+}
+
+
+@media (max-width:1360px) {
+    .carousel {
+        width:512px;
+        height:300px;
+    }
+    .slide {
+        width:512px;
+        height:300px;
+    } 
+    div.postcontent {
+        padding-bottom: 25px;
+    }
+    
+    div.justifytextbox {
+        margin: auto;
+        width: 65%;
+    }
+
+    a.post {
+        overflow: hidden;
+        width: 600px;
+        height: 350px;
+
+    }
+    a.post .postcontent {
+        padding: 25px;
+        background-color: rgba(20, 20, 20, 0.7);
+        width: 100%;
+    }
+    a.post .image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        
+        transition: transform 0.5s cubic-bezier(0.42, 0, 0, 1);
+
+
+    }
+    a.post:hover .image {
+        transform: scale(1.2,1.2);
+    }
+}
+
+
+@media (max-width:720px) {
+
+    div.content {
+        padding-bottom: 25px;
+
+    }
+    
+    div.justifytextbox {
+
+        margin: auto;
+        width: 75%;
+    }    
+    
+    a.post {
+
+        width: 80%;
+        height: 30%;
+
+    }
+
+    
+div.title {
+    left: 0;
+    right:0;
+    width: 75%;
+}
+}
+
+@media (max-width:524px) {
+    .carousel {
+        width:256px;
+        height:150px;
+    }
+    .slide {
+        width:256px;
+        height:150px;
+    } 
+}
