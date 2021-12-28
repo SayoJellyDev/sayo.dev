@@ -17,7 +17,7 @@ layout: compress
     <meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.url }}{% if page.url %}{{ page.url }}{% endif %}" />
-    <meta property="og:image" content="/images/projects/bound/GameIcon.png" />
+    <meta property="og:image" content="/images/projects/deimos/DeimosColouredIcon.png" />
     <meta property="og:description" content="{% if page.description %}{{ page.description }} {% elsif page.categories %}{{ page.excerpt | truncate: 120 | strip_html }}{% else %}{{ site.description }}{% endif %}" />
     <!-- Discord Colour -->
     <meta name="theme-color" content="#141414">
