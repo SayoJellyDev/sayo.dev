@@ -178,6 +178,9 @@ div.justifytextbox {
 
 
 div.subtitle {
+    padding-left: 25px;
+    padding-right:25px;
+
     font-size: 1.5em;
     text-align: center;
 }
@@ -185,6 +188,10 @@ div.subtitle {
 div.text {
     font-size: 1.2em;
     letter-spacing: -0.02em;
+}
+
+div.status {
+    z-index: 100;
 }
 
 div.status.in.development {

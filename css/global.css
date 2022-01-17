@@ -3,11 +3,19 @@ layout: stylesheet
 ---
 :root {
     --blur-amount: 15px;
-    --border-radius-value: 0px;
-    --standard-colour: rgba(0, 0, 0, 0.20);
-    --standard-border-colour: rgba( 0,0,0, 0.18);
+    --border-radius-value: 5px;
+    --standard-colour: rgba(25,25,25,0.6);
+    --standard-border-colour: rgba(42,42,42,0.6);
     --standard-text-colour: white;
     --dimmed-text: rgba(200, 200, 200, 0.9);
+
+    --background-colour: #080808;
+
+    --button-initial-colour: #9e0b35;
+    --button-hover-colour: #e01d54;
+    --button-pressed-colour: #7d092a;
+    --button-disabled-colour: #450618;
+
 }
 
 /*
@@ -104,16 +112,18 @@ START
     text-align: center;
     vertical-align: middle;
     /*justify-content: space-evenly;*/
-    background-color: rgba(25, 25, 25, 0.781);
+    background-color: var(--button-initial-colour);
     color: white;
     text-decoration: none;
     width: 50px;
     margin: 0;
-    left: 15px;
+    left: 0px;
     right: 0;
     transform: translateY(-50%);
     top: 50%;
     border-radius: var(--border-radius-value);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     z-index: 10;
     backdrop-filter: blur(var(--blur-amount));
 }
@@ -141,23 +151,29 @@ START
     border-radius: var(--border-radius-value);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
 }
 
 .nav a:last-child {
     border-radius: var(--border-radius-value);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 .nav a:first-child span {
     border-radius: var(--border-radius-value);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
 }
 
 .nav a:last-child span {
     border-radius: var(--border-radius-value);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 
@@ -178,25 +194,36 @@ START
 }
 
 .nav span:hover {
-    background-color: rgba(77, 77, 77, 0.8);
+    background-color: var(--button-hover-colour);
 }
+
+.nav span:active {
+    background-color: var(--button-pressed-colour);
+}
+
 
 .nav span .tooltip {
     visibility: hidden;
     color: white;
     width: 120px;
     backdrop-filter: blur(var(--blur-amount));
-    background-color: rgba(25, 25, 25, 0.781);
+    background-color: var(--button-hover-colour);
     text-align: center;
     border-radius: var(--border-radius-value);
     left: 55px;
     /* Position the tooltip */
     position: absolute;
+    opacity: 0;
 }
 
 .nav span:hover .tooltip {
+    opacity: 1;
     visibility: visible;
 }
+.nav span:active .tooltip {
+    background-color: var(--button-pressed-colour);
+}
+
 
 .peeker {
     z-index: 10;
@@ -237,7 +264,7 @@ END
     .peeker {
         background-image: url("/images/icons/Menu-Icon.svg");
         pointer-events: visible;
-        background-color: rgba(25, 25, 25, 0.781);
+        background-color: var(--button-initial-colour);
         z-index: 101;
     }
     .peeker:hover div.nav {
@@ -269,7 +296,6 @@ END
         flex-direction: column;
         text-align: center;
         vertical-align: middle;
-        background-color: rgba(25, 25, 25, 0.781);
         width: 50px;
         margin: 0;
         left: 10px;
