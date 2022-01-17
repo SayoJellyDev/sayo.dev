@@ -6,7 +6,7 @@ layout: compress
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
     <head prefix="og: {{ site.url }}">
     <link rel="shortcut icon" href="{% if page.icon %}{{ page.icon }}{% endif %}" type="image/x-icon">
-    <link rel="stylesheet" href="/css/bound.css?v=0.9">
+    <link rel="stylesheet" href="/css/bound.css?v=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="/css/global.css?v=1.5" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/global.css?v=1.5"></noscript>
