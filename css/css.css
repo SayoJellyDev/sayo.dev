@@ -15,7 +15,7 @@ html {
     top: 50%;
     transform: translateY(-50%);
     width: 600px;
-    height: 300px;
+    height: 330px;
     border-radius: var(--border-radius-value);
     box-sizing: border-box;
     border: 1px solid var(--standard-border-colour);
