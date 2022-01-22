@@ -10,24 +10,23 @@ title: Projects
             <div id="vcontainer" class="vcontainer">
                 {% for project in site.projects reversed %}
                 {% if project.featured %}
-                <div class="pItem" id="{{ project.title }}"
-                    style="background-image: url('{{ project.background-image }}');">
-                    <a href="{{ site.base }}{{ project.url }}" class="pTitle">
-                        {{ project.title }}
-                    </a>
-                    <div class="pDescription">{{ project.description }}</div>
-                </div>
+                <a href="{{ site.base }}{{ project.url }}" class="pItem" id="{{ project.title }}">
+                    <div class="pBackground" style="background-image: url('{{ project.background-image }}');">
+                        <div class="pTitle">{{ project.title }}</div>
+                        <div class="pDescription">{{ project.description }}</div>
+                    </div>
+                </a>
                 {% endif %}
                 {% endfor %}
                 {% for project in site.projects reversed %}
                 {% if project.featured == false %}
-                <div class="pItem" id="{{ project.title }}"
-                    style="background-image: url('{{ project.background-image }}');">
-                    <a href="{{ site.base }}{{ project.url }}" class="pTitle">
-                        {{ project.title }}
-                    </a>
-                    <div class="pDescription">{{ project.description }}</div>
-                </div>
+
+                <a href="{{ site.base }}{{ project.url }}" class="pItem" id="{{ project.title }}">
+                    <div class="pBackground" style="background-image: url('{{ project.background-image }}');">
+                        <div class="pTitle">{{ project.title }}</div>
+                        <div class="pDescription">{{ project.description }}</div>
+                    </div>
+                </a>
                 {% endif %}
                 {% endfor %}
             </div>
