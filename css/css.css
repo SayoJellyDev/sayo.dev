@@ -909,7 +909,8 @@ END
 
     .container.center.projects {
         width: 100%;
-        height:65%;
+        height: 80%;
+        margin: 0;
     }
 
     .container.center.projects .pDescription {
