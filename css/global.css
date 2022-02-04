@@ -303,8 +303,29 @@ END
         top: initial !important;
         bottom: 70px;
         transform: translateX(-60px);
-        border-radius: var(--border-radius-value);
+        border-radius: var(--border-radius-value) !important;
         z-index: 10;
         backdrop-filter: blur(var(--blur-amount));
     }
+
+    .nav a:first-child {
+        border-radius: var(--border-radius-value);
+
+    }
+    
+    .nav a:last-child {
+        border-radius: var(--border-radius-value);
+    }
+    .nav a:first-child span {
+        border-radius: var(--border-radius-value);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    .nav a:last-child span {
+        border-radius: var(--border-radius-value);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    
 }
