@@ -66,6 +66,7 @@ div.deimos-container {
     z-index: 1;
     width: 770px;
     height: 450px;
+    color: white;
     background-color: #eee;
     text-align: center;
     transition: opacity 0.4s;
