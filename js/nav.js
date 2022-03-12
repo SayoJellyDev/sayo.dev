@@ -29,3 +29,7 @@ function navBarFunc()
         }
     }
 }
+// loader stuff
+window.addEventListener("load", function(){
+    document.getElementById("loader-wrapper").classList.add("hidden")
+});
