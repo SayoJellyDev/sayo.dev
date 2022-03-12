@@ -28,6 +28,7 @@ layout: compress
     <body>
         {% include copyright.html %}
         {% include navbar.html %}
+        {% include loader.html %}
         {{ content }}
     </body>
     {% include footer.html %}
