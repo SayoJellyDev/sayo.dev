@@ -4,10 +4,9 @@ layout: stylesheet
 :root {
     --blur-amount: 15px;
     --border-radius-value: 5px;
-    --standard-colour: rgba(25,25,25,0.6);
-    --standard-border-colour: rgba(42,42,42,0.6);
+    --standard-colour: #121212; /*rgba(25,25,25,0.6)*/
+    --standard-border-colour: #202020; /*rgba(42,42,42,0.6)*/
     --standard-text-colour: white;
-    --dimmed-text: rgba(200, 200, 200, 0.9);
 
     --background-colour: #080808;
 
@@ -27,6 +26,7 @@ html {
     font-family: 'Nunito', sans-serif;
     font-size: 1.1em;
     letter-spacing: -0.02em;
+
 
 }
 
@@ -57,7 +57,6 @@ END
     FORMATTING
 
 */
-
 
 /*
 START 

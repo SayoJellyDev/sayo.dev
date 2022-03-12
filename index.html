@@ -2,8 +2,8 @@
 permalink: /
 layout: page
 ---
-<div class="outer-container background snap-child">
-  <div id="titleCard" class="animate__animated animate__fadeIn">
+<div class="outer-container">
+  <div id="titleCard">
     <div class="icon top"></div>
     <h1 class="title">{{ site.title }}</h1>
     <div class="cardContainer"> 
@@ -21,7 +21,7 @@ layout: page
 
   {% for project in site.projects %}
   {% if project.featured == true %}
-  <a id="featuredProject" class="animate__animated animate__fadeIn" href="{{ site.base }}{{ project.url }}">
+  <a id="featuredProject" href="{{ site.base }}{{ project.url }}">
     {% if project.titleimage %}
     <div class="projectImage" style="background-image: url({{ project.titleimage }});"></div>
     {% else %}
@@ -36,7 +36,7 @@ layout: page
       <div class="arrow"></div>
     </div>-->
   </span>
-  <div class="social animate__animated animate__fadeIn">
+  <div class="social">
     <a href="{{ site.discord_link }}"><span class="icon" id="discord"></span></a>
     <a href="{{ site.twitter_link }}"><span class="icon" id="twitter"></span></a>
     <a href="{{ site.youtube_link }}"><span class="icon" id="youtube"></span></a>

@@ -9,7 +9,7 @@ layout: compress
     <link rel="stylesheet" href="/css/deimos.css?v=0.3">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="/css/global.css?v=1.6" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/global.css?v=1.6"></noscript>
+    <noscript><link rel="stylesheet" href="/css/global.css?v=2.0"></noscript>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

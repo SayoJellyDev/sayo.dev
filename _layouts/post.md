@@ -2,7 +2,7 @@
 layout: page 
 ---
 <div class="outer-container">
-    <div class="container expandable background">
+    <div class="container background">
         <div class="title center">{{ page.title }}</div>
         <div class="container center">
             <div class="post">
