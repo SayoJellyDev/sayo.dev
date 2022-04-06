@@ -18,7 +18,7 @@ title: Projects
                 </a>
                 {% endif %}
                 {% endfor %}
-                {% for project in site.projects reversed %}
+                {% for project in site.projects reversed%}
                 {% if project.featured == false %}
 
                 <a href="{{ site.base }}{{ project.url }}" class="pItem" id="{{ project.title }}">

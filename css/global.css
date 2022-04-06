@@ -34,6 +34,7 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
+    visibility: visible !important;
 }
 
 a {
@@ -152,6 +153,11 @@ END
   animation: hide-loader 0.5s;
 }
 
+.show {
+    opacity: 1;
+    z-index: 9;
+    animation: hide-loader reverse 0.5s;
+}
 /*
 START
     NAV
