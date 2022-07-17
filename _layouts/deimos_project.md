@@ -7,6 +7,7 @@ layout: compress
     <head prefix="og: {{ site.url }}">
     <link rel="shortcut icon" href="{% if page.icon %}{{ page.icon }}{% endif %}" type="image/x-icon">
     <link rel="stylesheet" href="/css/deimos.css?v=0.3">
+    <link rel="stylesheet" href="/css/project.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="/css/global.css?v=1.6" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/global.css?v=2.0"></noscript>

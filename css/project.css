@@ -1,28 +1,22 @@
-:root {
-    --base-colour: rgb(24, 0, 21);
-    --gradient-colour-1: rgb(46, 0, 40);
-    --text-colour: rgb(255, 255, 255);
-}
-
 html {
-    height:100%;
     color: var(--text-colour);
-    background-image: -moz-linear-gradient(0deg, var(--base-colour), var(--gradient-colour-1));
-    background-image: -webkit-linear-gradient(0deg, var(--base-colour), var(--gradient-colour-1));
-    background-image: -ms-linear-gradient(0deg, var(--base-colour), var(--gradient-colour-1));
-    background-image: linear-gradient(0deg, var(--base-colour), var(--gradient-colour-1));
-    background-color: var(#080808);
+    background-color: var(--base-colour);
+    background-image: -moz-linear-gradient(45deg, var(--base-colour), var(--gradient-colour-1));
+    background-image: -webkit-linear-gradient(45deg, var(--base-colour), var(--gradient-colour-1));
+    background-image: -ms-linear-gradient(45deg, var(--base-colour), var(--gradient-colour-1));
+    background-image: linear-gradient(25deg, var(--base-colour), var(--gradient-colour-1));
+
 }
 
-a { 
+a {
     text-decoration: none;
-    color: white;
+    color: var(--text-colour);
 }
 
 a.link {
-    color:rgb(255, 200,200);
+    color: var(--button-colour);
     text-decoration: none;
-    background-image: linear-gradient(to right, #b6004c, #b6004c);
+    background-image: linear-gradient(to right, var(--button-gradient-colour-1), var(--button-gradient-colour-1));
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 50% 2px;
@@ -31,16 +25,20 @@ a.link {
 }
 
 a.link:hover {
-    color: #b6004c;
+    color: var(--button-gradient-colour-1);
     background-size: 100% 2px;
+}
+
+li {
+    margin: 5px 0;
 }
 
 div.status {
     position: fixed;
     right: 15px;
     top: 15px;
-    background-color: rgba(25,25,25, 0.5);
-    border: 1px solid rgba(200,200,200, 0.75);
+    background-color: var(--status-background-colour);
+    border: 1px solid var(--status-border-colour);
     border-radius: 5px;
     padding: 5px;
     z-index: 1;
@@ -48,20 +46,15 @@ div.status {
 
 }
 
-div.bound-container {
-    height:100%;
-    display: block;
-}
-
 div.title {
     position: relative;
     margin: auto;
 
     left: 0;
-    right:0;
+    right: 0;
     width: 500px;
     height: 300px;
-    background-image: url(/images/projects/ruin/Ruin_title_wip.png);
+    background-image: var(--title-image);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -83,7 +76,7 @@ div.justifytextbox {
 
 div.subtitle {
     padding-left: 25px;
-    padding-right:25px;
+    padding-right: 25px;
     font-size: 1.5em;
     text-align: center;
 }
@@ -94,22 +87,22 @@ div.text {
 }
 
 div.status.in.development {
-    background-color: rgba(50, 10, 10, 0.6);
-    border: 1px solid rgba(150, 10, 10, 0.6);
-    color:white;
+    background-color: var(--status-in-development-background-colour);
+    border: 1px solid var(--status-in-development-border-colour);
+    color: white;
 }
 
 div.status.halted {
 
-    background-color: rgba(50, 50, 50, 0.9);
-    border: 1px solid rgba(10, 10, 10, 0.9);
-    color:white;
+    background-color: var(--status-halted-background-colour);
+    border: 1px solid var(--status-halted-border-colour);
+    color: white;
 }
 
 
 a.post {
     position: relative;
-    background-color: rgba(25,25,25, 0.5);
+    background-color: rgba(25, 25, 25, 0.5);
     border-radius: 5px;
     border: 1px solid rgba(50, 50, 50, 0.9);
     margin: auto;
@@ -145,6 +138,7 @@ a.post .postcontent {
 a.post .postcontent .posttitle {
     font-size: 2em;
 }
+
 a.post .postcontent .date {
     float: right;
     position: absolute;
@@ -163,7 +157,7 @@ a.post .postcontent .category {
     div.postcontent {
         padding-bottom: 25px;
     }
-    
+
     div.justifytextbox {
         margin: auto;
         width: 65%;
@@ -175,11 +169,13 @@ a.post .postcontent .category {
         height: 350px;
 
     }
+
     a.post .postcontent {
         padding: 25px;
         background-color: rgba(20, 20, 20, 0.7);
         width: 100%;
     }
+
     a.post .image {
         position: absolute;
         width: 100%;
@@ -188,13 +184,14 @@ a.post .postcontent .category {
         background-repeat: no-repeat;
         background-size: cover;
         z-index: -1;
-        
+
         transition: transform 0.5s cubic-bezier(0.42, 0, 0, 1);
 
 
     }
+
     a.post:hover .image {
-        transform: scale(1.2,1.2);
+        transform: scale(1.2, 1.2);
     }
 }
 
@@ -205,13 +202,13 @@ a.post .postcontent .category {
         padding-bottom: 25px;
 
     }
-    
+
     div.justifytextbox {
 
         margin: auto;
         width: 75%;
-    }    
-    
+    }
+
     a.post {
 
         width: 80%;
@@ -219,18 +216,8 @@ a.post .postcontent .category {
 
     }
 
-    
-div.title {
-    position: relative;
-    margin: auto;
 
-    left: 0;
-    right:0;
-    width: 75%;
-    height: 300px;
-    background-image: url(/images/projects/bound/title.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
+    div.title {
+        width: 75%;
+    }
 }
