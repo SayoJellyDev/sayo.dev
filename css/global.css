@@ -25,7 +25,17 @@ START
 html {
     font-family: 'Nunito', sans-serif;
     font-size: 1.1em;
+    
     letter-spacing: -0.02em;
+
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    background: var(--background-colour);
+
+    color: white;
+    overflow-x: hidden;
 }
 
 body {

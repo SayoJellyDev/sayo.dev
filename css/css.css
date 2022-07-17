@@ -1,15 +1,83 @@
 --- 
 layout: stylesheet 
----
-html {
+--- 
+@keyframes animateBg {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+}
+
+div.main {
+    margin: auto;
     height: 100%;
     width: 100%;
-    margin: 0;
-    
-    background: var(--background-colour);
+}
 
-    color: white;
-    overflow-x: hidden;
+div.card {
+    position: absolute;
+    margin: auto;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 800px;
+    height: 330px;
+
+}
+
+div.card>* {
+    position: absolute;
+    z-index: 2;
+}
+
+div.card h1.name {
+    margin: auto;
+    left: 375px;
+    text-align: center;
+    font-weight: 600;
+}
+
+div.card div.description {
+    margin: auto;
+    left: 350px;
+    top: 50px;
+}
+
+div.card div.image {
+    background-image: url(/images/jellycyclethighwatermark.jpg);
+    background-position: -75px -50px;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    width: 350px;
+    height: 100%;
+    clip-path: polygon(100px 0px, 350px 0, 250px 330px, 0 330px);
+}
+
+div.card::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: var(--standard-colour);
+    clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
+    z-index: 1;
+}
+
+div.card::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: -2px;
+    bottom: -2px;
+
+    /*background-color: var(--button-initial-colour);*/
+    animation: animateBg 12s linear infinite;
+    background-image: linear-gradient(90deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 45%,#84bdff 50%,var(--button-initial-colour) 55%,var(--button-initial-colour) 100%);
+    background-size: 500% 100%;
+    clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
+    z-index: 1;
 }
 
 /* 
@@ -20,21 +88,50 @@ START
 
 div.social {
     position: absolute;
-    right: 15px;
-    bottom: 15px;
+    width: 148px;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    right: 0;
+    bottom: 30px;
     display: flex;
     flex-direction: row-reverse;
+    z-index: 1;
 }
 
+div.social::before,
+div.social::after {
+    width: 215px;
+    height: 52px;
+    top: -6px;
+    right:0;
+    position: absolute;
+    content: '';
+    background-color: var(--standard-colour);
+    clip-path: polygon( 20px 0px, 100% 0, 100% 52px, 0px 52px);
+}
+
+div.social::before {
+    right: 2px;
+    top:-4px;
+
+    animation: animateBg 12s linear infinite;
+    background-image: linear-gradient(90deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 45%,#84bdff 50%,var(--button-initial-colour) 55%,var(--button-initial-colour) 100%);
+    background-size: 500% 100%;
+}
+
+
 span.icon {
-    width: 32px;
-    height: 32px;
-    padding:0;
+    z-index: 1;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0;
     display: block;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 span#discord {
@@ -50,7 +147,7 @@ span#youtube {
 }
 
 span#github {
-    background-image: url("/images/icons/Github-Logo.svg"); 
+    background-image: url("/images/icons/Github-Logo.svg");
 }
 
 /* 
