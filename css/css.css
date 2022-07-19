@@ -6,6 +6,23 @@ layout: stylesheet
     100% { background-position: 100% 0%; }
 }
 
+
+a.link {
+    color: var(--button-colour);
+    text-decoration: none;
+    background-image: linear-gradient(to right, var(--button-gradient-colour-1), var(--button-gradient-colour-1));
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 50% 2px;
+    transition: all .2s ease;
+
+}
+
+a.link:hover {
+    color: var(--button-gradient-colour-1);
+    background-size: 100% 2px;
+}
+
 div.main {
     margin: auto;
     height: 100%;
@@ -54,6 +71,16 @@ div.card div.image {
     clip-path: polygon(100px 0px, 350px 0, 250px 330px, 0 330px);
 }
 
+div.card div.image div.author {
+    background-color: rgba(0,0,0,0.9);
+    width:250px;
+    bottom: 0;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    font-weight: 800;
+}
+
 div.card::after {
     position: absolute;
     width: 100%;
@@ -74,11 +101,74 @@ div.card::before {
 
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
-    background-image: linear-gradient(90deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 45%,#84bdff 50%,var(--button-initial-colour) 55%,var(--button-initial-colour) 100%);
-    background-size: 500% 100%;
+    background-image: linear-gradient(140deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 49%, var(--flash-colour) 50%,var(--button-initial-colour) 51%,var(--button-initial-colour) 100%);
+    background-size: 1200% 100%;
     clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
     z-index: 1;
 }
+
+
+div.features {
+    display: flex;
+    flex-direction: row-reverse;
+
+    top: 210px;
+    width: 50%;
+    left: 290px;
+    z-index: 10;
+}
+
+div.features span {
+    position: relative;
+    width: 150px;
+    height: 100px;
+
+
+
+    clip-path: polygon(28px 0, 130px 0, 100px 102px, -2px 102px);
+    margin-left: -40px;
+    z-index: 2;
+}
+
+div.features span::after {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 100px;
+    background-color: var(--standard-highlight-colour);
+    clip-path: polygon(30px 0, 130px 0, 100px 100px, 0 100px);
+    z-index: 2;
+
+    background-position: 50px center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+}
+
+div.features span::before {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    left: -2px;
+    bottom: -2px;
+    content: '';
+    background-color: var(--button-initial-colour);
+    /*background-color: var(--button-initial-colour);*/
+    animation: animateBg 12s linear infinite;
+    background-image: linear-gradient(140deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 49%, var(--flash-colour) 50%,var(--button-initial-colour) 51%,var(--button-initial-colour) 100%);
+    background-size: 1200% 100%;
+    clip-path: polygon(30px 0, 130px 0, 100px 100px, 0 100px);
+    z-index: 2;
+}
+
+div.features span:hover::after {
+    background-color: var(--standard-highlight-hover-colour);
+}
+
+
+div.features span.likes::after {background-image: url(/images/icons/Likes-Icon.png);}
+div.features span.projects::after {background-image: url(/images/icons/Projects-Icon.png);}
+div.features span.contact::after {background-image: url(/images/icons/Contact-Icon.png);}
+
 
 /* 
 START
@@ -116,8 +206,8 @@ div.social::before {
     top:-4px;
 
     animation: animateBg 12s linear infinite;
-    background-image: linear-gradient(90deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 45%,#84bdff 50%,var(--button-initial-colour) 55%,var(--button-initial-colour) 100%);
-    background-size: 500% 100%;
+    background-image: linear-gradient(140deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 49%,var(--flash-colour) 50%,var(--button-initial-colour) 51%,var(--button-initial-colour) 100%);
+    background-size: 1200% 100%;
 }
 
 
