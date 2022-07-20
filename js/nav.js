@@ -30,9 +30,44 @@ function navBarFunc()
     }
 }
 // loader stuff
-window.addEventListener("load", function(){
-    this.setTimeout(function(){
+//window.addEventListener("load", function(){
+//    this.setTimeout(function(){
+//
+//        document.getElementById("loader-wrapper").classList.add("hidden")
+//    }, 250)
+//});
 
-        document.getElementById("loader-wrapper").classList.add("hidden")
-    }, 250)
-});
+
+var likes = document.getElementById("likes")
+var projects = document.getElementById("projects")
+var contact = document.getElementById("contact")
+
+
+likes.addEventListener('mouseover',openNode)
+projects.addEventListener('mouseover',openNode)
+contact.addEventListener('mouseover',openNode)
+
+function openNode(event) {
+    if (event.target.id == "likes") {
+        document.getElementById("likesNode").classList.add("shown")
+        document.getElementById("projectsNode").classList.remove("shown")
+        document.getElementById("contactNode").classList.remove("shown")
+
+        document.getElementById("card").classList.add("moved")
+    }
+    if (event.target.id == "projects") {
+        document.getElementById("likesNode").classList.remove("shown")
+        document.getElementById("projectsNode").classList.add("shown")
+        document.getElementById("contactNode").classList.remove("shown")
+
+        document.getElementById("card").classList.add("moved")
+    }
+    if (event.target.id == "contact") {
+        document.getElementById("likesNode").classList.remove("shown")
+        document.getElementById("projectsNode").classList.remove("shown")
+        document.getElementById("contactNode").classList.add("shown")
+
+        document.getElementById("card").classList.add("moved")
+    }
+}
+

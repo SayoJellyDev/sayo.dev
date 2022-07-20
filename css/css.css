@@ -108,6 +108,14 @@ div.card::before {
 }
 
 
+div.card.moved {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    transition: all 0.5s ease;
+}
+
 div.features {
     display: flex;
     flex-direction: row-reverse;
@@ -169,6 +177,66 @@ div.features span.likes::after {background-image: url(/images/icons/Likes-Icon.p
 div.features span.projects::after {background-image: url(/images/icons/Projects-Icon.png);}
 div.features span.contact::after {background-image: url(/images/icons/Contact-Icon.png);}
 
+div.feature-cards div {
+    opacity: 0;
+    position: absolute;
+    
+    top:380px;
+    left: -130px;
+    right:0;
+    bottom:0;
+
+    margin: auto;
+
+    width: 730px;
+    height: 100px;
+
+}
+
+div.feature-cards div::before {
+    position: absolute;
+    width: 730px;
+    height: 100px;
+    left: -2px;
+    bottom: -2px;
+    content: '';
+    background-color: var(--button-initial-colour);
+    /*background-color: var(--button-initial-colour);*/
+    animation: animateBg 12s linear infinite;
+    background-image: linear-gradient(140deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 49%, var(--flash-colour) 50%,var(--button-initial-colour) 51%,var(--button-initial-colour) 100%);
+    background-size: 1200% 100%;
+    clip-path: polygon(30px 0, 730px 0, 700px 100px, 0px 100px);
+    z-index: 2;
+}
+
+div.feature-cards div::after {
+    position: absolute;
+    content: '';
+    width: 730px;
+    height: 100px;
+    background-color: var(--standard-colour);
+    clip-path: polygon(30px 0, 730px 0, 700px 100px, 0px 100px);
+    z-index: 2;
+
+    background-position: 50px center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+}
+
+div.feature-cards div.shown {
+    opacity: 1 !important;
+    transition: all 0.5s ease;
+}
+
+div.feature-cards div p {
+    position: absolute;
+    margin: auto;
+    left:0;
+    right:0;
+    text-align: center;
+    z-index: 5;
+    padding: 15px;
+}
 
 /* 
 START
