@@ -1,6 +1,8 @@
 --- 
 layout: stylesheet 
 ---
+* {}
+
 :root {
     --blur-amount: 15px;
     --border-radius-value: 5px;

@@ -2,10 +2,14 @@
 layout: stylesheet 
 --- 
 @keyframes animateBg {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 100% 0%; }
-}
+    0% {
+        background-position: 0% 0%;
+    }
 
+    100% {
+        background-position: 100% 0%;
+    }
+}
 
 a.link {
     color: var(--button-colour);
@@ -41,6 +45,8 @@ div.card {
     width: 800px;
     height: 330px;
 
+    transition: bottom 0.5s ease;
+
 }
 
 div.card>* {
@@ -72,8 +78,8 @@ div.card div.image {
 }
 
 div.card div.image div.author {
-    background-color: rgba(0,0,0,0.9);
-    width:250px;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 250px;
     bottom: 0;
     text-align: center;
     padding: 10px;
@@ -101,7 +107,7 @@ div.card::before {
 
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
-    background-image: linear-gradient(140deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 49%, var(--flash-colour) 50%,var(--button-initial-colour) 51%,var(--button-initial-colour) 100%);
+    background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
     background-size: 1200% 100%;
     clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
     z-index: 1;
@@ -113,7 +119,7 @@ div.card.moved {
     left: 0;
     right: 0;
     bottom: 100px;
-    transition: all 0.5s ease;
+
 }
 
 div.features {
@@ -136,6 +142,7 @@ div.features span {
     clip-path: polygon(28px 0, 130px 0, 100px 102px, -2px 102px);
     margin-left: -40px;
     z-index: 2;
+    cursor: pointer;
 }
 
 div.features span::after {
@@ -150,6 +157,8 @@ div.features span::after {
     background-position: 50px center;
     background-repeat: no-repeat;
     background-size: 32px;
+
+    transition: background-color 0.1s ease;
 }
 
 div.features span::before {
@@ -162,7 +171,7 @@ div.features span::before {
     background-color: var(--button-initial-colour);
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
-    background-image: linear-gradient(140deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 49%, var(--flash-colour) 50%,var(--button-initial-colour) 51%,var(--button-initial-colour) 100%);
+    background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
     background-size: 1200% 100%;
     clip-path: polygon(30px 0, 130px 0, 100px 100px, 0 100px);
     z-index: 2;
@@ -173,24 +182,25 @@ div.features span:hover::after {
 }
 
 
-div.features span.likes::after {background-image: url(/images/icons/Likes-Icon.png);}
-div.features span.projects::after {background-image: url(/images/icons/Projects-Icon.png);}
-div.features span.contact::after {background-image: url(/images/icons/Contact-Icon.png);}
+div.features span.likes::after {
+    background-image: url(/images/icons/Likes-Icon.png);
+}
+
+div.features span.projects::after {
+    background-image: url(/images/icons/Projects-Icon.png);
+}
+
+div.features span.contact::after {
+    background-image: url(/images/icons/Contact-Icon.png);
+}
 
 div.feature-cards div {
-    opacity: 0;
     position: absolute;
-    
-    top:380px;
-    left: -130px;
-    right:0;
-    bottom:0;
-
-    margin: auto;
+    display: block;
 
     width: 730px;
     height: 100px;
-
+    z-index: 1;
 }
 
 div.feature-cards div::before {
@@ -203,7 +213,7 @@ div.feature-cards div::before {
     background-color: var(--button-initial-colour);
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
-    background-image: linear-gradient(140deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 49%, var(--flash-colour) 50%,var(--button-initial-colour) 51%,var(--button-initial-colour) 100%);
+    background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
     background-size: 1200% 100%;
     clip-path: polygon(30px 0, 730px 0, 700px 100px, 0px 100px);
     z-index: 2;
@@ -224,24 +234,102 @@ div.feature-cards div::after {
 }
 
 div.feature-cards div.shown {
-    opacity: 1 !important;
+    z-index: 5;
+}
+
+div.feature-cards {
+    position: absolute;
+    margin: auto;
+    top:350px;
+    left: -100px;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 730px;
+    height: 100px;
     transition: all 0.5s ease;
+    
+}
+
+div.feature-cards.shown {
+    opacity: 1 !important;
+    top:380px;
+    left: -140px;
+}
+
+div.feature-cards #close {
+    position: absolute;
+    right: 25px;
+    top: -10px;
+    z-index: 10;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: 800;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+
+div.feature-cards #close:hover {
+    color: var(--button-hover-colour);
+}
+
+div.feature-cards div h2 {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 5px;
+    text-align: center;
+    z-index: 5;
 }
 
 div.feature-cards div p {
     position: absolute;
     margin: auto;
-    left:0;
-    right:0;
+    top: 1.5em;
+    width: 100%;
+    z-index: 5;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+div.feature-cards div p.bottom {
+    top: 55px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: var(--standard-highlight-hover-colour);
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+
+div.feature-cards div ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    margin: auto;
+    top: 1.5em;
     text-align: center;
     z-index: 5;
-    padding: 15px;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap:50px;
 }
+
+div.feature-cards div ul li {
+    flex-grow: 1;
+    margin:0;
+}
+
 
 /* 
 START
     SOCIALS 
-
 */
 
 div.social {
@@ -311,5 +399,163 @@ span#github {
 /* 
 END
     SOCIALS 
+*/
+/* 
+
+BLOG CSS 
 
 */
+
+div.main .title.center {
+    text-align: center;
+
+    font-size: 3em;
+}
+
+div.card-chain {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+    width: 800px;
+    z-index: 1;
+}
+
+div.card-chain .post {
+    height: 250px;
+    position: relative;
+}
+
+div.card-chain .post::after {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    bottom: 2px;
+    left: 2px;
+    content: '';
+    background-color: var(--standard-colour);
+    clip-path: polygon(100px 0, 800px 0, 700px 250px, 0 250px);
+    z-index: -1;
+}
+
+
+div.card-chain .post::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 250px;
+
+    bottom: 0;
+    left:0;
+
+    /*background-color: var(--button-initial-colour);*/
+    animation: animateBg 12s linear infinite;
+    background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
+    background-size: 1200% 100%;
+    clip-path: polygon(100px 0, 800px 0, 700px 250px, 0 250px);
+    z-index: -1;
+}
+
+div.card-chain .post:nth-child(2)::before {
+    clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
+}
+
+div.card-chain .post:nth-child(2)::after {
+    clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
+}
+
+
+div.card-chain .post .sub.title {
+    position: relative;
+    left: 100px;
+    padding: 15px;
+    font-size: 1.5em;
+}
+
+div.card-chain .post:nth-child(2) .sub.title {
+    left: 25px;
+}
+
+
+div.card-chain .post .text {
+    position: relative;
+    left: 100px;
+    width: 600px;
+    margin: 0;
+}
+
+div.card-chain .post .text p:first-child {
+    margin-top:0;
+}
+
+
+div.card-chain .post .info {
+    position: absolute;
+    right: 110px;
+    bottom: 10px;
+}
+
+div.card-chain .post:nth-child(2) .info {
+    right: 25px;
+}
+
+div.card-chain .post .button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    
+    position: absolute;
+    height: 40px;
+    width: 100px;
+    bottom: 15px;
+    left: 50px;
+    z-index: 1;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+div.card-chain .post:nth-child(2) .button {
+    left: 125px;
+}
+
+div.card-chain .post:nth-child(2) .button::after, div.card-chain .post:nth-child(2) .button::before {
+    clip-path: polygon(0 0, 84px 0, 100px 40px, 16px 40px);
+}
+
+div.card-chain .post .button::after {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 2px;
+    left: 2px;
+    content: '';
+    background-color: var(--standard-highlight-colour);
+    clip-path: polygon(16px 0, 100px 0, 84px 40px, 0 40px);
+    z-index: -1;
+    transition: background-color 0.1s ease;
+}
+
+div.card-chain .post .button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 40px;
+
+    bottom: 0;
+    left:0;
+
+    /*background-color: var(--button-initial-colour);*/
+    animation: animateBg 12s linear infinite;
+    background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
+    background-size: 1200% 100%;
+    clip-path: polygon(16px 0, 100px 0, 84px 40px, 0 40px);
+    z-index: -1;
+}
+
+
+div.card-chain .post .button:hover::after {
+    background-color: var(--standard-highlight-hover-colour);
+}

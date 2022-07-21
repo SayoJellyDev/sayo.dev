@@ -42,12 +42,16 @@ var likes = document.getElementById("likes")
 var projects = document.getElementById("projects")
 var contact = document.getElementById("contact")
 
+var close = document.getElementById("close")
 
 likes.addEventListener('mouseover',openNode)
 projects.addEventListener('mouseover',openNode)
 contact.addEventListener('mouseover',openNode)
 
+close.addEventListener("mousedown",closeNode)
+
 function openNode(event) {
+    document.getElementById("feature-cards").classList.add("shown")
     if (event.target.id == "likes") {
         document.getElementById("likesNode").classList.add("shown")
         document.getElementById("projectsNode").classList.remove("shown")
@@ -71,3 +75,10 @@ function openNode(event) {
     }
 }
 
+function closeNode(event) {
+    if (event.target.id == "close") {
+        console.log("CLOSING AHAHAH")
+        document.getElementById("feature-cards").classList.remove("shown")
+        document.getElementById("card").classList.remove("moved")
+    }
+}

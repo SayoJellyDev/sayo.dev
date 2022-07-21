@@ -18,10 +18,26 @@ layout: page
     </div>
   </div>
 
-  <div class="feature-cards">
-    <div id="likesNode"><p>Ayaya, something something information about something</p></div>
-    <div id="projectsNode"><p>Ayaya, something something information about something</p></div>
-    <div id="contactNode"><p>Ayaya, something something information about something</p></div>
+  <div class="feature-cards" id="feature-cards">
+    <p id="close">X</p>
+    <div id="likesNode">
+      <h2 class="title">Likes</h2>
+      <ul>
+        <li>Creating random projects</li>
+        <li>Never finishing any of them</li>
+        <li>Procrastination!</li>
+      </ul>
+      <p class="bottom">(don't wanna forget that last one!)</p>
+    </div>
+    <div id="projectsNode">
+      <h2 class="title">Projects</h2>
+      <p>Currently has no currently active <a class="link" href="/projects/">projects</a>.<br> Soon tm</p>
+      <p></p>
+    </div>
+    <div id="contactNode">
+      <h2 class="title">Contact</h2>
+      <p>Ayaya, something something information about something</p>
+    </div>
   </div>
 </div>
 <!--{% for project in site.projects %}
@@ -36,11 +52,6 @@ layout: page
   </a>
   {% endif %}
   {% endfor %}
-  <span>
-    <div class="bottom scroll-down">
-      <div class="arrow"></div>
-    </div>
-    </span>
   -->
 
 <div class="social">

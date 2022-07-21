@@ -3,30 +3,23 @@ permalink: /blog/
 layout: page
 title: Blog
 ---
-<div class="outer-container">
-<div class="container">
+<div class="main">
 
   <div class="title center">{{ page.title }}</div>
-  <div class="container center noborder">
+  <div class="card-chain">
     {% for post in site.posts %}
 
       <article class="post">
-        <div class="image" style="background-image: url({{ site.base }}{{ post.picture }});"></div>
         <div class="sub title"><a href="{{ site.base }}{{ post.url }}">{{ post.title }}</a></div>
 
         {% assign excerptParts = post.excerpt | split: "<!-- excerpt_start -->" %}
-        <div class="text">{{ excerptParts[1] | truncate: 450 }}</div>
+        <div class="text">{{ excerptParts[1] | truncate: 250 }}</div>
 
-        <div class="container">
           <div class="info">
             {{ post.date | date: "%B %e, %Y" }} - {{ post.categories }}
           </div>
           <a class="button" href="{{ site.base }}{{ post.url }}">Read...</a>
-        </div>
-        
-
       </article>
     {% endfor %}
   </div>
-</div>
 </div>
