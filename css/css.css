@@ -457,11 +457,15 @@ div.card-chain .post::before {
     z-index: -1;
 }
 
-div.card-chain .post:nth-child(2)::before {
+div.card-chain .post:last-child {
+    margin-bottom: 50px;
+}
+
+div.card-chain .post:nth-child(2n)::before {
     clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
 }
 
-div.card-chain .post:nth-child(2)::after {
+div.card-chain .post:nth-child(2n)::after {
     clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
 }
 
@@ -473,7 +477,7 @@ div.card-chain .post .sub.title {
     font-size: 1.5em;
 }
 
-div.card-chain .post:nth-child(2) .sub.title {
+div.card-chain .post:nth-child(2n) .sub.title {
     left: 25px;
 }
 
@@ -496,7 +500,7 @@ div.card-chain .post .info {
     bottom: 10px;
 }
 
-div.card-chain .post:nth-child(2) .info {
+div.card-chain .post:nth-child(2n) .info {
     right: 25px;
 }
 
@@ -517,11 +521,11 @@ div.card-chain .post .button {
 
 }
 
-div.card-chain .post:nth-child(2) .button {
+div.card-chain .post:nth-child(2n) .button {
     left: 125px;
 }
 
-div.card-chain .post:nth-child(2) .button::after, div.card-chain .post:nth-child(2) .button::before {
+div.card-chain .post:nth-child(2n) .button::after, div.card-chain .post:nth-child(2n) .button::before {
     clip-path: polygon(0 0, 84px 0, 100px 40px, 16px 40px);
 }
 
