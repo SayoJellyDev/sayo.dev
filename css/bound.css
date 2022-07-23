@@ -3,8 +3,8 @@
     --gradient-colour-1: #111111;
     --text-colour: rgb(255, 255, 255);
 
-    --button-colour: rgb(255, 200,200);
-    --button-gradient-colour-1: #b6004c;
+    --link-colour: rgb(255, 200,200);
+    --link-gradient-colour-1: #b6004c;
 
     --status-background-colour: rgba(25,25,25, 0.5);
     --status-border-colour: rgba(200,200,200, 0.75);

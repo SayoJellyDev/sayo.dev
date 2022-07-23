@@ -3,25 +3,25 @@ START
     POST PAGE STUFF
 
 */
-div.post .entry {
+article.blog-post  .entry {
     padding: 25px;
 }
 
-div.post a {
+article.blog-post  a {
     text-decoration: underline;
     color: rgb(0, 162, 255);
     color: #ffd9a7;
     transition: all .1s ease;
 }
 
-div.post a:hover {
+article.blog-post  a:hover {
     color: #ffffff;
 }
 
-div.post .date {
+article.blog-post  .date {
     position: absolute;
-    right: 5px;
-    bottom: 5px;
+    right: 115px;
+    bottom: 10px;
 }
 /* 
 END
@@ -61,11 +61,9 @@ h1.subtitle {
     text-decoration: none;
 }
 
-div.post {
+article.blog-post  {
     font-size: 1.1em;
 }
-
-div.container.center {}
 
 @media (max-width:1360px) {}
 

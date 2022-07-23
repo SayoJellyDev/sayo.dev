@@ -1,15 +1,7 @@
 --- 
 layout: stylesheet 
 --- 
-@keyframes animateBg {
-    0% {
-        background-position: 0% 0%;
-    }
 
-    100% {
-        background-position: 100% 0%;
-    }
-}
 
 a.link {
     color: var(--button-colour);
@@ -29,8 +21,10 @@ a.link:hover {
 
 div.main {
     margin: auto;
-    height: 100%;
+    /* min-height for pages that are using absolute positions */
+    min-height: 100%;
     width: 100%;
+    background-image: url("/images/background-pattern.png");
 }
 
 div.card {
@@ -56,19 +50,31 @@ div.card>* {
 
 div.card h1.name {
     margin: auto;
-    left: 375px;
+    left: 445px;
+    top: 10px;
     text-align: center;
     font-weight: 600;
 }
 
 div.card div.description {
     margin: auto;
+    width: 400px;
     left: 350px;
-    top: 50px;
+    font-size: 1.15em;
+    top: 85px;
+}
+
+div.card div.sub.title {
+    margin: auto;
+    left: 445px;
+    top: 55px;
+    font-size: 0.9em;
+    font-style: italic;
+
 }
 
 div.card div.image {
-    background-image: url(/images/jellycyclethighwatermark.jpg);
+    background-image: url(/images/icon-trimmed.webp);
     background-position: -75px -50px;
     background-size: 150%;
     background-repeat: no-repeat;
@@ -161,6 +167,11 @@ div.features span::after {
     transition: background-color 0.1s ease;
 }
 
+div.features span:hover::before {
+    left: -8px;
+    bottom: -8px;
+}
+
 div.features span::before {
     position: absolute;
     width: 150px;
@@ -175,6 +186,7 @@ div.features span::before {
     background-size: 1200% 100%;
     clip-path: polygon(30px 0, 130px 0, 100px 100px, 0 100px);
     z-index: 2;
+    transition: all 0.5s ease;
 }
 
 div.features span:hover::after {
@@ -240,7 +252,7 @@ div.feature-cards div.shown {
 div.feature-cards {
     position: absolute;
     margin: auto;
-    top:350px;
+    top: 350px;
     left: -100px;
     right: 0;
     bottom: 0;
@@ -248,12 +260,12 @@ div.feature-cards {
     width: 730px;
     height: 100px;
     transition: all 0.5s ease;
-    
+
 }
 
 div.feature-cards.shown {
     opacity: 1 !important;
-    top:380px;
+    top: 380px;
     left: -140px;
 }
 
@@ -287,8 +299,8 @@ div.feature-cards div h2 {
 div.feature-cards div p {
     position: absolute;
     margin: auto;
-    top: 1.5em;
-    width: 100%;
+    top: 25px;
+    width: 650px;
     z-index: 5;
     padding-top: 15px;
     padding-left: 50px;
@@ -312,18 +324,19 @@ div.feature-cards div ul {
     flex-wrap: wrap;
     position: absolute;
     margin: auto;
-    top: 1.5em;
+    width: 650px;
+    top: 25px;
     text-align: center;
     z-index: 5;
     padding-top: 15px;
     padding-left: 50px;
     padding-right: 50px;
-    gap:50px;
+    gap: 50px;
 }
 
 div.feature-cards div ul li {
     flex-grow: 1;
-    margin:0;
+    margin: 0;
 }
 
 
@@ -350,19 +363,19 @@ div.social::after {
     width: 215px;
     height: 52px;
     top: -6px;
-    right:0;
+    right: 0;
     position: absolute;
     content: '';
     background-color: var(--standard-colour);
-    clip-path: polygon( 20px 0px, 100% 0, 100% 52px, 0px 52px);
+    clip-path: polygon(20px 0px, 100% 0, 100% 52px, 0px 52px);
 }
 
 div.social::before {
     right: 2px;
-    top:-4px;
+    top: -4px;
 
     animation: animateBg 12s linear infinite;
-    background-image: linear-gradient(140deg,var(--button-initial-colour) 0%,var(--button-initial-colour) 49%,var(--flash-colour) 50%,var(--button-initial-colour) 51%,var(--button-initial-colour) 100%);
+    background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
     background-size: 1200% 100%;
 }
 
@@ -408,7 +421,8 @@ BLOG CSS
 
 div.main .title.center {
     text-align: center;
-
+    padding: 15px;
+    margin-bottom: 15px;
     font-size: 3em;
 }
 
@@ -425,7 +439,14 @@ div.card-chain {
 div.card-chain .post {
     height: 250px;
     position: relative;
+    clip-path: polygon(100px 0, 800px 0, 700px 250px, 0 250px);
+    overflow: hidden;
 }
+
+div.card-chain .post:nth-child(2n) {
+    clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
+}
+
 
 div.card-chain .post::after {
     position: absolute;
@@ -447,7 +468,7 @@ div.card-chain .post::before {
     height: 250px;
 
     bottom: 0;
-    left:0;
+    left: 0;
 
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
@@ -455,6 +476,32 @@ div.card-chain .post::before {
     background-size: 1200% 100%;
     clip-path: polygon(100px 0, 800px 0, 700px 250px, 0 250px);
     z-index: -1;
+}
+
+div.card-chain .post .background {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 250px;
+
+    bottom: 2px;
+    left: 2px;
+
+    background-size: 100%;
+    background-position: center;
+    clip-path: polygon(100px 0, 800px 0, 700px 250px, 0 250px);
+    z-index: 0;
+    transition: background-size 0.3s ease;
+}
+
+div.card-chain .post:hover .background {
+    background-size: 110%;
+    transition: background-size 0.3s ease;
+}
+
+div.card-chain .post:nth-child(2n) .background {
+    clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
+    left: 2px;
 }
 
 div.card-chain .post:last-child {
@@ -477,20 +524,57 @@ div.card-chain .post .sub.title {
     font-size: 1.5em;
 }
 
+
 div.card-chain .post:nth-child(2n) .sub.title {
-    left: 25px;
+    left: 85px;
 }
 
+div.card-chain .post .project.title {
+    clip-path: polygon(24px 0, 800px 0, 700px 54px, 2px 54px);
+    position: absolute;
+    line-height: 1em;
+    width: 800px;
+    height: 25px;
+    bottom: 1px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.5em;
+}
+
+div.card-chain .post:nth-child(2n) .project.title {
+    clip-path: polygon(80px 0, 800px 0, 800px 54px, 102px 54px);
+}
+
+div.card-chain .post .project.text {
+    position: absolute;
+    left: initial !important;
+    right: 0;
+    width: initial !important;
+    bottom: 60px;
+    padding: 10px;
+    padding-right: 85px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+div.card-chain .post:nth-child(2n) .project.text {
+    padding-right: 65px;
+}
 
 div.card-chain .post .text {
     position: relative;
-    left: 100px;
+    left: 115px;
     width: 600px;
     margin: 0;
 }
 
+div.card-chain .post:nth-child(2n) .text {
+    left: 100px;
+}
+
 div.card-chain .post .text p:first-child {
-    margin-top:0;
+    margin-top: 0;
 }
 
 
@@ -505,11 +589,12 @@ div.card-chain .post:nth-child(2n) .info {
 }
 
 div.card-chain .post .button {
+    clip-path: polygon(16px 0, 100px 0, 84px 40px, 0 40px);
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    
+
     position: absolute;
     height: 40px;
     width: 100px;
@@ -521,11 +606,22 @@ div.card-chain .post .button {
 
 }
 
+div.card-chain .post .button::before {
+    transition: all 0.5s ease;
+}
+
+div.card-chain .post .button:hover::before {
+    left: -4px;
+    bottom: -4px;
+}
+
 div.card-chain .post:nth-child(2n) .button {
     left: 125px;
 }
 
-div.card-chain .post:nth-child(2n) .button::after, div.card-chain .post:nth-child(2n) .button::before {
+div.card-chain .post:nth-child(2n) .button::after,
+div.card-chain .post:nth-child(2n) .button,
+div.card-chain .post:nth-child(2n) .button::before {
     clip-path: polygon(0 0, 84px 0, 100px 40px, 16px 40px);
 }
 
@@ -549,7 +645,7 @@ div.card-chain .post .button::before {
     height: 40px;
 
     bottom: 0;
-    left:0;
+    left: 0;
 
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
@@ -563,3 +659,51 @@ div.card-chain .post .button::before {
 div.card-chain .post .button:hover::after {
     background-color: var(--standard-highlight-hover-colour);
 }
+
+/* 
+
+START
+    POST
+
+*/
+
+article.blog-post {
+    position: relative;
+    width: 800px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: auto;
+    z-index: 1;
+}
+
+article.blog-post::before, article.blog-post::after {
+    width: 1000px;
+    height: 100%;
+    position: absolute;
+    content: '';
+    left:0;
+    bottom: 0;
+    clip-path: polygon(10% 0, 95% 0, 90% 100%, 5% 100%);
+    z-index: -1;
+}
+
+article.blog-post::before {
+    left: -1px;
+    bottom: -1px;
+    background-color: var(--button-initial-colour);
+    animation: animateBg 12s linear infinite;
+    background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
+    background-size: 1200% 100%;
+}
+
+article.blog-post::after {
+    background-color: var(--standard-colour);
+}
+
+
+/* 
+
+END
+    POST
+    
+*/

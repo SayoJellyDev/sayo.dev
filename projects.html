@@ -3,45 +3,32 @@ permalink: /projects/
 layout: page
 title: Projects
 ---
-<div class="outer-container">
-    <div class="container page">
-        <div class="title center">Projects</div>
-        <div class="container center projects">
-            <div id="vcontainer" class="vcontainer">
-                {% for project in site.projects reversed %}
-                {% if project.featured %}
-                <a href="{{ site.base }}{{ project.url }}" class="pItem" id="{{ project.title }}">
-                    <div class="pBackground" style="background-image: url('{{ project.background-image }}');">
-                        <div class="pTitle">{{ project.title }}</div>
-                        <div class="pDescription">{{ project.description }}</div>
-                    </div>
-                </a>
-                {% endif %}
-                {% endfor %}
-                {% for project in site.projects reversed%}
-                {% if project.featured == false %}
+<div class="main">
 
-                <a href="{{ site.base }}{{ project.url }}" class="pItem" id="{{ project.title }}">
-                    <div class="pBackground" style="background-image: url('{{ project.background-image }}');">
-                        <div class="pTitle">{{ project.title }}</div>
-                        <div class="pDescription">{{ project.description }}</div>
-                    </div>
-                </a>
-                {% endif %}
-                {% endfor %}
-            </div>
-            <div class="pCount">
-                {% for project in site.projects reversed %}
-                {% if project.featured %}
-                <a class="bubble" href="#{{ project.title }}" focus></a>
-                {% endif %}
-                {% endfor %}
-                {% for project in site.projects reversed %}
-                {% if project.featured == false %}
-                <a  class="bubble" href="#{{ project.title }}"></a>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
+    <div class="title center">{{ page.title }}</div>
+    <div class="card-chain">
+        {% for project in site.projects reversed %}
+        {% if project.featured %}
+        <article class="post">
+          <div class="background" style="background-image: url('{{ project.background-image }}');"></div>
+          <div class="project title"><a href="{{ site.base }}{{ project.url }}">{{ project.title }}</a></div>
+
+          <div class="project text">{{ project.short_description | truncate: 75 }}</div>
+        <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
+        </article>
+        {% endif %}
+      {% endfor %}
+      {% for project in site.projects reversed%}
+      {% if project.featured == false %}
+
+      <article class="post">
+        <div class="background" style="background-image: url('{{ project.background-image }}');"></div>
+        <div class="project title"><a href="{{ site.base }}{{ project.url }}">{{ project.title }}</a></div>
+
+        <div class="project text">{{ project.short_description | truncate: 75 }}</div>
+        <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
+      </article>
+      {% endif %}
+      {% endfor %}
     </div>
-</div>
+  </div>

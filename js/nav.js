@@ -59,14 +59,14 @@ function openNode(event) {
 
         document.getElementById("card").classList.add("moved")
     }
-    if (event.target.id == "projects") {
+    else if (event.target.id == "projects") {
         document.getElementById("likesNode").classList.remove("shown")
         document.getElementById("projectsNode").classList.add("shown")
         document.getElementById("contactNode").classList.remove("shown")
 
         document.getElementById("card").classList.add("moved")
     }
-    if (event.target.id == "contact") {
+    else if (event.target.id == "contact") {
         document.getElementById("likesNode").classList.remove("shown")
         document.getElementById("projectsNode").classList.remove("shown")
         document.getElementById("contactNode").classList.add("shown")
@@ -77,7 +77,6 @@ function openNode(event) {
 
 function closeNode(event) {
     if (event.target.id == "close") {
-        console.log("CLOSING AHAHAH")
         document.getElementById("feature-cards").classList.remove("shown")
         document.getElementById("card").classList.remove("moved")
     }

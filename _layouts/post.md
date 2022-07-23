@@ -1,18 +1,20 @@
 --- 
 layout: page 
 ---
-<div class="outer-container">
-    <div class="container background">
-        <div class="title center">{{ page.title }}</div>
-        <div class="container center">
-            <div class="post">
-                <div class="entry">
-                    {{ content }}
-                </div>
-                <div class="date">
-                    Written on {{ page.date | date: "%B %e, %Y" }}
-                </div>
-            </div>
+
+<div class="main">
+    <div class="title center">{{ page.title }}</div>
+    <article class="blog-post">
+        <div class="entry">
+            {{ content }}
         </div>
-    </div>
+        <div class="date">
+            Written on {{ page.date | date: "%B %e, %Y" }}
+        </div>
+    </article>
+    <!-- Yucky br but I'm lazy -->
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
