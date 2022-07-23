@@ -94,28 +94,27 @@ div.card div.image div.author {
 }
 
 div.card::after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: '';
+
     background-color: var(--standard-colour);
-    clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
     z-index: 1;
 }
 
-div.card::before {
+div.card::before, div.card::after {
     position: absolute;
-    content: '';
     width: 100%;
     height: 100%;
+    content: '';
+    clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
+}
+
+div.card::before {
     left: -2px;
     bottom: -2px;
-
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
     background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
     background-size: 1200% 100%;
-    clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
+
     z-index: 1;
 }
 
@@ -132,7 +131,7 @@ div.features {
     display: flex;
     flex-direction: row-reverse;
 
-    top: 210px;
+    bottom: 20px;
     width: 50%;
     left: 290px;
     z-index: 10;
@@ -151,13 +150,18 @@ div.features span {
     cursor: pointer;
 }
 
-div.features span::after {
+div.features span::before, div.features span::after {
     position: absolute;
     content: '';
     width: 150px;
     height: 100px;
-    background-color: var(--standard-highlight-colour);
     clip-path: polygon(30px 0, 130px 0, 100px 100px, 0 100px);
+}
+
+div.features span::after {
+
+    background-color: var(--standard-highlight-colour);
+
     z-index: 2;
 
     background-position: 50px center;
@@ -173,18 +177,13 @@ div.features span:hover::before {
 }
 
 div.features span::before {
-    position: absolute;
-    width: 150px;
-    height: 100px;
     left: -2px;
     bottom: -2px;
-    content: '';
     background-color: var(--button-initial-colour);
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
     background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
     background-size: 1200% 100%;
-    clip-path: polygon(30px 0, 130px 0, 100px 100px, 0 100px);
     z-index: 2;
     transition: all 0.5s ease;
 }
@@ -215,31 +214,28 @@ div.feature-cards div {
     z-index: 1;
 }
 
-div.feature-cards div::before {
+div.feature-cards div::before, div.feature-cards div::after {
     position: absolute;
-    width: 730px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
+    content: '';
+    z-index: 2;
+    clip-path: polygon(30px 0, 730px 0, 700px 100px, 0px 100px);
+}
+
+
+div.feature-cards div::before {
     left: -2px;
     bottom: -2px;
-    content: '';
     background-color: var(--button-initial-colour);
     /*background-color: var(--button-initial-colour);*/
     animation: animateBg 12s linear infinite;
     background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
     background-size: 1200% 100%;
-    clip-path: polygon(30px 0, 730px 0, 700px 100px, 0px 100px);
-    z-index: 2;
 }
 
 div.feature-cards div::after {
-    position: absolute;
-    content: '';
-    width: 730px;
-    height: 100px;
     background-color: var(--standard-colour);
-    clip-path: polygon(30px 0, 730px 0, 700px 100px, 0px 100px);
-    z-index: 2;
-
     background-position: 50px center;
     background-repeat: no-repeat;
     background-size: 32px;
@@ -707,3 +703,241 @@ END
     POST
     
 */
+
+@media (max-width:1360px) {
+
+}
+
+@media (max-width:1200px) {
+
+    div.card {
+        width: 600px;    
+    }
+        
+    div.card h1.name {
+        left: 325px;
+    }
+    
+    div.card div.description {
+        width: 300px;
+        left: 275px;
+    }
+    
+    div.card div.sub.title {
+        left: 325px;
+    }
+    
+    div.card div.image {
+        background-position: -50px -0px;
+        width: 290px;
+        clip-path: polygon(100px 0px, 290px 0, 190px 330px, 0 330px);
+    }
+    
+    div.card div.image div.author {
+        width: 190px;
+    }
+    
+    div.card::before, div.card::after {
+        clip-path: polygon(100px 0, 600px 0, 500px 330px, 0 330px);
+    }
+    
+    div.features {
+        width: 25%;
+        left: 250px;
+        gap: 75px;
+    }
+    
+    div.features span {
+        width: 100px;
+        height: 75px;
+        /*  */
+        clip-path: polygon(18px 0, 100px 0, 80px 77px, -2px 77px);
+        margin-left: 10px;
+    }
+    
+    div.features span::before, div.features span::after {
+        width: 110px;
+        height: 75px;
+        clip-path: polygon(20px 0, 100px 0, 80px 75px, 0 75px);
+    }
+
+    div.features span::after {  
+        background-position: 35px center;
+    }
+    
+    div.feature-cards {
+        width: 545px;
+        height: 150px;
+    }
+
+    div.feature-cards div {
+        position: absolute;
+        display: block;
+    
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    
+    div.feature-cards div::before, div.feature-cards div::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        z-index: 2;
+        clip-path: polygon(0 0, 500px 0, 545px 150px, 45px 150px);
+    }
+
+    div.feature-cards div::after {   
+        background-position: 50px center;
+    }
+        
+    div.feature-cards.shown {
+        top: 420px;
+        left: -60px;
+    }
+    
+    div.feature-cards #close {
+        right: 60px;
+        top: -10px;
+    }
+    
+    div.feature-cards div p {
+        width: 80%;
+    }
+    
+    div.feature-cards div p.bottom {
+        top: 110px;
+
+        padding-left: 50px;
+    }
+    
+    div.feature-cards div ul {
+        flex-direction: column;
+        position: absolute;
+        width: initial;
+        left: 0;
+        right:0;
+        text-align: center;
+        padding-left: 70px;
+        gap: 0;
+    }    
+}
+
+
+/* NEEDS TO BE WORKED ON! */
+
+@media (max-width:800px) {
+    div.card {
+        width: 600px;    
+    }
+        
+    div.card h1.name {
+        left: 325px;
+    }
+    
+    div.card div.description {
+        width: 300px;
+        left: 275px;
+    }
+    
+    div.card div.sub.title {
+        left: 325px;
+    }
+    
+    div.card div.image {
+        background-position: -50px -0px;
+        width: 290px;
+        clip-path: polygon(100px 0px, 290px 0, 190px 330px, 0 330px);
+    }
+    
+    div.card div.image div.author {
+        width: 190px;
+    }
+    
+    div.card::before, div.card::after {
+        clip-path: polygon(100px 0, 600px 0, 500px 330px, 0 330px);
+    }
+    
+    div.features {
+        width: 25%;
+        left: 250px;
+        gap: 75px;
+    }
+    
+    div.features span {
+        width: 100px;
+        height: 75px;
+        /*  */
+        clip-path: polygon(18px 0, 100px 0, 80px 77px, -2px 77px);
+        margin-left: 10px;
+    }
+    
+    div.features span::before, div.features span::after {
+        width: 110px;
+        height: 75px;
+        clip-path: polygon(20px 0, 100px 0, 80px 75px, 0 75px);
+    }
+
+    div.features span::after {  
+        background-position: 35px center;
+    }
+    
+    div.feature-cards {
+        width: 545px;
+        height: 150px;
+    }
+
+    div.feature-cards div {
+        position: absolute;
+        display: block;
+    
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    
+    div.feature-cards div::before, div.feature-cards div::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        z-index: 2;
+        clip-path: polygon(0 0, 500px 0, 545px 150px, 45px 150px);
+    }
+
+    div.feature-cards div::after {   
+        background-position: 50px center;
+    }
+        
+    div.feature-cards.shown {
+        top: 420px;
+        left: -60px;
+    }
+    
+    div.feature-cards #close {
+        right: 60px;
+        top: -10px;
+    }
+    
+    div.feature-cards div p {
+        width: 80%;
+    }
+    
+    div.feature-cards div p.bottom {
+        top: 110px;
+
+        padding-left: 50px;
+    }
+    
+    div.feature-cards div ul {
+        flex-direction: column;
+        position: absolute;
+        width: initial;
+        left: 0;
+        right:0;
+        text-align: center;
+        padding-left: 70px;
+        gap: 0;
+    }    
+}
