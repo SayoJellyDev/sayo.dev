@@ -11,7 +11,7 @@ title: Projects
         {% if project.featured %}
         <article class="post">
           <div class="background" style="background-image: url('{{ project.background-image }}');"></div>
-          <div class="project title"><a href="{{ site.base }}{{ project.url }}">{{ project.title }}</a></div>
+          <div class="project description"><a href="{{ site.base }}{{ project.url }}">{{ project.title }}</a></div>
 
           <div class="project text">{{ project.short_description | truncate: 75 }}</div>
         <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
@@ -23,9 +23,9 @@ title: Projects
 
       <article class="post">
         <div class="background" style="background-image: url('{{ project.background-image }}');"></div>
-        <div class="project title"><a href="{{ site.base }}{{ project.url }}">{{ project.title }}</a></div>
+        <a href="{{ site.base }}{{ project.url }}"><div class="project title">{{ project.title }}</div></a>
 
-        <div class="project text">{{ project.short_description | truncate: 75 }}</div>
+        <div class="project description">{{ project.short_description | truncate: 75 }}</div>
         <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
       </article>
       {% endif %}

@@ -130,10 +130,8 @@ div.card.moved {
 div.features {
     display: flex;
     flex-direction: row-reverse;
-
     bottom: 20px;
-    width: 50%;
-    left: 290px;
+    left: 365px;
     z-index: 10;
 }
 
@@ -478,7 +476,7 @@ div.card-chain .post .background {
     position: absolute;
     content: '';
     width: 100%;
-    height: 250px;
+    height: 100%;
 
     bottom: 2px;
     left: 2px;
@@ -526,7 +524,6 @@ div.card-chain .post:nth-child(2n) .sub.title {
 }
 
 div.card-chain .post .project.title {
-    clip-path: polygon(24px 0, 800px 0, 700px 54px, 2px 54px);
     position: absolute;
     line-height: 1em;
     width: 800px;
@@ -539,22 +536,18 @@ div.card-chain .post .project.title {
     font-size: 1.5em;
 }
 
-div.card-chain .post:nth-child(2n) .project.title {
-    clip-path: polygon(80px 0, 800px 0, 800px 54px, 102px 54px);
-}
-
-div.card-chain .post .project.text {
+div.card-chain .post .project.description {
     position: absolute;
     left: initial !important;
     right: 0;
-    width: initial !important;
+    width: initial;
     bottom: 60px;
     padding: 10px;
     padding-right: 85px;
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-div.card-chain .post:nth-child(2n) .project.text {
+div.card-chain .post:nth-child(2n) .project.description {
     padding-right: 65px;
 }
 
@@ -673,7 +666,7 @@ article.blog-post {
 }
 
 article.blog-post::before, article.blog-post::after {
-    width: 1000px;
+    width: 100%;
     height: 100%;
     position: absolute;
     content: '';
@@ -740,11 +733,12 @@ END
     div.card::before, div.card::after {
         clip-path: polygon(100px 0, 600px 0, 500px 330px, 0 330px);
     }
+
     
     div.features {
-        width: 25%;
-        left: 250px;
-        gap: 75px;
+        left: 245px;
+        gap: 0;
+
     }
     
     div.features span {
@@ -752,7 +746,7 @@ END
         height: 75px;
         /*  */
         clip-path: polygon(18px 0, 100px 0, 80px 77px, -2px 77px);
-        margin-left: 10px;
+        margin-left: -15px;
     }
     
     div.features span::before, div.features span::after {
@@ -822,71 +816,235 @@ END
         padding-left: 70px;
         gap: 0;
     }    
+    div.card-chain {
+        width: 70%;
+    }
+
+    div.card-chain .post {
+        min-height: 250px;
+        padding-bottom: 25px;
+
+        height: initial;
+        position: relative;
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+        overflow: hidden;
+    }
+
+    div.card-chain .post:nth-child(2n) {
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+    }
+    div.card-chain .post:nth-child(2n)::before, div.card-chain .post:nth-child(2n)::after {
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+    }
+
+    div.card-chain .post::before, div.card-chain .post::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%)
+    }
+
+    div.card-chain .post::after {
+        bottom: 2px;
+        left: 2px;
+        background-color: var(--standard-colour);
+        
+        z-index: -1;
+    }
+
+
+    div.card-chain .post::before {
+
+
+        bottom: 0;
+        left: 0;
+
+        /*background-color: var(--button-initial-colour);*/
+        animation: animateBg 12s linear infinite;
+        background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
+        background-size: 1200% 100%;
+        z-index: -1;
+    }
+
+    div.card-chain .post:nth-child(2n) .sub.title {
+        left: 15%;
+        padding-left: 0;
+    }
+
+    div.card-chain .post .sub.title {
+        left: 15%;
+        padding-left: 0;
+    }
+
+    div.card-chain .post .text {
+        width: 65%;
+        left: 15%;
+    }
+
+    div.card-chain .post:nth-child(2n) .text {
+        width: 78%;
+        left: 15%;
+    }
+
+    div.card-chain .post .info {
+        position: absolute;
+        right: 12%;
+        bottom: 10px;
+    }
+
+
+    article.blog-post::before, article.blog-post::after {
+        width: 100%;
+    }
+
+    article.blog-post {
+        width: 76%;
+        padding: 25px;
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+    
+    div.card-chain .post .background {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+        
+    }
+
+    div.card-chain .post:nth-child(2n) .background  {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+    }
+
+    div.card-chain .post .project.title {
+        position: absolute;
+        width: 100%;
+        height: 25px;
+        bottom: 1px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 1.5em;
+        
+    }
+    
 }
 
-
-/* NEEDS TO BE WORKED ON! */
-
-@media (max-width:800px) {
+@media (max-width:720px) {
     div.card {
-        width: 600px;    
+        min-height: 370px;
+        height: 50%;
+        width: 80%;    
     }
         
     div.card h1.name {
-        left: 325px;
+        font-size: 1.5em;
+        position: absolute;
+        left: 0;
+        text-align: center;
+        right: 0;
+        top: 42%;
     }
     
     div.card div.description {
-        width: 300px;
-        left: 275px;
+        text-align: center;
+        top: 56%;
+        width: 65%;
+        margin:0;
+        left: 15%;
+        right: 0%;
+        font-size: 1em;
     }
     
     div.card div.sub.title {
-        left: 325px;
+        left: 10%;
+        right: 10%;
+        top:51%;
+        text-align: center;
     }
     
     div.card div.image {
-        background-position: -50px -0px;
-        width: 290px;
-        clip-path: polygon(100px 0px, 290px 0, 190px 330px, 0 330px);
+        background: none;
+
+        width: 100%;
+        height:  100%;
+        clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+    }
+    div.card div.image::before {
+        position: absolute;
+        content:'';
+        width: 100%;
+        height: 40%;
+        background-image: url(/images/icon-trimmed.webp);
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
     }
     
     div.card div.image div.author {
-        width: 190px;
+        width: 150px;
+        height: 40px;
+        padding: 0;
+        line-height: 40px;
+
+        justify-content: center;
+        align-content: center;
+
+        bottom: initial;
+        top:2%;
+        right: 0;
+        left:initial;
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
     }
     
     div.card::before, div.card::after {
-        clip-path: polygon(100px 0, 600px 0, 500px 330px, 0 330px);
+        clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
+    }
+
+    div.card.moved {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 25%;
+    
     }
     
+    
     div.features {
-        width: 25%;
-        left: 250px;
-        gap: 75px;
+        margin:auto;
+        left: 5%;
+        right: initial;
+        top: initial;
+        bottom: 10px;
+        justify-content: center;
+        align-content: center;
     }
     
     div.features span {
-        width: 100px;
-        height: 75px;
-        /*  */
-        clip-path: polygon(18px 0, 100px 0, 80px 77px, -2px 77px);
-        margin-left: 10px;
+        width: 80px;
+        height: 60px;
+        /*  polygon(10px 0, 75px 0, 60px 60px, 0 60px) */
+        clip-path: polygon(8px 0, 80px 0, 72px 62px, -2px 62px);;
+        margin-left: 0;
     }
     
     div.features span::before, div.features span::after {
-        width: 110px;
-        height: 75px;
-        clip-path: polygon(20px 0, 100px 0, 80px 75px, 0 75px);
+        width: 80px;
+        height: 60px;
+        clip-path: polygon(10px 0, 80px 0, 70px 60px, 0 60px);
     }
 
     div.features span::after {  
-        background-position: 35px center;
+        background-position: 25px center;
     }
     
-    div.feature-cards {
-        width: 545px;
-        height: 150px;
+    div.feature-cards div h2 {
+        font-size: 1.2em;
     }
+
+
 
     div.feature-cards div {
         position: absolute;
@@ -903,7 +1061,7 @@ END
         height: 100%;
         content: '';
         z-index: 2;
-        clip-path: polygon(0 0, 500px 0, 545px 150px, 45px 150px);
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
     }
 
     div.feature-cards div::after {   
@@ -911,22 +1069,35 @@ END
     }
         
     div.feature-cards.shown {
-        top: 420px;
-        left: -60px;
+        top: 65%;
+        left: 2%;
     }
     
     div.feature-cards #close {
-        right: 60px;
+        right: 12%;
         top: -10px;
     }
     
     div.feature-cards div p {
         width: 80%;
+        top: 20px;
+        font-size: 1em;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    div.feature-cards {
+        height: 22%;
+        min-height: 150px;
+        width: 85%;
+        margin: 0;
+        top: 60%;
+        left: 4%;
     }
     
     div.feature-cards div p.bottom {
-        top: 110px;
-
+        top: 85%;
+        padding-top: 0;
         padding-left: 50px;
     }
     
@@ -936,8 +1107,82 @@ END
         width: initial;
         left: 0;
         right:0;
+        top: 20px;
         text-align: center;
-        padding-left: 70px;
+        padding-left: 50px;
         gap: 0;
     }    
+
+
+    div.card-chain {
+        width: 90%;
+    }
+
+    div.card-chain .post .text {
+        width: 78%;
+        left: 12%;
+    }
+
+    div.card-chain .post:nth-child(2n) .text {
+        width: 78%;
+        left: 12%;
+    }
+
+    div.card-chain .post:nth-child(2n) .sub.title {
+        left: 12%;
+        padding-left: 0;
+    }
+
+
+    div.card-chain .post .button {
+        bottom: 40px;
+    }
+
+    div.card-chain .post:nth-child(2n) .button {
+        left: 15%;
+    }
+
+    div.card-chain .post .button {
+        left: 10%;
+    }
+    
+
+    div.card-chain .post {
+        min-height: 250px;
+        padding-bottom: 100px;
+    }
+
+    article.blog-post .entry {
+        width: 90%;
+        padding: 25px !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+
+    div.card-chain .post .project.description {
+        width: 65%;
+        padding-right: 40px;  
+    }
+
+    div.card-chain .post:nth-child(2n) .project.description {
+        padding-right: 25px;   
+    }
+
+    div.card-chain .post .background {
+        background-size: 100vh;
+       
+    }
+
+    div.card-chain .post:hover .background {
+        background-size: 120vh;
+       
+    }
+}
+
+
+@media (max-width: 720px) {
+    div.card {
+        height: 50%;
+        width: 95%;    
+    }
 }
