@@ -20,7 +20,6 @@ a.link:hover {
 }
 
 div.main {
-    margin: auto;
     /* min-height for pages that are using absolute positions */
     min-height: 100%;
     width: 100%;
@@ -93,11 +92,6 @@ div.card div.image div.author {
     font-weight: 800;
 }
 
-div.card::after {
-
-    background-color: var(--standard-colour);
-    z-index: 1;
-}
 
 div.card::before, div.card::after {
     position: absolute;
@@ -105,6 +99,11 @@ div.card::before, div.card::after {
     height: 100%;
     content: '';
     clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
+}
+
+div.card::after {
+    background-color: var(--standard-colour);
+    z-index: 1;
 }
 
 div.card::before {
@@ -124,7 +123,6 @@ div.card.moved {
     left: 0;
     right: 0;
     bottom: 100px;
-
 }
 
 div.features {
@@ -373,7 +371,6 @@ div.social::before {
     background-size: 1200% 100%;
 }
 
-
 span.icon {
     z-index: 1;
     position: relative;
@@ -407,6 +404,7 @@ span#github {
 END
     SOCIALS 
 */
+
 /* 
 
 BLOG CSS 
@@ -433,12 +431,12 @@ div.card-chain {
 div.card-chain .post {
     height: 250px;
     position: relative;
-    clip-path: polygon(100px 0, 800px 0, 700px 250px, 0 250px);
+    clip-path: polygon(75px 0, 800px 0, 725px 250px, 0 250px);
     overflow: hidden;
 }
 
 div.card-chain .post:nth-child(2n) {
-    clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
+    clip-path: polygon(0 0, 725px 0, 800px 250px, 75px 250px);
 }
 
 
@@ -450,7 +448,7 @@ div.card-chain .post::after {
     left: 2px;
     content: '';
     background-color: var(--standard-colour);
-    clip-path: polygon(100px 0, 800px 0, 700px 250px, 0 250px);
+    clip-path: polygon(75px 0, 800px 0, 725px 250px, 0 250px);
     z-index: -1;
 }
 
@@ -468,7 +466,7 @@ div.card-chain .post::before {
     animation: animateBg 12s linear infinite;
     background-image: linear-gradient(140deg, var(--button-initial-colour) 0%, var(--button-initial-colour) 49%, var(--flash-colour) 50%, var(--button-initial-colour) 51%, var(--button-initial-colour) 100%);
     background-size: 1200% 100%;
-    clip-path: polygon(100px 0, 800px 0, 700px 250px, 0 250px);
+    clip-path: polygon(75px 0, 800px 0, 725px 250px, 0 250px);
     z-index: -1;
 }
 
@@ -503,11 +501,11 @@ div.card-chain .post:last-child {
 }
 
 div.card-chain .post:nth-child(2n)::before {
-    clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
+    clip-path: polygon(0 0, 725px 0, 800px 250px, 75px 250px);
 }
 
 div.card-chain .post:nth-child(2n)::after {
-    clip-path: polygon(0 0, 700px 0, 800px 250px, 100px 250px);
+    clip-path: polygon(0 0, 725px 0, 800px 250px, 75px 250px);
 }
 
 
