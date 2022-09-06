@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-06T22:29:24+10:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">King Jellycycle</title><subtitle>I like creating random projects and never finishing them, and procrastination too! (don&apos;t wanna forget that one!) &lt;br&gt;Hope you enjoy! &lt;3</subtitle><entry><title type="html">The Combat System</title><link href="http://localhost:4000/blog/development/2021/09/26/the-combat-system.html" rel="alternate" type="text/html" title="The Combat System" /><published>2021-09-26T20:00:00+10:00</published><updated>2021-09-26T20:00:00+10:00</updated><id>http://localhost:4000/blog/development/2021/09/26/the-combat-system</id><content type="html" xml:base="http://localhost:4000/blog/development/2021/09/26/the-combat-system.html">&lt;!-- excerpt_start --&gt;
+&lt;p&gt;Let’s talk about the combat system!&lt;/p&gt;
+
+&lt;p&gt;I’ve already talked about the combat system in the previous post (&lt;a href=&quot;https://www.kingjellycycle.com/development/2021/08/26/what-is-Bound.html&quot;&gt;Bound Information Post&lt;/a&gt;), but I wanted to expand on it and detail it more out, explain what I got and show examples of what’s to come.
+&lt;!-- excerpt_end --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Additionally, this has been created as a guideline for myself! So that I don’t go off track with the combat system or how the ability system and the combat system interact!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;the-combat-system&quot;&gt;The Combat System&lt;/h1&gt;
+&lt;h5 id=&quot;and-how-is-it-going-to-work&quot;&gt;(And how is it going to work?)&lt;/h5&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;current-position-in-progress&quot;&gt;Current Position in Progress?&lt;/h2&gt;
+&lt;p&gt;Currently, the combat system has combos that are hot-swapped to match the weapon the player is using (though the player can’t equip gear just yet). Each attack produces a hitbox, which lingers for a set duration and then disappears. Combos will reset after a set duration after each attack.&lt;/p&gt;
+
+&lt;p&gt;Each weapon will contain a unique combo set fitting to the weapon type. For example, swords having quick combos and scythes having large sweeping attacks that are much slower!&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-plan&quot;&gt;What is the plan?&lt;/h2&gt;
+&lt;p&gt;Well, we will start talking about the Weapons!&lt;/p&gt;
+
+&lt;h3 id=&quot;weapons&quot;&gt;Weapons!&lt;/h3&gt;
+&lt;p&gt;I’ve already said that there will be different types of weapons. Each with potential interactions and or abilities alongside them. But first, what weapon choices does the player have?
+The first few weapons I’d like added will be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Sword (Close-Range)&lt;/li&gt;
+  &lt;li&gt;Scythe (Mid-Range)&lt;/li&gt;
+  &lt;li&gt;Grimore (Ranged)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These three I’d love to have added and working. Once these are working correctly, the combat system will be functional enough to continue working on other game systems, such as quest and classes!&lt;/p&gt;
+
+&lt;p&gt;These won’t be the only weapons I’d like to have in the game so that you know!
+Additional weapons such as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bow (Ranged)&lt;/li&gt;
+  &lt;li&gt;Dagger (Close-Range)&lt;/li&gt;
+  &lt;li&gt;Greatsword (Mid-Range)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But I’d like to get the game into a playable state before putting more focus into this system!&lt;/p&gt;
+
+&lt;p&gt;Okay, since that’s out of the way, what about the potential effects I had mentioned above?&lt;/p&gt;
+
+&lt;p&gt;Like the last three weapons mentioned above, I won’t add the weapon effects/abilities until the game is playable. Then I’ll put more focus into getting item effects working and interacting with the system! But, what kind of effects would we be looking at?&lt;/p&gt;
+
+&lt;p&gt;Effects such as stacking increase damage per hit (with a cap on stacks) and increase movement/attack speed and such. These aren’t final but gives you a rough idea of what kind of effects could show up!&lt;/p&gt;
+
+&lt;p&gt;Time to end the weapons section and talk about the Combos! And how combos will contribute to the game!&lt;/p&gt;
+
+&lt;h3 id=&quot;combos&quot;&gt;Combos&lt;/h3&gt;
+&lt;p&gt;I want combos to be a big part of Bound! It’s always wonderful playing a game with flowing combos that come out like my butter, smooth and clean. But I still do want the hard-hitting and powerful attacks!&lt;/p&gt;
+
+&lt;p&gt;But what exactly does this look like? Let’s go over how the combos will look! What does it feel like, and how would I implement this?&lt;/p&gt;
+
+&lt;p&gt;Each part of the combo should have weight and feel to them!
+Things like force in the attack, how the player is moved based on this force. And how the enemy’s position is offset based on the attack and many more! Variables will be set to determine each of these things in our combos!&lt;/p&gt;
+
+&lt;p&gt;Variables such as:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The hitbox size&lt;/li&gt;
+  &lt;li&gt;The damage it will deal&lt;/li&gt;
+  &lt;li&gt;The delay before the next attack&lt;/li&gt;
+  &lt;li&gt;The duration the attack lingers for (for specific attacks)&lt;/li&gt;
+  &lt;li&gt;The players offset (on performing the attack)&lt;/li&gt;
+  &lt;li&gt;The enemy offset (on being hit by the attack)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These makeup basic attack information that we then can supply to the relevant systems and entities to “react” to being hit or performing the action!&lt;/p&gt;
+
+&lt;h3 id=&quot;classes-and-their-abilities&quot;&gt;Classes and their abilities!&lt;/h3&gt;
+&lt;p&gt;I’d also like to talk about how abilities are going to work too briefly! The combat system will play a big part in this game, and the abilities will need to synergise, improve or work around this system!&lt;/p&gt;
+
+&lt;h4 id=&quot;whats-the-go&quot;&gt;What’s the go?&lt;/h4&gt;
+&lt;p&gt;Well, I’ll be using the Huntress as an example of how abilities will work with the combat system!
+The Huntress will have (at this current point in time) three abilities and a Passive, not including the primary and secondary attacks from the Weapons!&lt;/p&gt;
+
+&lt;p&gt;The first ability will be a simple, quick dash, ignoring entity collisions and passing through them. This ability will also deal low damage but helps catch up to enemies or escape them!&lt;/p&gt;
+
+&lt;p&gt;The second ability will be a simple damage buff. Then the third ability will create a mimick of yourself, mimicking your attacks and class abilities for a set duration before going on cooldown!&lt;/p&gt;
+
+&lt;p&gt;And finally, the passive will be a damage over time effect, applied on each attack made!&lt;/p&gt;
+
+&lt;p&gt;Each of these is very much possible to change, adjust, or completely being removed and replaced! But each of these abilities supports the combat system, providing buffs, movement and additional sources of damage!&lt;/p&gt;
+
+&lt;p&gt;Each class will perform differently and shine in different sections of the game, but this gives us a very rough idea of what’s to come!&lt;/p&gt;
+
+&lt;h2 id=&quot;endnotes&quot;&gt;Endnotes&lt;/h2&gt;
+&lt;p&gt;There will be a lot of work needed to be completed to get each of these parts and systems working and ready. I have a baseline setup, allowing for different combos, each having set variables interacting with the entities within the game.&lt;/p&gt;
+
+&lt;p&gt;There are also additional features within the system I’d like to have working, such as a lock on/targeting system, to make it easier to hit enemies! (But more on that later)&lt;/p&gt;
+
+&lt;p&gt;Have fun ~ &lt;a href=&quot;/&quot;&gt;Jelly&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="blog" /><category term="Development" /><summary type="html">Let’s talk about the combat system! I’ve already talked about the combat system in the previous post (Bound Information Post), but I wanted to expand on it and detail it more out, explain what I got and show examples of what’s to come.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/projects/bound/GameIcon.png" /><media:content medium="image" url="http://localhost:4000/images/projects/bound/GameIcon.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What is Bound?</title><link href="http://localhost:4000/blog/development/2021/08/26/what-is-Bound.html" rel="alternate" type="text/html" title="What is Bound?" /><published>2021-08-26T15:00:00+10:00</published><updated>2021-08-26T15:00:00+10:00</updated><id>http://localhost:4000/blog/development/2021/08/26/what-is-Bound</id><content type="html" xml:base="http://localhost:4000/blog/development/2021/08/26/what-is-Bound.html">&lt;h1 id=&quot;what-is-bound&quot;&gt;What is Bound?&lt;/h1&gt;
+&lt;h1 class=&quot;subtitle&quot;&gt;(and the state of the game I want to aim for!)&lt;/h1&gt;
+&lt;!-- excerpt_start --&gt;
+&lt;p&gt;Bound is the game I’ve been “looking for”. That would be how I want to say it.
+It is a game with an excellent combat system, with multiple classes, each with its abilities and play styles.&lt;/p&gt;
+
+&lt;p&gt;I’d love A few different weapon types, a variety of abilities and being able to explore a world and have some fun. I want a lot in this game, and I hope to detail a lot of it here so it can be a base for you (and me) to see what this game will become!&lt;/p&gt;
+
+&lt;p&gt;We are starting with the Combat System!
+&lt;!-- excerpt_end --&gt;&lt;/p&gt;
+&lt;h2 id=&quot;combat-system&quot;&gt;Combat System&lt;/h2&gt;
+
+&lt;h3 id=&quot;weapons&quot;&gt;Weapons:&lt;/h3&gt;
+&lt;p&gt;The combat system will have different types of weapons, each having combos and potentially unique interaction and abilities.&lt;/p&gt;
+
+&lt;p&gt;Any character can use any weapon. For example, a huntress could use a bow, but they can also use a dagger, scythe, or even a grimoire! The different weapons’ goal is to expand our playstyle and allow players to pick and choose what they want for gameplay and fashion.&lt;/p&gt;
+
+&lt;h3 id=&quot;combos&quot;&gt;Combos:&lt;/h3&gt;
+
+&lt;p&gt;The second part of the combat system would be the combo system, and this will mainly apply to your weapon and its combos and interaction with enemies! This part aims to have excellent flowing combat that feels good and has a little bit of variety! Some weapons would be hitting at a more extended range than others, whilst others doing more damage.&lt;/p&gt;
+
+&lt;h2 id=&quot;classes&quot;&gt;Classes&lt;/h2&gt;
+
+&lt;p&gt;I would love to have multiple classes in the game, starting with just a few (for obvious reasons). The first class will be the huntress. I can confirm that. Each of the classes will have a unique set of abilities, which synergies with each other and potentially other classes and weapons. I want a few different classes that can perform better in some places than others, such as being able to support better or tank hits better and so on!&lt;/p&gt;
+
+&lt;h2 id=&quot;dungeon-crawlingraiding&quot;&gt;Dungeon Crawling/Raiding&lt;/h2&gt;
+
+&lt;p&gt;Having a mix of content that is mechanic heavy to content that is more of a combat experience is something I’d love to have.&lt;/p&gt;
+
+&lt;p&gt;For example, you have a dungeon which is a fighting arena of some sort. In this dungeon, you are tasked to fight for as long as possible, duelling enemies with your weapon and with raw class power to acquire rewards!&lt;/p&gt;
+
+&lt;p&gt;And for the mechanic heavy dungeon, you might have to position yourself to a spot on the map to bait the boss or the need to apply a debuff to the boss.&lt;/p&gt;
+
+&lt;p&gt;The feeling of raiding or completing high level/challenging dungeons is the kind of feel that I want to replicate while maintaining an enjoyable and smooth experience.&lt;/p&gt;
+
+&lt;h2 id=&quot;questing&quot;&gt;Questing&lt;/h2&gt;
+
+&lt;p&gt;Questing is a crucial factor to Bound, as it will help players learn and interact with the world-building, game systems, lore and showing the player additional content within the game!&lt;/p&gt;
+
+&lt;p&gt;I’d love to have lore-based quests and gameplay based quests. A good variety of both is what I want! But I can’t jump the gun, so simple quest and quest steps will be in the game, showing functionality and proving the concept.&lt;/p&gt;
+
+&lt;h2 id=&quot;simple-multiplayer&quot;&gt;Simple Multiplayer&lt;/h2&gt;
+
+&lt;p&gt;There isn’t all too much to say about this one. Simple multiplayer will be Peer-to-Peer networking, allowing players to play together in the world and activities.&lt;/p&gt;
+
+&lt;p&gt;This feature is at the bottom of the barrel, but it is one that I want in the game. The idea of playing this game with some friends is one that I want to have!&lt;/p&gt;
+
+&lt;h1 id=&quot;whats-beyond&quot;&gt;What’s beyond?&lt;/h1&gt;
+&lt;h1 class=&quot;subtitle&quot;&gt;(I would LOVE to have, but won&apos;t work on till at least everything else is working!)&lt;/h1&gt;
+
+&lt;p&gt;Well… There are always going to be those kinds of things that would be cool to have, fun to play with, but aren’t possible or would hinder the development much greater than doing good in the end.&lt;/p&gt;
+
+&lt;p&gt;That doesn’t mean they won’t ever be added if given a chance, but they cannot be added at this current stage in time, nor are there plans to.&lt;/p&gt;
+
+&lt;h2 id=&quot;open-world&quot;&gt;Open World&lt;/h2&gt;
+
+&lt;p&gt;An open world to explore is something I’ve always loved, and if ever possible, I wouldn’t hesitate to add it to this game. Just the thought of exploring a world with hints of lore and activities is something that gets me excited. But again, this is something that won’t be added till after everything else has been developed.&lt;/p&gt;
+
+&lt;h2 id=&quot;improved-multiplayer-serversdedicated-servers&quot;&gt;Improved Multiplayer Servers/Dedicated Servers&lt;/h2&gt;
+
+&lt;p&gt;I’ve already talked about multiplayer servers, but this is for an improved version built on the above feature. As well as an enhanced Peer-to-Peer system, being able to host a dedicated server for those looking for a better experience is something I’d love to have!&lt;/p&gt;
+
+&lt;p&gt;Instead of having the Peer host machine put in all the work, this server could run off another device (including cloud services), improving gameplay, consistency, and connectivity.&lt;/p&gt;
+
+&lt;h1 id=&quot;so-where-are-we-at&quot;&gt;So, Where are we at?&lt;/h1&gt;
+
+&lt;p&gt;Well, you can see that in the Discord and Trello board!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://discord.gg/TQJjnEsh3E&quot;&gt;Discord&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://trello.com/b/SieEloKO/bound&quot;&gt;Trello&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both of these will have updates of their own, The discord will have me talking more about it all/previews, and Trello gives the guidelines on where the game is headed and where it is at!&lt;/p&gt;</content><author><name></name></author><category term="blog" /><category term="Development" /><summary type="html">What is Bound? (and the state of the game I want to aim for!) Bound is the game I’ve been “looking for”. That would be how I want to say it. It is a game with an excellent combat system, with multiple classes, each with its abilities and play styles. I’d love A few different weapon types, a variety of abilities and being able to explore a world and have some fun. I want a lot in this game, and I hope to detail a lot of it here so it can be a base for you (and me) to see what this game will become! We are starting with the Combat System!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/projects/bound/GameIcon.png" /><media:content medium="image" url="http://localhost:4000/images/projects/bound/GameIcon.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Welcome to the website!</title><link href="http://localhost:4000/blog/personal/2021/08/16/welcome-to-the-site.html" rel="alternate" type="text/html" title="Welcome to the website!" /><published>2021-08-16T19:00:00+10:00</published><updated>2021-08-16T19:00:00+10:00</updated><id>http://localhost:4000/blog/personal/2021/08/16/welcome-to-the-site</id><content type="html" xml:base="http://localhost:4000/blog/personal/2021/08/16/welcome-to-the-site.html">&lt;h2&gt;Welcome to my personal website!&lt;/h2&gt;
+
+&lt;!-- excerpt_start --&gt;
+&lt;p&gt;I don&apos;t really have much to say after that :P, thank you for visiting though!&lt;/p&gt;
+&lt;!-- excerpt_end --&gt;</content><author><name></name></author><category term="blog" /><category term="Personal" /><summary type="html">Welcome to my personal website! I don&apos;t really have much to say after that :P, thank you for visiting though!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/profilePic.jpg" /><media:content medium="image" url="http://localhost:4000/images/profilePic.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
