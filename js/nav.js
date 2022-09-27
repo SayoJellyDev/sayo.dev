@@ -29,13 +29,6 @@ function navBarFunc()
         }
     }
 }
-// loader stuff
-//window.addEventListener("load", function(){
-//    this.setTimeout(function(){
-//
-//        document.getElementById("loader-wrapper").classList.add("hidden")
-//    }, 250)
-//});
 
 
 var likes = document.getElementById("likes")
