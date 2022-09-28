@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production && sleep 1 && bundle exec jekyll serve ",
+    "build": "webpack --mode production && sleep 1 && bundle exec jekyll serve --host 0.0.0.0 ",
     "builds": "run-s build:webpack build:jekyll purgecss"
   },
   "license": "MIT",
