@@ -18,7 +18,7 @@ a {
 }
 
 a.link {
-    color: var(--link--colour);
+    color: var(--link-colour);
     text-decoration: none;
     background-image: linear-gradient(to right, var(--link-gradient-colour-1), var(--link-gradient-colour-1));
     background-position: bottom center;
