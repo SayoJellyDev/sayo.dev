@@ -1,0 +1,153 @@
+:root {
+    --base-colour: #e3e3e3;
+    --gradient-colour-1: white;
+    --text-colour: #292929;
+
+    --link-colour: rgb(26, 26, 26);
+    --link-gradient-colour-1: #b6004c;
+
+    --status-background-colour: rgba(25, 25, 25, 0.5);
+    --status-border-colour: rgba(200, 200, 200, 0.75);
+
+    --status-in-development-background-colour: rgba(160, 25, 25, 0.8);
+    --status-in-development-border-colour: rgba(110, 14, 14, 0.8);
+
+    --status-halted-background-colour: rgba(50, 50, 50, 0.9);
+    --status-halted-border-colour: rgba(10, 10, 10, 0.9);
+
+    --title-image: url(/images/projects/deimos/DeimosTitle.png);
+}
+
+.carousel {
+    position: relative;
+    width: 770px;
+    height: 450px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.carousel:hover .slide:after,
+.carousel:hover .counter,
+.carousel:hover .slide:before {
+    opacity: 1;
+}
+
+.slide {
+    float: right;
+    position: absolute;
+    z-index: 1;
+    width: 770px;
+    height: 450px;
+    color: white;
+    background-color: #eee;
+    text-align: center;
+    transition: opacity 0.4s;
+    opacity: 1;
+}
+
+.slide div {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.slide:before {
+    content: attr(annot);
+    display: block;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 12;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.slide:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.3s;
+    width: 100%;
+    height: 80px;
+    opacity: 0;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+}
+
+.slideInput {
+    top: 0;
+    right: 0;
+    float: right;
+    position: absolute;
+    margin-top: 0;
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.slideInput:checked {
+    z-index: 8;
+}
+
+.slideInput:checked+.slide {
+    opacity: 0;
+}
+
+.slideInput:checked:nth-child(1):checked {
+    z-index: 9;
+}
+
+.slideInput:nth-child(1):checked {
+    float: left;
+    z-index: 9;
+}
+
+.slideInput:nth-child(1):checked+.slide {
+    opacity: 1;
+}
+
+.slideInput:nth-child(1):checked~.slideInput {
+    float: left;
+    z-index: 8;
+}
+
+.slideInput:nth-child(1):checked~.slideInput+.slide {
+    opacity: 0;
+}
+
+.slideInput:nth-child(1):checked~.slideInput:checked {
+    z-index: 9;
+}
+
+.slideInput:nth-child(1):checked~.slideInput:checked+.slide {
+    opacity: 1;
+}
+
+@media (max-width:1360px) {
+    .carousel {
+        width: 512px;
+        height: 300px;
+    }
+
+    .slide {
+        width: 512px;
+        height: 300px;
+    }
+}
+
+@media (max-width:524px) {
+    .carousel {
+        width: 256px;
+        height: 150px;
+    }
+
+    .slide {
+        width: 256px;
+        height: 150px;
+    }
+}
