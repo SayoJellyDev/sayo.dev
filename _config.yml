@@ -22,6 +22,8 @@ plugins:
 collections:
   projects:
     output: true
+  commissions:
+    output: true
 
 sass:
   style: compressed

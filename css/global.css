@@ -1,9 +1,14 @@
 --- 
 layout: stylesheet 
 ---
-* {}
+* {box-sizing:border-box;}
+
+html, body {
+    
+}
 
 :root {
+
     --blur-amount: 15px;
     --border-radius-value: 5px;
     --standard-colour: #121212; /*rgba(25,25,25,0.6)*/
@@ -229,7 +234,7 @@ START
     background-image: url("/images/icons/Blog-Icon.svg");
 }
 
-.nav span.information {
+.nav span.commissions {
     background-image: url("/images/icons/Information-Icon.svg");
 }
 
@@ -338,8 +343,8 @@ END
         pointer-events: none;
         position: fixed;
         display: block;
-        left: 10px;
-        bottom: 19px;
+        left: 20px;
+        bottom: 20px;
         width: 60px;
         height: 50px;
         background-repeat: no-repeat;
@@ -379,8 +384,8 @@ END
     .hide {
         visibility: hidden;
         position: fixed;
-        left: 15px;
-        bottom: 18px;
+        left: 25px;
+        bottom: 20px;
         width: 50px;
         height: 50px;
         background-repeat: no-repeat;
