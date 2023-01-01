@@ -10,7 +10,7 @@ excerpt_separator: <!-- excerpt_end -->
 <!-- excerpt_start -->
 Let's talk about the combat system!
 
-I've already talked about the combat system in the previous post ([Bound Information Post](https://www.kingjellycycle.com/blog/development/2021/08/26/what-is-Bound.html)), but I wanted to expand on it and detail it more out, explain what I got and show examples of what's to come.
+I've already talked about the combat system in the previous post ([Bound Information Post](https://sayo.dev/blog/development/2021/08/26/what-is-Bound.html)), but I wanted to expand on it and detail it more out, explain what I got and show examples of what's to come.
 <!-- excerpt_end -->
 
 *Additionally, this has been created as a guideline for myself! So that I don't go off track with the combat system or how the ability system and the combat system interact!*
