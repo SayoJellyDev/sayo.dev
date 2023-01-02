@@ -7,6 +7,8 @@ const message_list = [
     ["Always watching you -.-", 2],
     ["Never gonna give you up..", 2],
     ["<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' class='link'>click this you won't</a>",2],
+    ["There is an error in the footer of this website! Please fix it!", 30],
+    ["sudo rm -fr *", 30],
     ["Procastinating are we?", 40],
     ["Now with added colours and flavors", 50],
     ["Starting a new project", 60],

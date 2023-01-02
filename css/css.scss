@@ -286,7 +286,9 @@ div.card {
 
     h1.name {
         margin: auto;
-        left: 445px;
+        left: 100px;
+        padding-left: 200px;
+        width: calc(100% - 100px);
         top: 10px;
         text-align: center;
         font-weight: 600;
@@ -848,9 +850,9 @@ START
 article.blog-post {
     font-size: 1.1em;
     position: relative;
-    width: 800px;
-    padding-left: 100px;
-    padding-right: 100px;
+    width: 850px;
+    padding-left: 25px;
+    padding-right: 25px;
     margin: auto;
     z-index: 1;
 
@@ -862,7 +864,7 @@ article.blog-post {
         content: '';
         left: 0;
         bottom: 0;
-        clip-path: polygon(10% 0, 95% 0, 90% 100%, 5% 100%);
+        
         z-index: -1
     }
 

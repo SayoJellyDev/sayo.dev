@@ -1,0 +1,160 @@
+---
+permalink: /tty1
+---
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+  html,
+  body {
+    font-family: "Roboto Mono", monospace;
+    background-color: black;
+    color: white;
+    margin: 5px;
+    font-size: 16px;
+  }
+  p {
+    margin: 0;
+  }
+
+  span.error {
+    color: red;
+    text-transform: uppercase;
+  }
+
+  span.success {
+    color: green;
+    text-transform: uppercase;
+  }
+
+  #location {
+    color: rgb(1, 138, 23);
+
+  }
+
+  #user-input {
+    display: none;
+
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  #user-input.show {
+    display: flex !important;
+  }
+
+  #input {
+    background-color: black;
+    color: white;
+    width: 100%;
+    border: none;
+    font-family: "Roboto Mono", monospace;
+    font-size: 16px;
+  }
+
+  #input:focus {
+    background-color: black;
+    color: white;
+    width: 100%;
+    border: none !important;
+    box-shadow: none;
+  }
+
+  input#input[type="text"]:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  input#input[type="text"]:focus:hover {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+  }
+
+  #interface {
+  }
+</style>
+
+<div id="output">
+  <p>Initialising Command-line interface</p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+</div>
+<div id="user-input">
+    <div id="location">~></div>
+    <input type="text" id="input" />
+</div>
+
+
+<script>
+  const params = new URLSearchParams(window.location.search)
+  console.log(params.get("Error"))
+
+
+
+
+  var currentDirector = "";
+
+  var directoryList = [];
+
+  setTimeout(appendToOutput,0,"Checking system...")
+  setTimeout(appendToOutput,1000,"System <span class='success'>passed</span>")
+  setTimeout(appendToOutput,3000,"Memes <span class='error'>missing</span>")
+  setTimeout(appendToOutput,4000,"Skipping memes...")
+  setTimeout(appendToOutput,5000,"Searching other areas...")
+
+  if (params.has("Error") == true) {
+    setTimeout(appendToOutput,8000,params.get("Error"))
+  }
+  
+  setTimeout(function (e) {
+    document.getElementById("user-input").classList.add("show")
+  }, 8000)
+
+  document.getElementById("input").focus();
+  document.addEventListener("click", focusInput);
+
+  document.querySelector("#input").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      var _input = document.getElementById("input");
+      console.log(_input.value);
+
+      _command = _input.value
+      _input.value = "";
+
+      switch(_command) {
+        case "help":
+            appendToOutput(`
+            Welcome to ______ command-line! <br>
+            Test
+            `)
+            break;
+        case "ls":
+            appendToOutput("Woah there")
+            break;
+        case "cd":
+
+            break;
+        case "clear":
+            document.getElementById("output").innerHTML = ``
+            break;
+      }
+    }
+  });
+
+  function focusInput() {
+    document.getElementById("input").focus();
+  }
+
+  function appendToOutput(htmlString) {
+    document.getElementById("output").innerHTML += `
+    <p>` + htmlString + `
+    </p>`
+  }
+</script>

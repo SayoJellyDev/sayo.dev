@@ -417,3 +417,9 @@ END
         z-index: 10;
     }
 }
+
+
+footer div#error {
+    position: absolute;
+    opacity: 0;
+}
