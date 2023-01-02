@@ -11,9 +11,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sayo.dev" # the base hostname & protocol for your site, e.g. http://example.com
 
 twitter_link: https://www.twitter.com/KingJellycycle
-youtube_link: https://www.youtube.com/channel/UCk5PWasAw6vOOvHiIFG5wVQ
+youtube_link: https://www.youtube.com/@SayoJellyDev
 discord_link: https://discord.gg/TQJjnEsh3E
-github_link:  https://www.github.com/KingJellycycle
+github_link:  https://github.com/SayoJellyDev
 
 # Build settings
 plugins:
