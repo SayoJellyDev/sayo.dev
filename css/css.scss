@@ -1089,7 +1089,8 @@ Background css
     }
 
     div.card h1.name {
-        left: 325px
+        padding-left: 0;
+        left: 175px
     }
 
     div.card div.description {
@@ -1380,6 +1381,7 @@ Background css
                 font-size: 1.5em;
                 position: absolute;
                 left: 0;
+                padding-left: 0;
                 text-align: center;
                 right: 0;
                 top: 42%
