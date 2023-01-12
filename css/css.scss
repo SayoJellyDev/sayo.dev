@@ -851,8 +851,8 @@ article.blog-post {
     font-size: 1.1em;
     position: relative;
     width: 850px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin: auto;
     z-index: 1;
 
@@ -1317,9 +1317,6 @@ Background css
 
     article.blog-post {
         width: 76%;
-        padding: 25px;
-        padding-left: 12%;
-        padding-right: 12%
     }
 
     div.card-chain .post .background {
@@ -1649,10 +1646,7 @@ Background css
     }
 
     article.blog-post .entry {
-        width: 90%;
-        padding: 25px !important;
-        padding-left: 5% !important;
-        padding-right: 5% !important;
+        width: 100%;
     }
 
     div.card-chain .post .project.description {
