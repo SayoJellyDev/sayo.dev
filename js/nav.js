@@ -8,8 +8,6 @@ hide.addEventListener('click', navBarFunc);
 cover.addEventListener('click', navBarFunc);
 peeker.addEventListener('click', navBarFunc);
 
-
-
 function navBarFunc()
 {
     var w = window.innerWidth;
@@ -29,7 +27,6 @@ function navBarFunc()
         }
     }
 }
-
 
 var likes = document.getElementById("likes")
 var projects = document.getElementById("projects")
