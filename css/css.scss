@@ -224,6 +224,10 @@ a.link {
         color: var(--button-gradient-colour-1);
         background-size: 100% 2px;
     }
+    &:focus {
+        color: var(--button-gradient-colour-1);
+        background-size: 100% 2px;
+    }
 }
 
 div.main {
@@ -695,6 +699,8 @@ div.card-chain {
         position: relative;
         overflow: hidden;
 
+        transition: left 0.2s ease;
+
         &:nth-child(2n) {
             &::before,
             &::after {
@@ -846,6 +852,15 @@ div.card-chain {
                 z-index: 1;
             }
 
+                            
+            &:hover::before {
+                left: -5px;
+            }
+
+            &:focus::before {
+                left: -5px;
+            }
+
             &::before,
             &::after {
                 position: absolute;
@@ -869,12 +884,20 @@ div.card-chain {
                     var(--button-initial-colour) 100%
                 );
                 background-size: 1200% 100%;
-                transition: all 0.5s ease;
+                transition: all 0.2s ease;
             }
 
             &::after {
                 background-color: var(--standard-highlight-colour);
                 transition: background-color 0.1s ease;
+            }
+
+            &:hover::after {
+                background-color: var(--standard-highlight-hover-colour);
+            }
+
+            &:focus::after {
+                background-color: var(--standard-highlight-hover-colour);
             }
         }
     }
