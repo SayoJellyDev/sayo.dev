@@ -47,5 +47,31 @@ title: My Projects
     </article>
     {% endif %}
     {% endfor %}
+
+    
+    {% for post in site.posts limit:1 %}
+    {% if post.categories contains "side" and "project" %}
+    <div class="title center">Side Projects</div>
+    {% endif %}
+       {% endfor %}
+
+    {% for post in site.posts %}
+    {% if post.categories contains "side" and "project" %}
+
+    <article class="post">
+      <div class="background" style="background-image: url('{{ post.background-image }}');">       
+        {% if post.isExternal %}
+        <a href="{{ project.link }}"><div class="project title">{{ post.title }}</div></a>
+        {% else %}
+        <a href="{{ site.base }}{{ post.url }}"><div class="project title">{{ post.title }}</div></a>
+        {% endif %}
+        {% assign excerptParts = post.excerpt | split: "<!-- excerpt_start -->" %}
+        <div class="project description">{{ excerptParts[1] | strip_html | truncate: 75 }}</div>
+      </div>
+
+      <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
+    </article>
+    {% endif %}
+    {% endfor %}
   </div>
 </div>

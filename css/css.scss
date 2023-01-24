@@ -210,6 +210,7 @@
 a.link {
     color: var(--button-colour);
     text-decoration: none;
+    width: fit-content;
     background-image: linear-gradient(
         to right,
         var(--button-gradient-colour-1),
@@ -227,6 +228,57 @@ a.link {
     &:focus {
         color: var(--button-gradient-colour-1);
         background-size: 100% 2px;
+    }
+}
+
+a.button {
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+
+    span {
+        position: relative;
+        z-index: 2;
+
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: "";
+        clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+    }
+
+    &::after {
+        left:0;
+        bottom: 0;
+        background-color: var(--standard-highlight-colour);
+        z-index: 1;
+    }
+
+    &:hover::after {
+        background-color: var(--standard-highlight-hover-colour);
+    }
+
+    &::before {
+        left: -2px;
+        bottom: -2px;
+        animation: animateBg 12s linear infinite;
+        background-image: linear-gradient(
+            140deg,
+            var(--button-initial-colour) 0%,
+            var(--button-initial-colour) 49%,
+            var(--flash-colour) 50%,
+            var(--button-initial-colour) 51%,
+            var(--button-initial-colour) 100%
+        );
+        background-size: 1200% 100%;
+        z-index: 1;
     }
 }
 
