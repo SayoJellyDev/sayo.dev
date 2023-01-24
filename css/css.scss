@@ -350,14 +350,14 @@ div.features {
     display: flex;
     flex-direction: row-reverse;
     bottom: 20px;
-    left: 365px;
+    left: 345px;
     z-index: 10;
+    gap: 110px;
 
     span {
         position: relative;
-        width: 150px;
+        width: 0px;
         height: 100px;
-        margin-left: -40px;
         z-index: 2;
         cursor: pointer;
 
@@ -371,6 +371,7 @@ div.features {
         }
 
         &::after {
+            left:-15px;
             background-color: var(--standard-highlight-colour);
             z-index: 2;
             background-position: 50px center;
@@ -380,12 +381,12 @@ div.features {
         }
 
         &:hover::before {
-            left: -5px;
+            left: -22px;
             //clip-path: polygon(27px 10px, 130px 0, 90px 100px, 0 100px);
         }
 
         &::before {
-            left: -2px;
+            left: -17px;
             bottom: -2px;
             background-color: var(--button-initial-colour);
             animation: animateBg 12s linear infinite;
@@ -1054,18 +1055,18 @@ h3 {
     }
 
     div.features {
-        left: 245px;
-        gap: 0;
+        left: 240px;
+        gap: 90px;
 
         span {
-            width: 100px;
+            width: 0;
             height: 75px;
-            margin-left: -15px;
 
             &::before,
             &::after {
-                width: 110px;
+                width: 100px;
                 height: 75px;
+                clip-path: polygon(20px 0,100px 0,80px 75px,0 75px);
             }
 
             &::after {
@@ -1352,7 +1353,6 @@ h3 {
     }
 
     div.features {
-        margin: auto;
         left: 15%;
         right: initial;
         top: initial;
@@ -1365,10 +1365,7 @@ h3 {
         }
 
         span {
-            width: 80px;
             height: 70px;
-            margin-left: 0;
-            clip-path: initial;
 
             &::before,
             &::after {
@@ -1378,8 +1375,6 @@ h3 {
             }
 
             &::after {
-                left: -1px;
-                bottom: -1px;
                 background-position: 25px center;
             }
         }
@@ -1563,15 +1558,44 @@ h3 {
 }
 
 @media (max-width: 420px) {
+    * {
+        clip-path: none !important;
+
+        &::before, &::after {
+            clip-path: none !important; 
+        }
+    }
     div {
         &.card {
             min-height: 370px;
-            height: 300px;
+            height: 500px;
             width: 95%;
 
             &::before,
             &::after {
-                clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+                clip-path: initial;
+            }
+
+            &.moved {
+                bottom: 235px;
+            }
+            h1.name {
+                left: initial;
+                right: initial;
+                width: 100%;
+                top:41%;
+            }
+            div.sub.title {
+                width: 100%;
+                top:49%;
+                right: initial;
+                left: initial;
+            }
+            div.description {
+                width: 100%;
+                left: initial;
+                right: initial;
+                top: 55%;
             }
         }
 
@@ -1581,12 +1605,28 @@ h3 {
 
         &.feature-cards {
             width: 95%;
+            &.shown {
+                top: 425px;
+            }
         }
 
         &.features {
-            left: -10px;
+            left: -25px;
             width: 100%;
-            margin: auto;
+        }
+
+        &.card-chain {
+            .post {
+                &:nth-child(2n) {
+                    .info {
+                        right: initial;
+                    }
+                }
+                .info {
+                    width: 100%;
+                    right: initial;
+                }
+            }
         }
     }
 }
