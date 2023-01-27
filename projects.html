@@ -50,13 +50,13 @@ title: My Projects
 
     
     {% for post in site.posts limit:1 %}
-    {% if post.categories contains "side" and "project" %}
+    {% if post.categories contains "Side" and "Project" %}
     <div class="title center">Side Projects</div>
     {% endif %}
        {% endfor %}
 
     {% for post in site.posts %}
-    {% if post.categories contains "side" and "project" %}
+    {% if post.categories contains "Side" and "Project" %}
 
     <article class="post">
       <div class="background" style="background-image: url('{{ post.background-image }}');">       
