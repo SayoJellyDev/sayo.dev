@@ -11,7 +11,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sayo.dev" # the base hostname & protocol for your site, e.g. http://example.com
 
 twitter_link: https://www.twitter.com/SayoJellyDev
-youtube_link: https://www.youtube.com/@SayoJellyDev
+youtube_link: https://www.youtube.com/@SayoDev
 discord_link: https://discord.gg/TQJjnEsh3E
 github_link:  https://github.com/SayoJellyDev
 
