@@ -1,5 +1,5 @@
 {
-  "name": "kingjellycycle-website",
+  "name": "sayojellydev-website",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -44,12 +44,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KingJellycycle/kingjellycycle.github.io.git"
+    "url": "git+https://github.com/SayoJellyDev/sayo.dev.git"
   },
-  "author": "",
+  "author": "SayoJellyDev",
   "bugs": {
-    "url": "https://github.com/KingJellycycle/kingjellycycle.github.io/issues"
+    "url": "https://github.com/SayoJellyDev/sayo.dev/issues"
   },
-  "homepage": "https://github.com/KingJellycycle/kingjellycycle.github.io#readme",
-  "description": "Website :peek:"
+  "homepage": "https://github.com/SayoJellyDev/sayo.dev#readme",
+  "description": "Website :peek:",
+  "keywords": [
+    "sayo",
+    "jelly",
+    "dev"
+  ]
 }
