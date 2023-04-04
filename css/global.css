@@ -571,3 +571,167 @@ Background css
         z-index: 10;
     }
 }
+
+
+/* Previewers CSS */
+
+div.preview {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-colour);
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow:scroll;
+    z-index: -999;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+}
+
+div.preview.shown {
+    opacity: 1;
+    z-index: 11;
+}
+
+div.preview #preview-close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url("/images/icons/Close-Icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    right:25px;
+    top:15px;
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+}
+
+div.preview #preview-close:hover {
+    transform: rotate(90deg);
+}
+
+div.preview div.split-information {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    width: 100%;
+}
+
+div.preview #library-nav {
+    display: none;
+}
+
+div.preview #library-nav.shown {
+    display: flex;
+    z-index: initial;
+}
+
+div.preview #preview-image-count {
+    flex-grow: 1;
+    text-align: right;
+}
+
+div.preview #preview-image {
+    margin: auto;
+    width: calc(100% - 60px);
+    height: calc(100% - 30px);
+    background: no-repeat;
+    background-position: center;
+    background-size: contain;
+   
+}
+
+div.preview #preview-title {
+    font-size: 2em;
+}
+
+div.preview div.split-information.arrow {
+    flex-direction: row-reverse;
+    gap:25px;
+}
+
+div.preview .left, div.preview .right {
+    width: 50px;
+    height: 50px;
+    background-image: url("/images/icons/Arrow-Icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    color:white;
+    cursor: pointer;
+}
+
+div.preview .left {
+    left: 0;
+    top:0;
+    bottom: 0;
+    transform: scaleX(-100%);
+}
+
+
+div.preview .right {
+    right: 0;
+    top:0;
+    bottom: 0;
+}
+
+div.library {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    gap: 5px;
+    box-sizing: border-box;
+}
+
+div.library .title {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+div.library .title span {
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+}
+
+div.library .title::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 6%, rgba(0,0,0,0.8813726174063375) 16%, rgba(0,0,0,0) 19%, rgba(0,0,0,0) 91%); 
+}
+
+div.library .image img {
+    height: 100%;
+}
+
+div.library .image span.description {
+    display: none;
+}
+
+
+
+
+
+/* END of previewers CSS */

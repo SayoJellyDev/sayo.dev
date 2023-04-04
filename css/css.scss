@@ -1022,8 +1022,8 @@ article.blog-post {
     }
 
     .date {
-        position: absolute;
-        right: 15px;
+        position: relative;
+        left: 15px;
         bottom: 10px;
     }
 }
@@ -1270,9 +1270,6 @@ h3 {
                 }
             }
 
-            .post-button {
-                left: 50%;
-            }
             .sub.title {
                 left: 15%;
                 padding-left: 0;
@@ -1681,6 +1678,7 @@ h3 {
                 .info {
                     width: 100%;
                     right: initial;
+                    text-align: center;
                 }
             }
         }

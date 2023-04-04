@@ -22,5 +22,19 @@ layout: page
     <br>
     <br>
     <br>
-
+    <div class="preview">
+        <div id="preview-title">Test Title</div>
+        <div class="split-information">
+            <div id="preview-description">Test Description</div>
+            <div id="preview-image-count">?/? images</div>
+        </div>
+        <div id="preview-image"></div>
+        <div id="preview-close"></div>
+        <div id="library-nav" class="split-information arrow">
+            <div class="right"></div>
+            <div class="left"></div>
+        </div>
+    </div>
 </div>
+
+<script src="/js/post.js?v=0.1"></script>

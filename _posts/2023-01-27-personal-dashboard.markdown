@@ -23,6 +23,18 @@ Simply put, I always have trouble styling other dashboards to precisely what I w
 This control also allows me to make features that would otherwise be difficult to add to other dashboards, like controlling certain aspects of my server. For example, the ability to turn the home server on and off whenever, where ever!
 
 Here are some screenshots!
-![Desktop](/images/post-images/dashboard/desktop.png)
-
-![Mobile](/images/post-images/dashboard/mobile.png)
+<div class="library">
+    <div class="title">
+        <span>Image Collection</span>
+    </div>
+    <div class="image" markdown="span">
+        ![Desktop](/images/post-images/dashboard/desktop.png)
+        <!--This will convert to <img src="/images/ArkeiStealer/DecryptionStub1.png/>-->
+        <span class="description">Desktop format example</span>
+    </div>
+    <div class="image" markdown="span">
+        ![Mobile](/images/post-images/dashboard/mobile.png)
+        <!--This will convert to <img src="/images/ArkeiStealer/DecryptionStub1.png/>-->
+        <span class="description">Mobile format example</span>
+    </div>
+</div>
