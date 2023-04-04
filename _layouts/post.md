@@ -2,7 +2,7 @@
 layout: page 
 ---
 
-<div class="main" data-barba="container" data-barba-namespace="home">
+<div class="main" data-barba="container" data-barba-namespace="post">
     <div class="swapper">
         <div class="loader">
             <p id="loader-message"></p>
@@ -36,5 +36,3 @@ layout: page
         </div>
     </div>
 </div>
-
-<script src="/js/post.js?v=0.1"></script>

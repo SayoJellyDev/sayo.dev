@@ -66,8 +66,16 @@ barba.init(
                     
                 }
             }
-        ]
-    }
+        ],
+    views: [{
+        namespace: 'post',
+        beforeEnter({ next }) {
+            let script = document.createElement('script');
+            script.src = '/js/post.js';
+            next.container.appendChild(script);
+        }
+    }]
+}
 )
 
 barba.hooks.before(() => {
