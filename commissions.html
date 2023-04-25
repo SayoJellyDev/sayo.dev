@@ -22,7 +22,8 @@ title: Commissions
     {% for project in site.commissions reversed %}
     {% if project.featured %}
     <article class="post">
-      <div class="background" style="background-image: url('{{ project.background-image }}');">       
+      <div class="background" style="background-image: url('{{ project.background-image }}');">      
+        <div class="project status">{{ project.status }}</div> 
         {% if project.isExternal %}
         <a href="{{ project.link }}"><div class="project title">{{ project.title }}</div></a>
         {% else %}
@@ -40,7 +41,8 @@ title: Commissions
     {% if project.featured == false %}
 
     <article class="post">
-      <div class="background" style="background-image: url('{{ project.background-image }}');">       
+      <div class="background" style="background-image: url('{{ project.background-image }}');">
+        <div class="project status">{{ project.status }}</div>     
         {% if project.isExternal %}
         <a href="{{ project.link }}"><div class="project title">{{ project.title }}</div></a>
         {% else %}

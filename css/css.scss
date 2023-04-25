@@ -770,7 +770,12 @@ div.card-chain {
             }
 
             .project.description {
-                padding-right: 65px;
+                padding-right: 45px;
+            }
+
+
+            .project.status {
+                padding-right: 85px;
             }
 
             .text {
@@ -780,11 +785,12 @@ div.card-chain {
             .info {
                 right: 25px;
             }
-
+            .post-button { left: 75px; }
             .post-button::before,
             .post-button::after {
                 clip-path: polygon(0 0, 88px 0, 100px 40px, 12px 40px);
             }
+            
         }
 
         &::before,
@@ -869,7 +875,20 @@ div.card-chain {
             width: initial;
             bottom: 60px;
             padding: 10px;
-            padding-right: 85px;
+            padding-right: 65px;
+            background-color: rgba(0, 0, 0, 0.9);
+            max-width: 500px;
+        }
+
+        .project.status {
+            position: absolute;
+            left: initial !important;
+            right: 0;
+            width: initial;
+            top: 30px;
+            padding: 10px;
+            text-transform: capitalize;
+            padding-right: 45px;
             background-color: rgba(0, 0, 0, 0.9);
         }
 
@@ -894,7 +913,7 @@ div.card-chain {
             position: absolute;
             width: 100px;
             height: 40px;
-            left: 75px;
+            left: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1674,11 +1693,17 @@ h3 {
                     .info {
                         right: initial;
                     }
+                    .project.description {
+                        padding-right: 10px;
+                    }
                 }
                 .info {
                     width: 100%;
                     right: initial;
                     text-align: center;
+                }
+                .project.description {
+                    padding-right: 10px;
                 }
             }
         }

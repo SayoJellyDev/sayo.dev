@@ -15,7 +15,10 @@ title: My Projects
     {% for project in site.projects reversed %}
     {% if project.featured %}
     <article class="post">
-      <div class="background" style="background-image: url('{{ project.background-image }}');">       
+      <div class="background" style="background-image: url('{{ project.background-image }}');">      
+        
+        <div class="project status">{{ project.status }}</div>
+        
         {% if project.isExternal %}
         <a href="{{ project.link }}"><div class="project title">{{ project.title }}</div></a>
         {% else %}
@@ -31,9 +34,13 @@ title: My Projects
     {% endfor %}
     {% for project in site.projects reversed%}
     {% if project.featured == false %}
+    {% if project.archive == false %}
 
     <article class="post">
-      <div class="background" style="background-image: url('{{ project.background-image }}');">       
+      <div class="background" style="background-image: url('{{ project.background-image }}');">
+        
+        <div class="project status">{{ project.status }}</div>
+
         {% if project.isExternal %}
         <a href="{{ project.link }}"><div class="project title">{{ project.title }}</div></a>
         {% else %}
@@ -45,6 +52,7 @@ title: My Projects
 
       <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
     </article>
+    {% endif %}
     {% endif %}
     {% endfor %}
 
