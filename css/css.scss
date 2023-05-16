@@ -1,221 +1,76 @@
-/* transition */
-.transition-enter {
-}
+/* GLOBAL CARD CLASS START */
+.card {
+    position: relative;
 
-.transition-enter-active {
-    transition: opacity 10s linear;
-}
-
-.transition-enter-to {
-}
-
-.transition-leave {
-}
-
-.transition-leave-active {
-    transition: opacity 10s linear;
-}
-
-.transition-leave-to {
-}
-
-.transition-enter-active {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        transition: opacity 1s cubic-bezier(0.66, -0.13, 0, 1.64);
-    }
-
-    .swapper::after {
-        transition: left 1s cubic-bezier(0.97, 0, 1, 1);
-    }
-
-    .swapper::before {
-        transition: left 1s cubic-bezier(1, 0, 1, 1);
-    }
-}
-
-.transition-enter {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        opacity: 1;
-    }
-
-    .swapper::after {
-        left: -15%;
-    }
-
-    .swapper::before {
-        left: -15%;
-    }
-}
-
-.transition-enter-to {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        opacity: 0;
-    }
-
-    .swapper::after {
-        left: -120%;
-    }
-
-    .swapper::before {
-        left: -120%;
-    }
-}
-
-.transition-leave-active {
-    .swapper .loader {
-        transition: opacity 1s cubic-bezier(0.54, -1.29, 0.59, 1.89);
-    }
-
-    .swapper::after {
-        transition: left 1s cubic-bezier(0, 0, 0, 0.97);
-    }
-
-    .swapper::before {
-        transition: left 1s cubic-bezier(0, 0, 0, 1);
-    }
-}
-
-.transition-leave {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        opacity: 0;
-    }
-
-    .swapper::after {
-        left: 100%;
-    }
-
-    .swapper::before {
-        left: 100%;
-    }
-}
-
-.transition-leave-to {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        opacity: 1;
-    }
-
-    .swapper::after {
-        left: -15%;
-    }
-
-    .swapper::before {
-        left: -15%;
-    }
-}
-
-.swapper .loader {
-    z-index: 1;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    opacity: 1;
-    margin: auto;
-    text-align: center;
-    opacity: 0;
-
-    p {
-        height: 2em;
-        font-size: 2em;
-    }
-
-    .loader-image {
-        width: 60px;
-        height: 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-
-        .ball {
-            background-color: #fff;
-            border-radius: 50%;
-            display: block;
-            width: 15px;
-            height: 15px;
-            animation: jump 1s ease-in-out infinite;
-        }
-    }
-}
-
-@keyframes jump {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-.swapper {
-    position: fixed;
-    z-index: -5;
-    height: 100vh;
-    width: 150vw;
 
     &::before,
     &::after {
         position: absolute;
-        height: calc(100vh - 2px);
-        width: 150vw;
-        left: 100%;
-        clip-path: polygon(10vw 0, 150vw 0, 140vw 150vh, 0vw 150vh);
+        width: 100%;
+        height: 100%;
         content: "";
-    }
-
-    &::before {
-        bottom: -2px;
-        animation: animateBg 12s linear infinite;
-        background-image: linear-gradient(
-            140deg,
-            var(--button-initial-colour) 0%,
-            var(--button-initial-colour) 49%,
-            var(--flash-colour) 50%,
-            var(--button-initial-colour) 51%,
-            var(--button-initial-colour) 100%
-        );
-        background-size: 1200% 100%;
+        left: 0;
+        bottom: 0;
     }
 
     &::after {
         background-color: var(--standard-colour);
     }
+
+    &::before {
+        left: -3px;
+        bottom: -2px;
+        animation: animateBg 12s linear infinite;
+        background-image: linear-gradient(140deg,
+                var(--button-initial-colour) 0%,
+                var(--button-initial-colour) 49%,
+                var(--flash-colour) 50%,
+                var(--button-initial-colour) 51%,
+                var(--button-initial-colour) 100%);
+        background-size: 1200% 100%;
+        transition: all 0.2s ease;
+    }
+
+    * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.hoverable {
+        cursor: pointer;
+
+        &:hover::before {
+            left: -6px;
+        }
+    }
+
+    &.flat {
+        clip-path: initial !important;
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: "";
+            clip-path: initial !important;
+        }
+
+        &.padded {
+            padding: 25px;
+        }
+    }
 }
+
+/* GLOBAL CARD CLASS END */
 
 a.link {
     color: var(--button-colour);
     text-decoration: none;
     width: fit-content;
-    background-image: linear-gradient(
-        to right,
-        var(--button-gradient-colour-1),
-        var(--button-gradient-colour-1)
-    );
+    background-image: linear-gradient(to right,
+            var(--button-gradient-colour-1),
+            var(--button-gradient-colour-1));
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 50% 2px;
@@ -225,80 +80,19 @@ a.link {
         color: var(--button-gradient-colour-1);
         background-size: 100% 2px;
     }
+
     &:focus {
         color: var(--button-gradient-colour-1);
         background-size: 100% 2px;
     }
 }
 
-a.button {
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    width: fit-content;
-    height: fit-content;
+/* Index */
 
-    span {
-        position: relative;
-        z-index: 2;
-
-    }
-
-    &::before,
-    &::after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: "";
-        clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-    }
-
-    &::after {
-        left:0;
-        bottom: 0;
-        background-color: var(--standard-highlight-colour);
-        z-index: 1;
-    }
-
-    &:hover::after {
-        background-color: var(--standard-highlight-hover-colour);
-    }
-
-    &::before {
-        left: -2px;
-        bottom: -2px;
-        animation: animateBg 12s linear infinite;
-        background-image: linear-gradient(
-            140deg,
-            var(--button-initial-colour) 0%,
-            var(--button-initial-colour) 49%,
-            var(--flash-colour) 50%,
-            var(--button-initial-colour) 51%,
-            var(--button-initial-colour) 100%
-        );
-        background-size: 1200% 100%;
-        z-index: 1;
-    }
-}
-
-div.main {
-    min-height: 100%;
-    width: 100%;
-    //background-image: url("/images/background-pattern.png");
-
-    .title.center {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        padding: 25px;
-        margin-bottom: 15px;
-        font-size: 3em;
-    }
-}
-
-div.card {
+#title-card {
     position: absolute;
+    display: flex;
+    flex-direction: row;
     margin: auto;
     top: 0;
     left: 0;
@@ -306,37 +100,8 @@ div.card {
     bottom: 0;
     width: 800px;
     height: 330px;
+
     transition: bottom 0.5s ease;
-
-    &::before,
-    &::after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: "";
-        clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
-    }
-
-    &::after {
-        background-color: var(--standard-colour);
-        z-index: 1;
-    }
-
-    &::before {
-        left: -2px;
-        bottom: -2px;
-        animation: animateBg 12s linear infinite;
-        background-image: linear-gradient(
-            140deg,
-            var(--button-initial-colour) 0%,
-            var(--button-initial-colour) 49%,
-            var(--flash-colour) 50%,
-            var(--button-initial-colour) 51%,
-            var(--button-initial-colour) 100%
-        );
-        background-size: 1200% 100%;
-        z-index: 1;
-    }
 
     &.moved {
         top: 0;
@@ -345,36 +110,34 @@ div.card {
         bottom: 100px;
     }
 
-    /* first child element, this is a dumb way but okay */
-    > * {
-        position: absolute;
-        z-index: 2;
+    &::before,
+    &::after {
+        clip-path: polygon(100px 0, 800px 0, 700px 330px, 0 330px);
+    }
+
+    .information {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        gap: 5px;
+
+        padding-top: 10px;
+        margin-right: 50px;
     }
 
     h1.name {
-        margin: auto;
-        left: 100px;
-        padding-left: 200px;
-        width: calc(100% - 100px);
-        top: 10px;
         text-align: center;
         font-weight: 600;
     }
 
-    div.description {
-        margin: auto;
-        width: 400px;
-        left: 350px;
-        font-size: 1.15em;
-        top: 85px;
-    }
-
     div.sub.title {
-        margin: auto;
-        left: 435px;
-        top: 55px;
+        text-align: center;
         font-size: 0.9em;
         font-style: italic;
+    }
+
+    div.description {
+        font-size: 1.15em;
     }
 
     div.image {
@@ -385,6 +148,7 @@ div.card {
         width: 350px;
         height: 100%;
         clip-path: polygon(100px 0px, 350px 0, 250px 330px, 0 330px);
+        flex: 0 0 auto;
     }
 
     div.image div.author {
@@ -396,90 +160,56 @@ div.card {
         position: absolute;
         font-weight: 800;
     }
-}
 
-div.features {
-    display: flex;
-    flex-direction: row-reverse;
-    bottom: 20px;
-    left: 345px;
-    z-index: 10;
-    gap: 110px;
 
-    span {
-        position: relative;
-        width: 0px;
-        height: 100px;
-        z-index: 2;
-        cursor: pointer;
+    div.features {
+        display: flex;
+        flex-direction: row;
+        gap: 110px;
+        left: -25px;
+        padding-top: 35px;
 
-        &::before,
-        &::after {
-            position: absolute;
-            content: "";
-            width: 150px;
+        div {
+            position: relative;
             height: 100px;
-            clip-path: polygon(30px 0, 130px 0, 100px 100px, 0 100px);
-        }
+            cursor: pointer;
 
-        &::after {
-            left:-15px;
-            background-color: var(--standard-highlight-colour);
-            z-index: 2;
-            background-position: 50px center;
-            background-repeat: no-repeat;
-            background-size: 32px;
-            transition: background-color 0.1s ease;
-        }
-
-        &:hover::before {
-            left: -22px;
-            //clip-path: polygon(27px 10px, 130px 0, 90px 100px, 0 100px);
-        }
-
-        &::before {
-            left: -17px;
-            bottom: -2px;
-            background-color: var(--button-initial-colour);
-            animation: animateBg 12s linear infinite;
-            background-image: linear-gradient(
-                140deg,
-                var(--button-initial-colour) 0%,
-                var(--button-initial-colour) 49%,
-                var(--flash-colour) 50%,
-                var(--button-initial-colour) 51%,
-                var(--button-initial-colour) 100%
-            );
-            background-size: 1200% 100%;
-            z-index: 2;
-            transition: all 0.2s ease;
-        }
-
-        &:hover::after {
-            background-color: var(--standard-highlight-hover-colour);
-        }
-
-        &.likes {
-            z-index: 2;
-
+            &::before,
             &::after {
-                background-image: url(/images/icons/Likes-Icon.png);
+                width: 130px;
+                height: 100px;
+                clip-path: polygon(30px 0, 130px 0, 100px 100px, 0 100px);
             }
-        }
-
-        &.projects {
-            z-index: 3;
 
             &::after {
-                background-image: url(/images/icons/Projects-Icon.png);
+                background-color: var(--standard-highlight-colour);
+                background-position: 50px center;
+                background-repeat: no-repeat;
+                background-size: 32px;
+                transition: background-color 0.1s ease;
             }
-        }
 
-        &.contact {
-            z-index: 4;
+            &:hover::after {
+                background-color: var(--standard-highlight-hover-colour);
+            }
 
-            &::after {
-                background-image: url(/images/icons/Contact-Icon.png);
+
+            &.likes {
+                &::after {
+                    background-image: url(/images/icons/Likes-Icon.png);
+                }
+            }
+
+            &.projects {
+                &::after {
+                    background-image: url(/images/icons/Projects-Icon.png);
+                }
+            }
+
+            &.contact {
+                &::after {
+                    background-image: url(/images/icons/Contact-Icon.png);
+                }
             }
         }
     }
@@ -501,6 +231,7 @@ div.feature-cards {
         opacity: 1 !important;
         left: -140px;
         user-select: initial;
+        transition: all 0.5s ease;
     }
 
     #close {
@@ -537,18 +268,16 @@ div.feature-cards {
         }
 
         &::before {
-            left: -2px;
+            left: -3px;
             bottom: -2px;
             background-color: var(--button-initial-colour);
             animation: animateBg 12s linear infinite;
-            background-image: linear-gradient(
-                140deg,
-                var(--button-initial-colour) 0%,
-                var(--button-initial-colour) 49%,
-                var(--flash-colour) 50%,
-                var(--button-initial-colour) 51%,
-                var(--button-initial-colour) 100%
-            );
+            background-image: linear-gradient(140deg,
+                    var(--button-initial-colour) 0%,
+                    var(--button-initial-colour) 49%,
+                    var(--flash-colour) 50%,
+                    var(--button-initial-colour) 51%,
+                    var(--button-initial-colour) 100%);
             background-size: 1200% 100%;
         }
 
@@ -616,157 +345,33 @@ div.feature-cards {
     }
 }
 
-div.social {
-    position: absolute;
-    width: 148px;
-    height: 40px;
-    padding-left: 15px;
-    padding-right: 15px;
-    right: 0;
-    bottom: 30px;
-    display: flex;
-    flex-direction: row-reverse;
-    z-index: 1;
-
-    &::before,
-    &::after {
-        width: 175px;
-        height: 52px;
-        top: -6px;
-        right: 0;
-        position: absolute;
-        content: "";
-        background-color: var(--standard-colour);
-        clip-path: polygon(20px 0px, 100% 0, 100% 52px, 0px 52px);
-    }
-
-    &::before {
-        right: 2px;
-        top: -4px;
-        animation: animateBg 12s linear infinite;
-        background-image: linear-gradient(
-            140deg,
-            var(--button-initial-colour) 0%,
-            var(--button-initial-colour) 49%,
-            var(--flash-colour) 50%,
-            var(--button-initial-colour) 51%,
-            var(--button-initial-colour) 100%
-        );
-        background-size: 1200% 100%;
-    }
-}
-
-span.icon {
-    z-index: 1;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    display: block;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-left: 5px;
-
-    &#discord {
-        background-image: url("/images/icons/Discord-Logo.svg");
-    }
-
-    &#twitter {
-        background-image: url("/images/icons/Twitter-Logo.svg");
-    }
-
-    &#youtube {
-        background-image: url("/images/icons/Youtube-Logo.svg");
-    }
-
-    &#github {
-        background-image: url("/images/icons/Github-Logo.svg");
-    }
-}
-
 div.card-chain {
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     position: relative;
     width: 800px;
     z-index: 1;
 
-    .information {
-        text-align: center;
-        padding: 5px;
-        position: relative;
-        width: 100%;
-        height: 155px;
-        margin-bottom: 25px;
-
-        &::before,
-        &::after {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(75px 0, 100% 0, calc(100% - 75px) 100%, 0 100%);
-            z-index: -1;
-        }
-
-        &::after {
-            bottom: 2px;
-            left: 2px;
-            background-color: var(--standard-colour);
-        }
-
-        &::before {
-            bottom: 0;
-            left: 0;
-            animation: animateBg 12s linear infinite;
-            background-image: linear-gradient(
-                140deg,
-                var(--button-initial-colour) 0%,
-                var(--button-initial-colour) 49%,
-                var(--flash-colour) 50%,
-                var(--button-initial-colour) 51%,
-                var(--button-initial-colour) 100%
-            );
-            background-size: 1200% 100%;
-        }
-
-        .title {
-            padding-left: 75px;
-            padding-right: 75px;
-            font-size: 1.5em;
-            font-weight: 800;
-        }
-
-        .info {
-            margin-top: 10px;
-            padding-left: 75px;
-            padding-right: 75px;
-        }
-    }
-
     .post {
         height: 250px;
         position: relative;
-        overflow: hidden;
-
         transition: left 0.2s ease;
 
         &:nth-child(2n) {
+
             &::before,
             &::after {
                 clip-path: polygon(0 0, 725px 0, 800px 250px, 75px 250px);
             }
 
-            .background {
-                clip-path: polygon(0 0, 725px 0, 800px 250px, 75px 250px);
-                left: 2px;
+            &::before {
+                left: -2px;
             }
 
-            .sub.title {
-                left: 85px;
+            .background {
+                clip-path: polygon(0 1px, 725px 1px, 800px 250px, 75px 250px);
             }
 
             .project.description {
@@ -778,50 +383,34 @@ div.card-chain {
                 padding-right: 85px;
             }
 
-            .text {
-                left: 100px;
+            .info {
+                left: 90px;
             }
 
-            .info {
-                right: 25px;
+            .post-button {
+                right: 15px;
             }
-            .post-button { left: 75px; }
+
+            .post-button::before {
+                left: -2px;
+            }
+
             .post-button::before,
             .post-button::after {
                 clip-path: polygon(0 0, 88px 0, 100px 40px, 12px 40px);
             }
-            
         }
 
         &::before,
         &::after {
-            position: absolute;
-            content: "";
             width: 100%;
-            height: 250px;
+            height: 100%;
             clip-path: polygon(75px 0, 800px 0, 725px 250px, 0 250px);
             z-index: -1;
         }
 
-        &::after {
-            bottom: 2px;
-            left: 2px;
-            background-color: var(--standard-colour);
-        }
-
         &::before {
-            bottom: 0;
-            left: 0;
-            animation: animateBg 12s linear infinite;
-            background-image: linear-gradient(
-                140deg,
-                var(--button-initial-colour) 0%,
-                var(--button-initial-colour) 49%,
-                var(--flash-colour) 50%,
-                var(--button-initial-colour) 51%,
-                var(--button-initial-colour) 100%
-            );
-            background-size: 1200% 100%;
+            left: -3px;
         }
 
         &:hover {
@@ -840,27 +429,25 @@ div.card-chain {
             content: "";
             width: 100%;
             height: 100%;
-            bottom: 2px;
-            left: 2px;
             background-size: 100%;
             background-position: center;
-            clip-path: polygon(75px 0, 800px 0, 725px 250px, 0 250px);
+            clip-path: polygon(75px 1px, 800px 1px, 725px 250px, 0 250px);
             z-index: 0;
             transition: background-size 0.3s ease;
         }
 
         .sub.title {
             position: relative;
-            left: 100px;
             padding: 15px;
             font-size: 1.5em;
+            text-align: center;
         }
 
         .project.title {
-            position: absolute;
+            position: relative;
             line-height: 1em;
-            width: 800px;
-            bottom: 0px;
+            // This is semi lazy lol
+            bottom: calc(-100% + 56px);
             text-align: center;
             background-color: rgba(0, 0, 0, 0.9);
             padding-top: 15px;
@@ -905,7 +492,7 @@ div.card-chain {
 
         .info {
             position: absolute;
-            right: 85px;
+            left: 25px;
             bottom: 10px;
         }
 
@@ -913,18 +500,18 @@ div.card-chain {
             position: absolute;
             width: 100px;
             height: 40px;
-            left: 25px;
+            right: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
-            bottom: 25px;
+            bottom: 10px;
 
             * {
                 position: absolute;
                 z-index: 1;
             }
 
-                            
+            // These two are needed because of some wack interaction with babel animations
             &:hover::before {
                 left: -5px;
             }
@@ -933,30 +520,11 @@ div.card-chain {
                 left: -5px;
             }
 
+
             &::before,
             &::after {
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 100%;
                 clip-path: polygon(12px 0, 100px 0, 88px 40px, 0 40px);
                 z-index: 0;
-            }
-
-            &::before {
-                bottom: -2px;
-                left: -2px;
-                animation: animateBg 12s linear infinite;
-                background-image: linear-gradient(
-                    140deg,
-                    var(--button-initial-colour) 0%,
-                    var(--button-initial-colour) 49%,
-                    var(--flash-colour) 50%,
-                    var(--button-initial-colour) 51%,
-                    var(--button-initial-colour) 100%
-                );
-                background-size: 1200% 100%;
-                transition: all 0.2s ease;
             }
 
             &::after {
@@ -975,83 +543,83 @@ div.card-chain {
     }
 }
 
-/* 
-START
-    POST PAGE STUFF
+div.main {
+    .title.center {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 25px;
+        margin-bottom: 15px;
+        font-size: 3em;
+    }
+}
 
-*/
-article.blog-post {
-    font-size: 1.1em;
-    position: relative;
-    width: 850px;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin: auto;
+div.social {
+    position: absolute;
+    width: 148px;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    right: 0;
+    bottom: 30px;
+    display: flex;
+    flex-direction: row-reverse;
     z-index: 1;
 
     &::before,
     &::after {
-        width: 100%;
-        height: 100%;
+        width: 175px;
+        height: 52px;
+        top: -6px;
+        right: 0;
         position: absolute;
         content: "";
-        left: 0;
-        bottom: 0;
-
-        z-index: -1;
+        background-color: var(--standard-colour);
+        clip-path: polygon(20px 0px, 100% 0, 100% 52px, 0px 52px);
     }
 
     &::before {
-        left: -1px;
-        bottom: -1px;
-        background-color: var(--button-initial-colour);
+        right: 2px;
+        top: -4px;
         animation: animateBg 12s linear infinite;
-        background-image: linear-gradient(
-            140deg,
-            var(--button-initial-colour) 0%,
-            var(--button-initial-colour) 49%,
-            var(--flash-colour) 50%,
-            var(--button-initial-colour) 51%,
-            var(--button-initial-colour) 100%
-        );
+        background-image: linear-gradient(140deg,
+                var(--button-initial-colour) 0%,
+                var(--button-initial-colour) 49%,
+                var(--flash-colour) 50%,
+                var(--button-initial-colour) 51%,
+                var(--button-initial-colour) 100%);
         background-size: 1200% 100%;
-    }
-
-    &::after {
-        background-color: var(--standard-colour);
-    }
-
-    .entry {
-        padding: 25px;
-        img {
-            width: 100%;
-        }
-    }
-
-
-    a {
-        text-decoration: underline;
-        color: rgb(0, 162, 255);
-        color: #ffd9a7;
-        transition: all 0.1s ease;
-
-        &:hover {
-            color: #ffffff;
-        }
-    }
-
-    .date {
-        position: relative;
-        left: 15px;
-        bottom: 10px;
     }
 }
 
-/* 
-END
-    POST PAGE STUFF
+span.icon {
+    z-index: 1;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 5px;
 
-*/
+    &#discord {
+        background-image: url("/images/icons/Discord-Logo.svg");
+    }
+
+    &#twitter {
+        background-image: url("/images/icons/Twitter-Logo.svg");
+    }
+
+    &#youtube {
+        background-image: url("/images/icons/Youtube-Logo.svg");
+    }
+
+    &#github {
+        background-image: url("/images/icons/Github-Logo.svg");
+    }
+}
 
 h1,
 h2,
@@ -1083,69 +651,45 @@ h3 {
     font-style: italic;
 }
 
-@keyframes animate {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
 
-    100% {
-        transform: translateY(-1200px) rotate(720deg);
-        opacity: 0;
-    }
-}
+@media (max-width: 1000px) {
 
-@media (max-width: 1200px) {
-    div.card {
+    #title-card {
+        width: 600px;
+
         &::before,
         &::after {
             clip-path: polygon(100px 0, 600px 0, 500px 330px, 0 330px);
         }
 
-        width: 600px;
+        div.image {
+            background-position: -50px -0px;
+            width: 290px;
+            clip-path: polygon(100px 0px, 290px 0, 190px 330px, 0 330px);
 
-        h1.name {
-            padding-left: 0;
-            left: 175px;
+            div.author {
+                width: 205px;
+            }
+
         }
 
-        div {
-            &.description {
-                width: 300px;
-                left: 275px;
-            }
-            &.sub.title {
-                left: 315px;
-            }
-            &.image {
-                background-position: -50px -0px;
-                width: 290px;
-                clip-path: polygon(100px 0px, 290px 0, 190px 330px, 0 330px);
+        div.features {
+            gap: 90px;
+            left: -65px;
 
-                div.author {
-                    width: 205px;
-                }
-            }
-        }
-    }
-
-    div.features {
-        left: 240px;
-        gap: 90px;
-
-        span {
-            width: 0;
-            height: 75px;
-
-            &::before,
-            &::after {
-                width: 100px;
+            div {
                 height: 75px;
-                clip-path: polygon(20px 0,100px 0,80px 75px,0 75px);
-            }
 
-            &::after {
-                background-position: 35px center;
+                &::before,
+                &::after {
+                    width: 100px;
+                    height: 75px;
+                    clip-path: polygon(20px 0, 100px 0, 80px 75px, 0 75px);
+                }
+
+                &::after {
+                    background-position: 35px center;
+                }
             }
         }
     }
@@ -1168,12 +712,11 @@ h3 {
 
             &::before,
             &::after {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                content: "";
-                z-index: 2;
                 clip-path: polygon(0 0, 500px 0, 545px 150px, 45px 150px);
+            }
+
+            &::before {
+                left: -2px;
             }
 
             &::after {
@@ -1201,6 +744,7 @@ h3 {
                 gap: 0;
             }
         }
+
         #close {
             right: 60px;
             top: -10px;
@@ -1210,133 +754,57 @@ h3 {
     div.card-chain {
         width: 575px;
 
-        .information {
-            &::before,
-            &::after {
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 100%;
-                clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-                z-index: -1;
-            }
-
-            .title {
-                padding-left: 10%;
-                padding-right: 10%;
-                font-size: 1.2em;
-                font-weight: 800;
-            }
-
-            .info {
-                padding-left: 10%;
-                padding-right: 10%;
-            }
-        }
+        min-height: 250px;
+        padding-bottom: 25px;
+        height: initial;
 
         .post {
+
             &::before,
             &::after {
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 100%;
-                clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+                clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
             }
-
-            &::before {
-                bottom: 0;
-                left: 0;
-                animation: animateBg 12s linear infinite;
-                background-image: linear-gradient(
-                    140deg,
-                    var(--button-initial-colour) 0%,
-                    var(--button-initial-colour) 49%,
-                    var(--flash-colour) 50%,
-                    var(--button-initial-colour) 51%,
-                    var(--button-initial-colour) 100%
-                );
-                background-size: 1200% 100%;
-                z-index: -1;
-            }
-
-            &::after {
-                bottom: 2px;
-                left: 2px;
-                background-color: var(--standard-colour);
-                z-index: -1;
-            }
-
-            min-height: 250px;
-            padding-bottom: 25px;
-            height: initial;
-            position: relative;
-            overflow: hidden;
 
             &:nth-child(2n) {
+
                 &::before,
                 &::after {
-                    clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
-                }
-
-                .sub.title {
-                    left: 15%;
-                    padding-left: 0;
+                    clip-path: polygon(0 0, 88% 0, 100% 100%, 12% 100%);
                 }
 
                 .post-button {
-                    left: 75px;
+                    right: 10px;
+                }
+
+                .background {
+                    clip-path: polygon(0 0, 88% 0, 100% 100%, 12% 100%);
                 }
             }
 
-            .sub.title {
-                left: 15%;
-                padding-left: 0;
+            .post-button {
+                right: 65px;
             }
+
             .text {
                 width: 70%;
-                left: 15%;
+                left: 15% !important;
             }
+
             .info {
-                position: absolute;
-                right: 12%;
                 bottom: 10px;
             }
+
+            .background {
+                clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+            }
+
         }
     }
 
-    article.blog-post::before,
-    article.blog-post::after {
-        width: 100%;
-    }
-
-    article.blog-post {
-        width: 76%;
-    }
-
-    div.card-chain .post .background {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-    }
-
-    div.card-chain .post:nth-child(2n) .background {
-        clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
-    }
-
-    div.card-chain .post .project.title {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding-top: 15px;
-        padding-bottom: 15px;
-        font-size: 1.5em;
-    }
 }
 
 @media (max-width: 720px) {
+
     div.main {
         .title.center {
             padding-top: 40px;
@@ -1344,58 +812,31 @@ h3 {
         }
     }
 
-    div.card {
-        min-height: 370px;
-        height: 300px;
-        width: 370px;
+    #title-card {
+        flex-direction: column;
+
+        height: 500px;
+        width: 410px;
 
         &::before,
         &::after {
             clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
         }
 
-        div.image {
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-        }
-
         &.moved {
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 160px;
+            bottom: 205px;
         }
 
         h1.name {
             font-size: 1.5em;
-            position: absolute;
-            left: 0;
-            padding-left: 0;
-            text-align: center;
-            right: 0;
-            top: 42%;
-        }
-
-        div.description {
-            text-align: center;
-            top: 57%;
-            width: 70%;
-            margin: 0;
-            left: 15%;
-            right: 0%;
-            font-size: 1em;
-        }
-
-        div.sub.title {
-            left: 10%;
-            right: 10%;
-            top: 51%;
-            text-align: center;
         }
 
         div.image {
+            position: absolute;
             background: none;
             width: 100%;
             height: 100%;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
         }
 
         div.image::before {
@@ -1409,6 +850,13 @@ h3 {
             background-repeat: no-repeat;
         }
 
+        div.information {
+            padding-top: 50%;
+            margin-left: 50px;
+            gap: 0;
+            text-align: center;
+        }
+
         div.image div.author {
             width: 150px;
             height: 40px;
@@ -1420,292 +868,385 @@ h3 {
             top: 2%;
             right: 0;
             left: initial;
-            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
-        }
-    }
-
-    div.features {
-        left: 15%;
-        right: initial;
-        top: initial;
-        bottom: 10px;
-        justify-content: center;
-        align-content: center;
-
-        div h2 {
-            font-size: 1.2em;
+            clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%);
         }
 
-        span {
-            height: 70px;
+        div.features {
+            left: 0px;
+            width: 255px;
+            right: initial;
+            top: initial;
+            align-content: center;
+            margin: auto;
+            gap: 80px;
+            padding-top: 50px;
 
-            &::before,
-            &::after {
-                width: 80px;
+            div h2 {
+                font-size: 1.2em;
+            }
+
+            div {
                 height: 70px;
-                clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-            }
 
-            &::after {
-                background-position: 25px center;
+                &::before,
+                &::after {
+                    width: 80px;
+                    height: 70px;
+                    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+                }
+
+                &::after {
+                    background-position: 25px center;
+                }
             }
         }
-    }
 
-    div.feature-cards div {
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        user-select: none;
-    }
-
-    div.feature-cards div::before,
-    div.feature-cards div::after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: "";
-        z-index: 2;
-        clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
-    }
-
-    div.feature-cards div::after {
-        background-position: 50px center;
-    }
-
-    div.feature-cards.shown {
-        top: 370px;
-        left: 0;
-    }
-
-    div.feature-cards #close {
-        right: 12%;
-        top: -10px;
-    }
-
-    div.feature-cards div p {
-        width: 98%;
-        top: 20px;
-        font-size: 1em;
-        padding-left: 40px;
-        padding-right: 20px;
     }
 
     div.feature-cards {
+
         min-height: 150px;
-        width: 370px;
+        width: 410px;
         margin: auto;
         top: 370px;
         left: 0;
-    }
 
-    div.feature-cards div p.bottom {
-        top: 85%;
-        padding-top: 0;
-        padding-left: 50px;
-    }
+        &.shown {
+            top: 465px;
+            left: 0;
+        }
 
-    div.feature-cards div ul {
-        flex-direction: column;
-        position: absolute;
-        width: initial;
-        left: 0;
-        right: 0;
-        top: 20px;
-        text-align: center;
-        padding-left: 50px;
-        gap: 0;
+        #close {
+            right: 12%;
+            top: -10px;
+        }
+
+        div {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            user-select: none;
+
+            &::before,
+            &::after {
+                clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+            }
+
+            p {
+                width: 98%;
+                top: 20px;
+                font-size: 1em;
+                padding-left: 40px;
+                padding-right: 20px;
+            }
+
+
+        }
     }
 
     div.card-chain {
         width: 90%;
 
-        .information {
-            height: fit-content;
-            &::before,
-            &::after {
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 100%;
-                clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-                z-index: -1;
-            }
-
-            .title {
-                padding-left: 10%;
-                padding-right: 10%;
-                font-size: 1em;
-                font-weight: 800;
-            }
-
-            .info {
-                padding-left: 10%;
-                padding-right: 10%;
-            }
-        }
-
         .post {
             min-height: 250px;
-            padding-bottom: 100px;
-
-            .sub.title {
-                left: 12%;
-                padding-left: 0;
-            }
-
-            .text {
-                width: 70%;
-                left: 12%;
-            }
+            height: initial;
+            padding-bottom: 50px;
 
             .post-button {
-                bottom: 45px;
-                width: 85%;
-                left: 5%;
+                margin: auto;
+                margin-top: 25px;
+                left: initial;
+                right: initial;
+                position: relative;
+                width: 80%;
 
                 &::before,
                 &::after {
-                    position: absolute;
-                    content: "";
-                    width: 100%;
-                    height: 40px;
-                    clip-path: polygon(1.5% 0, 100% 0, 98.5% 100%, 0 100%);
-                    z-index: 0;
+                    clip-path: polygon(2% 0, 100% 0, 98% 100%, 0 100%);
                 }
             }
 
             &:nth-child(2n) {
-                .sub.title {
-                    left: 12%;
-                    padding-left: 0;
-                }
-
-                .text {
-                    width: 70%;
-                    left: 12%;
-                }
-
                 .post-button {
-                    bottom: 45px;
+
                     left: initial;
-                    right: 3%;
+                    right: initial;
 
                     &::before,
                     &::after {
-                        position: absolute;
-                        content: "";
-                        width: 100%;
-                        height: 40px;
-                        clip-path: polygon(0 0, 98.5% 0, 100% 100%, 1.5% 100%);
-                        z-index: 0;
+                        clip-path: polygon(0% 0, 98% 0, 100% 100%, 2% 100%);
                     }
                 }
+
+                .project.description {
+                    padding-right: 25px;
+                }
             }
+
+            .project.description {
+                width: 65%;
+                padding-right: 40px;
+            }
+
+
+            &:hover {
+                .background {
+                    background-size: 120vh;
+                }
+            }
+
+            .background {
+                background-size: 100vh;
+            }
+
         }
     }
 
-    article.blog-post .entry {
-        width: 100%;
-    }
-
-    div.card-chain .post .project.description {
-        width: 65%;
-        padding-right: 40px;
-    }
-
-    div.card-chain .post:nth-child(2n) .project.description {
-        padding-right: 25px;
-    }
-
-    div.card-chain .post .background {
-        background-size: 100vh;
-    }
-
-    div.card-chain .post:hover .background {
-        background-size: 120vh;
-    }
 }
 
 @media (max-width: 420px) {
     * {
         clip-path: none !important;
 
-        &::before, &::after {
-            clip-path: none !important; 
+        &::before,
+        &::after {
+            clip-path: none !important;
         }
     }
-    div {
-        &.card {
-            min-height: 370px;
-            height: 500px;
-            width: 95%;
 
-            &::before,
-            &::after {
-                clip-path: initial;
-            }
+    #title-card {
+        width: 95%;
 
-            &.moved {
-                bottom: 235px;
-            }
-            h1.name {
-                left: initial;
-                right: initial;
-                width: 100%;
-                top:41%;
-            }
-            div.sub.title {
-                width: 100%;
-                top:49%;
-                right: initial;
-                left: initial;
-            }
-            div.description {
-                width: 100%;
-                left: initial;
-                right: initial;
-                top: 55%;
-            }
+        &.moved {
+            bottom: 230px;
+        }
+
+        div.features {
+            gap: 90px;
+        }
+
+        div.information {
+            margin: auto;
+            margin-top: 5px;
+            padding: 15px;
+            padding-top: 0;
         }
 
         div.image {
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-        }
-
-        &.feature-cards {
-            width: 95%;
-            &.shown {
-                top: 425px;
-            }
-        }
-
-        &.features {
-            left: -25px;
+            position: relative;
+            background-image: url(/images/icon-trimmed.webp);
+            background-position: center;
+            background-size: 150%;
+            background-repeat: no-repeat;
             width: 100%;
+            height: 40%;
+            clip-path: polygon(100px 0px, 350px 0, 250px 330px, 0 330px);
+            flex: 0 0 auto;
         }
 
-        &.card-chain {
-            .post {
-                &:nth-child(2n) {
-                    .info {
-                        right: initial;
-                    }
-                    .project.description {
-                        padding-right: 10px;
-                    }
-                }
-                .info {
-                    width: 100%;
-                    right: initial;
-                    text-align: center;
-                }
-                .project.description {
-                    padding-right: 10px;
-                }
+        div.image::before {
+            background-image: none;
+        }
+    }
+
+    div.feature-cards {
+        width: 95%;
+
+        &.shown {
+            top: 425px;
+        }
+
+        div {
+            ul {
+                padding: 25px;
             }
         }
+    }
+
+    /* flatten cards here */
+    .card {
+        position: relative;
+        transition: bottom 0.5s ease;
+
+        &::before,
+        &::after {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: "";
+            left: 0;
+            bottom: 0;
+            clip-path: initial !important;
+        }
+
+        &::before {
+            left: -2px;
+            bottom: -2px;
+        }
+    }
+}
+
+/* transition */
+
+.transition-enter-active {
+    transition: opacity 10s linear;
+
+    .swapper {
+        z-index: 1000;
+    }
+
+    .swapper .loader {
+        transition: opacity 1s cubic-bezier(0.66, -0.13, 0, 1.64);
+    }
+
+    .swapper::after {
+        transition: left 1s cubic-bezier(0.97, 0, 1, 1);
+    }
+
+    .swapper::before {
+        transition: left 1s cubic-bezier(1, 0, 1, 1);
+    }
+}
+
+.transition-enter {
+    .swapper {
+        z-index: 1000;
+    }
+
+    .swapper .loader {
+        opacity: 1;
+    }
+
+    .swapper::after {
+        left: -15%;
+    }
+
+    .swapper::before {
+        left: -15%;
+    }
+}
+
+.transition-enter-to {
+    .swapper {
+        z-index: 1000;
+    }
+
+    .swapper .loader {
+        opacity: 0;
+    }
+
+    .swapper::after {
+        left: -120%;
+    }
+
+    .swapper::before {
+        left: -120%;
+    }
+}
+
+.transition-leave-active {
+    transition: opacity 10s linear;
+
+    .swapper .loader {
+        transition: opacity 1s cubic-bezier(0.54, -1.29, 0.59, 1.89);
+    }
+
+    .swapper::after {
+        transition: left 1s cubic-bezier(0, 0, 0, 0.97);
+    }
+
+    .swapper::before {
+        transition: left 1s cubic-bezier(0, 0, 0, 1);
+    }
+}
+
+.transition-leave {
+    .swapper {
+        z-index: 1000;
+    }
+
+    .swapper .loader {
+        opacity: 0;
+    }
+
+    .swapper::after {
+        left: 100%;
+    }
+
+    .swapper::before {
+        left: 100%;
+    }
+}
+
+.transition-leave-to {
+    .swapper {
+        z-index: 1000;
+    }
+
+    .swapper .loader {
+        opacity: 1;
+    }
+
+    .swapper::after {
+        left: -15%;
+    }
+
+    .swapper::before {
+        left: -15%;
+    }
+}
+
+.swapper .loader {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    opacity: 1;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+
+    p {
+        height: 2em;
+        font-size: 2em;
+    }
+}
+
+.swapper {
+    position: fixed;
+    z-index: -5;
+    height: 100vh;
+    width: 150vw;
+
+    &::before,
+    &::after {
+        position: absolute;
+        height: calc(100vh - 2px);
+        width: 150vw;
+        left: 100%;
+        clip-path: polygon(10vw 0, 150vw 0, 140vw 150vh, 0vw 150vh);
+        content: "";
+    }
+
+    &::before {
+        bottom: -2px;
+        animation: animateBg 12s linear infinite;
+        background-image: linear-gradient(140deg,
+                var(--button-initial-colour) 0%,
+                var(--button-initial-colour) 49%,
+                var(--flash-colour) 50%,
+                var(--button-initial-colour) 51%,
+                var(--button-initial-colour) 100%);
+        background-size: 1200% 100%;
+    }
+
+    &::after {
+        background-color: var(--standard-colour);
     }
 }

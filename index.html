@@ -9,42 +9,45 @@ layout: page
         <p id="loader-message"></p>
     </div>
 </div>
-  <div class="card" id="card">
-    <div class="image">
-      <div class="author">Art by <a class="link" href="https://twitter.com/raemibun">Raemi</a></div>
-    </div>
+
+<div class="card" id="title-card">
+  <div class="image">
+    <div class="author">Art by <a class="link" href="https://twitter.com/raemibun">Raemi</a></div>
+  </div>
+
+  <div class="information">
     <h1 class="name">{{ site.title }}</h1>
     <div class="sub title">The Definition of Procrastination</div>
     <div class="description">Just some <a class="link" href="/commissions/">Web Developer</a> that wants to make games and then proceeds to procrastinate!</div>
-
     <div class="features">
-      <span class="contact" id="contact"></span>
-      <span class="projects" id="projects"></span>
-      <span class="likes" id="likes"></span>
+      <div class="card hoverable likes" id="likes"></div>
+      <div class="card hoverable projects" id="projects"></div>
+      <div class="card hoverable contact" id="contact"></div>
     </div>
   </div>
+</div>
 
-  <div class="feature-cards" id="feature-cards">
-    <p id="close">X</p>
-    <div id="likesNode">
-      <h2 class="title">Likes</h2>
-      <ul>
-        <li>Creating random projects</li>
-        <li>Never finishing any of them</li>
-        <li>Procrastination!</li>
-      </ul>
-      <p class="bottom">(don't wanna forget that last one!)</p>
-    </div>
-    <div id="projectsNode">
-      <h2 class="title">Projects</h2>
-      <p>Currently has no currently active <a class="link" href="/projects/">projects</a>.</p>
-      <p></p>
-    </div>
-    <div id="contactNode">
-      <h2 class="title">Contact</h2>
-      <p>I don't know why you would need to contact me, but can contact me through Discord, Email (<a class="link" href="mailto:{{ site.email }}">Email</a>) or even Twitter!</p>
-    </div>
+<div class="feature-cards" id="feature-cards">
+  <p id="close">X</p>
+  <div class="card" id="likesNode">
+    <h2 class="title">Likes</h2>
+    <ul>
+      <li>Creating random projects</li>
+      <li>Never finishing any of them</li>
+      <li>Procrastination!</li>
+    </ul>
+    <p class="bottom">(don't wanna forget that last one!)</p>
   </div>
+  <div class="card" id="projectsNode">
+    <h2 class="title">Projects</h2>
+    <p>Currently has no currently active <a class="link" href="/projects/">projects</a>.</p>
+    <p></p>
+  </div>
+  <div class="card" id="contactNode">
+    <h2 class="title">Contact</h2>
+    <p>I don't know why you would need to contact me, but can contact me through Discord, Email (<a class="link" href="mailto:{{ site.email }}">Email</a>) or even Twitter!</p>
+  </div>
+</div>
 
 <div class="social">
   <a href="{{ site.discord_link }}"><span class="icon" id="discord"></span></a>

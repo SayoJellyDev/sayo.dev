@@ -9,14 +9,16 @@ layout: page
         </div>
     </div>
     <div class="title center">{{ page.title }}</div>
-    <article class="blog-post">
-        <div class="entry">
-            {{ content }}
+    <div class="card-chain">
+        <div class="card flat padded">
+            <div class="entry">
+                {{ content }}
+            </div>
+            <div class="date">
+                Written on {{ page.date | date: "%B %e, %Y" }}
+            </div>
         </div>
-        <div class="date">
-            Written on {{ page.date | date: "%B %e, %Y" }}
-        </div>
-    </article>
+    </div>
     <!-- Yucky br but I'm lazy -->
     <br>
     <br>

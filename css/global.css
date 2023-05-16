@@ -80,8 +80,6 @@ html, body {
     }
 }
 
-
-
 /*
 START 
     FORMATTING
@@ -336,6 +334,18 @@ footer div#error {
 Background css
 
 */
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-1200px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
 .circles {
     position: fixed;
     top: 0;

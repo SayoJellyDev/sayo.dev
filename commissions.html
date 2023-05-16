@@ -21,7 +21,7 @@ title: Commissions
     </div>-->
     {% for project in site.commissions reversed %}
     {% if project.featured %}
-    <article class="post">
+    <div class="card post">
       <div class="background" style="background-image: url('{{ project.background-image }}');">      
         <div class="project status">{{ project.status }}</div> 
         {% if project.isExternal %}
@@ -34,13 +34,13 @@ title: Commissions
       </div>
 
       <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
-    </article>
+    </div>
     {% endif %}
     {% endfor %}
     {% for project in site.commissions reversed%}
     {% if project.featured == false %}
 
-    <article class="post">
+    <div class="card post">
       <div class="background" style="background-image: url('{{ project.background-image }}');">
         <div class="project status">{{ project.status }}</div>     
         {% if project.isExternal %}
@@ -53,7 +53,7 @@ title: Commissions
       </div>
 
       <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
-    </article>
+    </div>
     {% endif %}
     {% endfor %}
   </div>

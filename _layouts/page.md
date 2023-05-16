@@ -7,28 +7,27 @@ layout: compress
     {% include header.html %}
 
     {% include meta.html %}
+<div class="background">
+    <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    </ul>
+</div>
     <body data-barba="wrapper">
         {% include copyright.html %}
         {% include navbar.html %}
         {{ content }}
     </body>
-
-<div class="background">
-<ul class="circles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
-</div>
     {% include footer.html %}
 </html>

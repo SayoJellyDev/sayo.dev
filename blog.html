@@ -13,7 +13,7 @@ title: Blog
   <div class="card-chain">
     {% for post in site.posts %}
 
-      <article class="post">
+      <div class="card post">
         <div class="sub title"><a href="{{ post.url }}">{{ post.title }}</a></div>
 
         {% assign excerptParts = post.excerpt | split: "<!-- excerpt_start -->" %}
@@ -22,8 +22,8 @@ title: Blog
         <div class="info">
           {{ post.date | date: "%B %e, %Y" }} - {% for cat in post.categories %} {{ cat | remove: "blog" }} {% endfor %}
         </div>
-        <a class="post-button" href="{{ post.url }}"><span>Read...</span></a>
-      </article>
+        <a class="card post-button hoverable" href="{{ post.url }}"><span>Read...</span></a>
+      </div>
     {% endfor %}
   </div>
 </div>

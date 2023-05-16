@@ -14,7 +14,7 @@ title: My Projects
   <div class="card-chain" data-barba-prevent="all">
     {% for project in site.projects reversed %}
     {% if project.featured %}
-    <article class="post">
+    <div class="card post">
       <div class="background" style="background-image: url('{{ project.background-image }}');">      
         
         <div class="project status">{{ project.status }}</div>
@@ -29,14 +29,14 @@ title: My Projects
       </div>
 
       <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
-    </article>
+    </div>
     {% endif %}
     {% endfor %}
     {% for project in site.projects reversed%}
     {% if project.featured == false %}
     {% if project.archive == false %}
 
-    <article class="post">
+    <div class="card post">
       <div class="background" style="background-image: url('{{ project.background-image }}');">
         
         <div class="project status">{{ project.status }}</div>
@@ -51,7 +51,7 @@ title: My Projects
       </div>
 
       <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
-    </article>
+    </div>
     {% endif %}
     {% endif %}
     {% endfor %}
@@ -66,7 +66,7 @@ title: My Projects
     {% for post in site.posts %}
     {% if post.categories contains "Side" and "Project" %}
 
-    <article class="post">
+    <div class="card post">
       <div class="background" style="background-image: url('{{ post.background-image }}');">       
         {% if post.isExternal %}
         <a href="{{ project.link }}"><div class="project title">{{ post.title }}</div></a>
@@ -78,7 +78,7 @@ title: My Projects
       </div>
 
       <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
-    </article>
+    </div>
     {% endif %}
     {% endfor %}
   </div>
