@@ -40,34 +40,41 @@ contact.addEventListener('mouseover',openNode)
 
 close.addEventListener("mousedown",closeNode)
 
-function openNode(event) {
-    document.getElementById("feature-cards").classList.add("shown")
-    if (event.target.id == "likes") {
-        document.getElementById("likesNode").classList.add("shown")
-        document.getElementById("projectsNode").classList.remove("shown")
-        document.getElementById("contactNode").classList.remove("shown")
+var _likes_card = document.getElementById("likesNode")
+var _projects_card = document.getElementById("projectsNode")
+var _contact_card = document.getElementById("contactNode")
+var _title_card = document.getElementById("title-card")
 
-        document.getElementById("card").classList.add("moved")
+var _feature_cards = document.getElementById("feature-cards")
+
+function openNode(event) {
+    _feature_cards.classList.add("shown")
+    if (event.target.id == "likes") {
+        _likes_card.classList.add("shown")
+        _projects_card.classList.remove("shown")
+        _contact_card .classList.remove("shown")
+
+        _title_card.classList.add("moved")
     }
     else if (event.target.id == "projects") {
-        document.getElementById("likesNode").classList.remove("shown")
-        document.getElementById("projectsNode").classList.add("shown")
-        document.getElementById("contactNode").classList.remove("shown")
+        _likes_card.classList.remove("shown")
+        _projects_card.classList.add("shown")
+        _contact_card .classList.remove("shown")
 
-        document.getElementById("card").classList.add("moved")
+        _title_card.classList.add("moved")
     }
     else if (event.target.id == "contact") {
-        document.getElementById("likesNode").classList.remove("shown")
-        document.getElementById("projectsNode").classList.remove("shown")
-        document.getElementById("contactNode").classList.add("shown")
+        _likes_card.classList.remove("shown")
+        _projects_card.classList.remove("shown")
+        _contact_card .classList.add("shown")
 
-        document.getElementById("card").classList.add("moved")
+        _title_card.classList.add("moved")
     }
 }
 
 function closeNode(event) {
     if (event.target.id == "close") {
-        document.getElementById("feature-cards").classList.remove("shown")
-        document.getElementById("card").classList.remove("moved")
+        _feature_cards.classList.remove("shown")
+        _title_card.classList.remove("moved")
     }
 }
