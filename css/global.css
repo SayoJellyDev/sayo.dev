@@ -3,10 +3,6 @@ layout: stylesheet
 ---
 * {box-sizing:border-box;}
 
-html, body {
-    
-}
-
 :root {
 
     --blur-amount: 15px;
