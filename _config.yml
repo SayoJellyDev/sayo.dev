@@ -19,6 +19,12 @@ github_link:  https://github.com/SayoJellyDev
 plugins:
   - jekyll-feed
 
+
+collections_dir: site_collections
+
+# Jekyll wil check this folder for the following collections below!
+# Much neater :D!
+
 collections:
   projects:
     output: true
@@ -29,9 +35,9 @@ sass:
   style: compressed
 
 exclude: 
-  - "/css/css.scss"
-  - "/js/app.js"
+  - "assets/css/css.scss"
+  - "assets/js/app.js"
 
 keep_files: 
-  - "css/css.css"
-  - "js/app.js"
+  - "assets/css/css.css"
+  - "assets/js/app.js"

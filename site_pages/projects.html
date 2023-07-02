@@ -27,8 +27,6 @@ title: My Projects
 
         <div class="project description">{{ project.short_description | truncate: 75 }}</div>
       </div>
-
-      <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
     </div>
     {% endif %}
     {% endfor %}
@@ -49,8 +47,6 @@ title: My Projects
 
         <div class="project description">{{ project.short_description | truncate: 75 }}</div>
       </div>
-
-      <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
     </div>
     {% endif %}
     {% endif %}
@@ -76,8 +72,6 @@ title: My Projects
         {% assign excerptParts = post.excerpt | split: "<!-- excerpt_start -->" %}
         <div class="project description">{{ excerptParts[1] | strip_html | truncate: 75 }}</div>
       </div>
-
-      <!--<a class="button" href="{{ site.base }}{{ project.url }}">More...</a>-->
     </div>
     {% endif %}
     {% endfor %}

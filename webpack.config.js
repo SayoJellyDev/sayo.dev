@@ -11,12 +11,12 @@ module.exports = (env, argv) => ({
   mode: argv.mode,
   devtool: argv.mode === 'development' ? 'source-map' : false,
   entry: [
-    './js/app.js',
-    './css/css.scss',
+    './assets/js/app.js',
+    './assets/css/css.scss',
   ],
   output: {
     path: path.resolve(__dirname, '_site'),
-    filename: 'js/app.js',
+    filename: 'assets/js/app.js',
   },
   optimization: {
     minimizer: [
@@ -64,7 +64,7 @@ module.exports = (env, argv) => ({
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/css.css',
+      filename: 'assets/css/css.css',
     }),
   ],
   devServer: {

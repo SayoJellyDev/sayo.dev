@@ -2,9 +2,21 @@
     <style>
         html,body { background-color: #080808; }
     </style>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/css.css?v=0.1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="/css/global.css?v=0.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/css/global.css?v=0.1"></noscript>
+
+    {% include page_meta.md %}
+
+
+    <link rel="shortcut icon" href="{% if page.icon %}{{ page.icon }}{% else %}/assets/images/favicon.ico{% endif %}" type="image/x-icon">
+    {% if page.layout == "project" %}
+        <link rel="stylesheet" href="{{ page.css }}">
+        <link rel="stylesheet" href="/assets/css/project.css">
+    {% elsif page.layout == "redirect" %}
+
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/css.css?v=0.1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    {% endif %}
+
+    <link rel="preload" href="/assets/css/global.css?v=0.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/global.css?v=0.1"></noscript>
 </head>

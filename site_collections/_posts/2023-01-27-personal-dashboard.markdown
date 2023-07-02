@@ -3,7 +3,7 @@ layout: post
 title:  "Home Server Dashboard"
 date:   2023-01-27 16:00:00 +1000
 categories: blog Side Project
-background-image: /images/post-images/dashboard/preview.png
+background-image: /assets/images/post-images/dashboard/preview.png
 excerpt_separator: <!-- excerpt_end -->
 ---
 <!-- excerpt_start -->
@@ -28,11 +28,11 @@ Here are some screenshots!
         <span>Image Collection</span>
     </div>
     <div class="image" markdown="span">
-        ![Desktop](/images/post-images/dashboard/desktop.png)
+        ![Desktop](/assets/images/post-images/dashboard/desktop.png)
         <span class="description">Desktop format example</span>
     </div>
     <div class="image" markdown="span">
-        ![Mobile](/images/post-images/dashboard/mobile.png)
+        ![Mobile](/assets/images/post-images/dashboard/mobile.png)
         <span class="description">Mobile format example</span>
     </div>
 </div>

@@ -15,7 +15,7 @@
     --status-halted-background-colour: rgba(50, 50, 50, 0.9);
     --status-halted-border-colour: rgba(10, 10, 10, 0.9);
 
-    --title-image: url(/images/projects/deimos/DeimosTitle.png);
+    --title-image: url("../images/projects/deimos/DeimosTitle.png");
 }
 
 .carousel {
