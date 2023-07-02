@@ -11,4 +11,4 @@
 
 <!-- Include this to make the og:image larger -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ site.url }}{% if page.icon %}{{ page.icon }}{% else %}/images/icon-trimmed.webp {% endif %}">
+<meta name="twitter:image" content="{{ site.url }}{% if page.icon %}{{ page.icon }}{% else %}/assets/images/icon-trimmed.webp {% endif %}">
