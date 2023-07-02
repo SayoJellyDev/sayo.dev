@@ -6,7 +6,7 @@
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production && sleep 1 && bundle exec jekyll serve --host 0.0.0.0",
     "gitbuild": "webpack --mode production",
-    "build-css": "node-sass --include-path scss css/css.scss _site/css/css.css",
+    "build-css": "node-sass --include-path scss assets/css/css.scss _site/assets/css/css.css",
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "builds": "run-s build:webpack build:jekyll purgecss"
   },

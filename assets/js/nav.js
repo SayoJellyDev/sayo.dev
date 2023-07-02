@@ -32,21 +32,29 @@ var likes = document.getElementById("likes")
 var projects = document.getElementById("projects")
 var contact = document.getElementById("contact")
 
+
+var _feature_cards = document.getElementById("feature-cards")
 var close = document.getElementById("close")
-
-likes.addEventListener('mouseover',openNode)
-projects.addEventListener('mouseover',openNode)
-contact.addEventListener('mouseover',openNode)
-
-close.addEventListener("mousedown",closeNode)
 
 var _likes_card = document.getElementById("likesNode")
 var _projects_card = document.getElementById("projectsNode")
 var _contact_card = document.getElementById("contactNode")
 var _title_card = document.getElementById("title-card")
 
-var _feature_cards = document.getElementById("feature-cards")
 
+// Lazy code, but if the likes element exists the others must too!
+// just reducing errors is all!
+if (likes) {
+close.addEventListener("mousedown",closeNode)
+
+likes.addEventListener('mouseover',openNode)
+projects.addEventListener('mouseover',openNode)
+contact.addEventListener('mouseover',openNode)
+}
+
+
+
+// Noice but not noice
 function openNode(event) {
     _feature_cards.classList.add("shown")
     if (event.target.id == "likes") {

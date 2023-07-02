@@ -1,12 +1,17 @@
 <style>
 html {
-    background-color: #222;
+    background-color: #080808;
     height: 100%;
 }
 
 body{
     font-family: 'Lato', sans-serif;
     margin: 0;
+    background: repeating-linear-gradient( 45deg, 
+    rgba(55, 55, 55, 0.2), 
+    rgba(55, 55, 55, 0.2) 1px, 
+    transparent 1px, 
+    transparent 20px );
 }
 
 #main{
@@ -30,7 +35,7 @@ body{
 }
 @keyframes type{
 	  from{
-        box-shadow: inset -3px 0px 0px white;       
+        box-shadow: inset -3px 0px 0px #9e0b35;       
       }
 	  to{box-shadow: inset -3px 0px 0px transparent;}
 }
@@ -49,7 +54,7 @@ a.return {
 
 .hidden {
     text-decoration: none;
-    color: #111;
+    color: rgba(255,255,255,0.3);
     position:absolute;
     bottom: 5px;
     left: 0;
@@ -63,7 +68,7 @@ a.return {
 
 <div id="main">
     	<div class="back">
-        		<h1>Error 404</h1>
+        		<h1>(404) Page not found! :(</h1>
                 <a class="return" href="/"><u>Return Home</u></a>
                 <div class="hidden">Please I miss you ;-;</div>
     	</div>
