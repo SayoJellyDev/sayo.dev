@@ -8,7 +8,7 @@ const message_list = [
     ["Never gonna give you up..", 2],
     ["<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' class='link'>click this you won't</a>", 2],
     ["Internet Waifu", 10],
-    ["INTENERT YAMERO!", 10],
+    ["INTERNET YAMERO!", 10],
     //["There is an error in the footer of this website! Please fix it!", 30],
     ["What the dog doing?", 20],
     ["Why are you here?", 20],
@@ -20,7 +20,7 @@ const message_list = [
     ["Getting a loading screen? Just a skill issue, I guess..", 30],
     ["What do I put here?", 30],
     ["sudo rm -fr *", 30],
-    ["Spinning up the virtual machine, hold please!", 30]
+    ["Spinning up the virtual machine, hold please!", 30],
     ["Procastinating are we?", 40],
     ["Just for you, I'm building the next page for you personally!", 40],
     ["Now with added colours and flavors", 50],
