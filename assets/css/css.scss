@@ -77,24 +77,24 @@ body {
 /* GLOBAL CARD CLASS END */
 
 a.link {
-    color: var(--button-colour);
+    color: var(--link-colour);
     text-decoration: none;
     width: fit-content;
     background-image: linear-gradient(to right,
-            var(--button-gradient-colour-1),
-            var(--button-gradient-colour-1));
+            var(--link-gradient-colour-1),
+            var(--link-gradient-colour-1));
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 50% 2px;
     transition: all 0.2s ease;
 
     &:hover {
-        color: var(--button-gradient-colour-1);
+        color: var(--link-gradient-colour-1);
         background-size: 100% 2px;
     }
 
     &:focus {
-        color: var(--button-gradient-colour-1);
+        color: var(--link-gradient-colour-1);
         background-size: 100% 2px;
     }
 }
@@ -259,7 +259,7 @@ div.feature-cards {
     }
 
     #close:hover {
-        color: var(--button-hover-colour);
+        color: var(--link-gradient-colour-1);
     }
 
     div {

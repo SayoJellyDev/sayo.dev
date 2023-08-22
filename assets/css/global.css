@@ -4,28 +4,20 @@ layout: stylesheet
 * {box-sizing:border-box;}
 
 :root {
-
-    --blur-amount: 15px;
-    --border-radius-value: 5px;
     --standard-colour: #121212; /*rgba(25,25,25,0.6)*/
     --standard-border-colour: #202020; /*rgba(42,42,42,0.6)*/
-    --standard-text-colour: white;
+    --standard-text-colour: white; /* not used, needs to be added */
 
     --standard-highlight-colour: #1c1c1c;
     --standard-highlight-hover-colour: #2a2a2a;
 
-
     --background-colour: #080808;
 
-    --button-initial-colour: #9e0b35;
-    --button-hover-colour: #e01d54;
-    --button-pressed-colour: #7d092a;
-    --button-disabled-colour: #450618;
-    
+    --button-initial-colour: #9e0b35;    
     --flash-colour: #84bdff;
 
-    --button-colour: rgb(255, 200,200);
-    --button-gradient-colour-1: #b6004c;
+    --link-colour: rgb(255, 200,200);
+    --link-gradient-colour-1: #b6004c;
 }
 
 
