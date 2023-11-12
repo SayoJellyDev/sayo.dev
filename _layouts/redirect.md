@@ -5,7 +5,7 @@ layout: compress
 <html lang="en">
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
     {% include header.html %}
-    <body data-barba="wrapper">
+    <body hx-boost="true" hx-indicator="body">
         {% include copyright.html %}
     </body>
     <script>

@@ -1,9 +1,11 @@
+--- 
+--- 
 body {
-    background: repeating-linear-gradient( 45deg, 
-    rgba(55, 55, 55, 0.2), 
-    rgba(55, 55, 55, 0.2) 1px, 
-    transparent 1px, 
-    transparent 20px );
+    background: repeating-linear-gradient(45deg,
+            rgba(55, 55, 55, 0.2),
+            rgba(55, 55, 55, 0.2) 1px,
+            transparent 1px,
+            transparent 20px);
 }
 
 /* GLOBAL CARD CLASS START */
@@ -1102,114 +1104,6 @@ h3 {
 
 /* transition */
 
-.transition-enter-active {
-    transition: opacity 10s linear;
-
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        transition: opacity 1s cubic-bezier(0.66, -0.13, 0, 1.64);
-    }
-
-    .swapper::after {
-        transition: left 1s cubic-bezier(0.97, 0, 1, 1);
-    }
-
-    .swapper::before {
-        transition: left 1s cubic-bezier(1, 0, 1, 1);
-    }
-}
-
-.transition-enter {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        opacity: 1;
-    }
-
-    .swapper::after {
-        left: -15%;
-    }
-
-    .swapper::before {
-        left: -15%;
-    }
-}
-
-.transition-enter-to {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        opacity: 0;
-    }
-
-    .swapper::after {
-        left: -120%;
-    }
-
-    .swapper::before {
-        left: -120%;
-    }
-}
-
-.transition-leave-active {
-    transition: opacity 10s linear;
-
-    .swapper .loader {
-        transition: opacity 1s cubic-bezier(0.54, -1.29, 0.59, 1.89);
-    }
-
-    .swapper::after {
-        transition: left 1s cubic-bezier(0, 0, 0, 0.97);
-    }
-
-    .swapper::before {
-        transition: left 1s cubic-bezier(0, 0, 0, 1);
-    }
-}
-
-.transition-leave {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        opacity: 0;
-    }
-
-    .swapper::after {
-        left: 100%;
-    }
-
-    .swapper::before {
-        left: 100%;
-    }
-}
-
-.transition-leave-to {
-    .swapper {
-        z-index: 1000;
-    }
-
-    .swapper .loader {
-        opacity: 1;
-    }
-
-    .swapper::after {
-        left: -15%;
-    }
-
-    .swapper::before {
-        left: -15%;
-    }
-}
-
 .swapper .loader {
     z-index: 1;
     width: 100vw;
@@ -1219,10 +1113,8 @@ h3 {
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    opacity: 1;
     margin: auto;
     text-align: center;
-    opacity: 0;
 
     p {
         height: 2em;
@@ -1236,12 +1128,13 @@ h3 {
     height: 100vh;
     width: 150vw;
 
+
     &::before,
     &::after {
         position: absolute;
         height: calc(100vh - 2px);
         width: 150vw;
-        left: 100%;
+        left: -100%;
         clip-path: polygon(10vw 0, 150vw 0, 140vw 150vh, 0vw 150vh);
         content: "";
     }
@@ -1260,5 +1153,87 @@ h3 {
 
     &::after {
         background-color: var(--standard-colour);
+    }
+}
+
+body.htmx-swapping {
+
+    .swapper::after {
+        left: 100%;
+    }
+
+    .swapper::before {
+        left: 100%;
+    }
+
+
+    .swapper .loader {
+        transition:  opacity 1s cubic-bezier(0.66, -0.13, 0, 1.64);
+    }
+    
+    .swapper::after {
+        transition: left 1s reverse  cubic-bezier(0.97, 0, 1, 1);
+    }
+    
+    .swapper::before {
+        transition: left 1s reverse  cubic-bezier(1, 0, 1, 1);
+    }
+    
+
+    
+
+    .swapper {
+        left: 0;
+        z-index: 1000;
+    }
+
+
+    .swapper .loader {
+        opacity: 1;
+    }
+
+    .swapper::after {
+        left: -15%;
+    }
+
+    .swapper::before {
+        left: -15%;
+    }
+
+}
+
+body.htmx-settling {
+
+
+
+
+    .swapper .loader {
+        transition: opacity 1s cubic-bezier(0.54, -1.29, 0.59, 1.89);
+    }
+
+    .swapper::after {
+        transition: left 1s cubic-bezier(0, 0, 0, 0.97);
+    }
+
+    .swapper::before {
+        transition: left 1s cubic-bezier(0, 0, 0, 1);
+    }
+
+    .swapper {
+        left: 0;
+        z-index: 1000;
+    }
+
+
+    .swapper .loader {
+        opacity: 0;
+    }
+
+    .swapper::after {
+        left: -120%;
+    }
+
+    .swapper::before {
+        left: -120%;
     }
 }

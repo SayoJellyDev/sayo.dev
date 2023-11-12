@@ -35,9 +35,11 @@ sass:
   style: compressed
 
 exclude: 
-  - "assets/css/css.scss"
   - "assets/js/app.js"
 
 keep_files: 
-  - "assets/css/css.css"
   - "assets/js/app.js"
+
+sass:
+    sass_dir: _sass
+    style: compressed

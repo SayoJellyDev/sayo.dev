@@ -3,11 +3,6 @@ layout: page
 ---
 
 <div class="main" data-barba="container" data-barba-namespace="post">
-    <div class="swapper">
-        <div class="loader">
-            <p id="loader-message"></p>
-        </div>
-    </div>
     <div class="title center">{{ page.title }}</div>
     <div class="card-chain">
         <div class="card flat padded">
@@ -38,3 +33,4 @@ layout: page
         </div>
     </div>
 </div>
+
