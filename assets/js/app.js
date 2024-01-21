@@ -12,7 +12,7 @@ const message_list = [
     //["There is an error in the footer of this website! Please fix it!", 30],
     ["What the dog doing?", 20],
     ["fetch_chatgpt_response()", 20],
-    ["Generating Vtuber modal for Sayo", 20],
+    ["Generating Vtuber model for Sayo", 20],
     ["Why are you here?", 20],
     ["I've got a secret for you in the next loading text!", 20],
     ["I'm playing Warframe right now", 20],
