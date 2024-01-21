@@ -568,10 +568,10 @@ div.main {
 
 div.social {
     position: absolute;
-    width: 148px;
+    width: 125px;
     height: 40px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     right: 0;
     bottom: 30px;
     display: flex;
@@ -580,7 +580,7 @@ div.social {
 
     &::before,
     &::after {
-        width: 175px;
+        width: 110%;
         height: 52px;
         top: -6px;
         right: 0;
@@ -602,6 +602,10 @@ div.social {
                 var(--button-initial-colour) 100%);
         background-size: 1200% 100%;
     }
+
+    a {
+        flex-grow: 1;
+    }
 }
 
 span.icon {
@@ -614,7 +618,7 @@ span.icon {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-left: 5px;
+    margin:auto;
 
     &#discord {
         background-image: url("../images/icons/Discord-Logo.svg");
