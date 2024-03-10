@@ -10,9 +10,8 @@ description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sayo.dev" # the base hostname & protocol for your site, e.g. http://example.com
 
-twitter_link: https://www.twitter.com/SayoJellyDev
+twitter_link: https://www.twitter.com/sayodev
 youtube_link: https://www.youtube.com/@SayoDev
-discord_link: https://discord.gg/TQJjnEsh3E
 github_link:  https://github.com/SayoJellyDev
 
 # Build settings
@@ -22,7 +21,7 @@ plugins:
 
 collections_dir: site_collections
 
-# Jekyll wil check this folder for the following collections below!
+# Jekyll will check this folder for the following collections below!
 # Much neater :D!
 
 collections:
@@ -33,9 +32,10 @@ collections:
 
 sass:
   style: compressed
+  sass_dir: "assets/css/"
 
 exclude: 
-  - "assets/css/css.scss"
+  #- "assets/css/css.scss"
   - "assets/js/app.js"
 
 keep_files: 
