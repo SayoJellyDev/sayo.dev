@@ -7,6 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
+#gem "jekyll", "~> 4.3.3"
 gem "jekyll", "~> 4.2.0"
 #gem 'jekyll-sass-converter'
 #gem "jekyll", github: "jekyll/jekyll", ref: "refs/pull/9248/head"
