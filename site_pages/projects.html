@@ -3,15 +3,8 @@ permalink: /projects/
 layout: page
 title: My Projects
 ---
-<div class="main" data-barba="container" data-barba-namespace="home">
-  <div class="swapper">
-    <div class="loader">
-      <p id="loader-message"></p>
-    </div>
-  </div>
-
-  <div class="title center">{{ page.title }}</div>
-  <div class="card-chain" data-barba-prevent="all">
+<div class="title center">{{ page.title }}</div>
+  <div class="card-chain" data-barba-prevent="all" hx-boost="falase">
     {% for project in site.projects reversed %}
     {% if project.featured %}
     <div class="card post">
@@ -76,4 +69,3 @@ title: My Projects
     {% endif %}
     {% endfor %}
   </div>
-</div>

@@ -24,10 +24,23 @@ layout: compress
         </ul>
     </div>
     {% endif %}
-    <body data-barba="wrapper">
+    {% if page.layout == "page" %}
+    <body hx-boost="true" hx-swap="innerHTML swap:1s">
+    {% elsif page.layout == "post" %}
+    <body hx-boost="true" hx-swap="innerHTML swap:1s">
+    {% else %}
+    <body hx-boost="false">
+    {% endif %}
         {% include copyright.html %}
         {% include navbar.html %}
+        <div class="swapper" id="swapper" hx-preserve>
+            <div class="loader" hx-preserve>
+                <p id="loader-message" hx-preserve></p>
+            </div>
+        </div>
+        <div class="main" id="main">
         {{ content }}
+        </div>
     </body>
     {% include footer.html %}
 </html>

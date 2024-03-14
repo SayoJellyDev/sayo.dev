@@ -1,8 +1,4 @@
-import barba from '@barba/core';
-import barbaCss from '@barba/css';
-
-
-const message_list = [
+var message_list = [
     ["I love you!", 1],
     ["Always watching you -.-", 2],
     ["Never gonna give you up..", 2],
@@ -67,44 +63,35 @@ function weighted_random(items) {
 
 }
 
-barba.use(barbaCss)
-
-barba.init(
-    {
-        transitions: [
-            {
-                name: 'transition',
-                leave() {
-                },
-                beforeEnter() {
-                    document.getElementById("loader-message").innerHTML = current_message
-                },
-                enter() {
-
-                }
-            }
-        ],
-        views: [{
-            namespace: 'post',
-            beforeEnter({ next }) {
-                let script = document.createElement('script');
-                script.src = '/assets/js/post.js';
-                next.container.appendChild(script);
-            }
-        }]
-    }
-)
-
-barba.hooks.before(() => {
+document.addEventListener('htmx:afterRequest', function (evt) {
     set_new_message()
+    htmx.addClass(htmx.find(".swapper"), "swapper-leaving-page")
+    
+    htmx.addClass(htmx.find(".swapper"), "swapper-middle")
 })
 
-barba.hooks.after(() => {
-    const bottomDOM = document.getElementsByTagName("body")[0]
-    const newScript = document.createElement("script")
-    const oldScript = document.querySelector(".main-script")
-    newScript.src = "/assets/js/nav.js"
-    newScript.className = "main-script"
-    oldScript.remove()
-    bottomDOM.appendChild(newScript)
+
+document.body.addEventListener('htmx:afterOnLoad',function(evt) {  
+    
+});
+
+document.body.addEventListener('htmx:afterSwap', function (evt) {
+    htmx.removeClass(htmx.find(".swapper"), "swapper-leaving-page")
+    htmx.addClass(htmx.find(".swapper"), "swapper-entering-page")
+
+    
+    // Timeout cheese so it's ever so slightly delayed for transition stuffs
+    setTimeout(() => {
+        htmx.addClass(htmx.find(".swapper"), "swapper-leaving")
+    }, 25)
+
+    setTimeout(() => {
+        htmx.removeClass(htmx.find(".swapper"), "swapper-middle")
+    }, 25)
+
+    setTimeout(() => {
+        htmx.removeClass(htmx.find(".swapper"), "swapper-leaving")
+        htmx.removeClass(htmx.find(".swapper"), "swapper-middle")
+        htmx.removeClass(htmx.find(".swapper"), "swapper-entering-page")
+    }, 1000)
 })

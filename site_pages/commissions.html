@@ -3,17 +3,8 @@ permalink: /commissions/
 layout: page
 title: Commissions
 ---
-<div class="main" data-barba="container" data-barba-namespace="home">
-  <div class="swapper">
-    <div class="loader">
-      <p id="loader-message"></p>
-    </div>
-  </div>
-
-  <div class="title center">{{ page.title }}</div>
-
-  
-  <div class="card-chain" data-barba-prevent="all">
+<div class="title center">{{ page.title }}</div>
+  <div class="card-chain" data-barba-prevent="all" hx-boost="false">
     <!--<div class="information">
       <div class="title">Welcome to my Commissions page!</div>
       <p class="info">Just browsing or looking for information on my commissions status/information? <br>
@@ -53,4 +44,3 @@ title: Commissions
     {% endif %}
     {% endfor %}
   </div>
-</div>
