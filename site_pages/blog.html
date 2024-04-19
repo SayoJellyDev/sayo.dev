@@ -16,7 +16,7 @@ title: Blog
         <div class="info">
           {{ post.date | date: "%B %e, %Y" }} - {% for cat in post.categories %} {{ cat | remove: "blog" }} {% endfor %}
         </div>
-        <a class="card post-button hoverable" href="{{ post.url }}"><span>Read...</span></a>
+        <a class="card post-button hoverable" href="{{ post.url }}" aria-label="Read more"><span>Read...</span></a>
       </div>
     {% endfor %}
   </div>

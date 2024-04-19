@@ -16,9 +16,9 @@ title: Commissions
       <div class="background" style="background-image: url('{{ project.background-image }}');">      
         <div class="project status">{{ project.status }}</div> 
         {% if project.isExternal %}
-        <a href="{{ project.link }}"><div class="project title">{{ project.title }}</div></a>
+        <a href="{{ project.link }}" aria-label="{{ project.title }}"><div class="project title">{{ project.title }}</div></a>
         {% else %}
-        <a href="{{ site.base }}{{ project.url }}"><div class="project title">{{ project.title }}</div></a>
+        <a href="{{ site.base }}{{ project.url }}" aria-label="{{ project.title }}"><div class="project title">{{ project.title }}</div></a>
         {% endif %}
 
         <div class="project description">{{ project.short_description | truncate: 75 }}</div>
@@ -33,9 +33,9 @@ title: Commissions
       <div class="background" style="background-image: url('{{ project.background-image }}');">
         <div class="project status">{{ project.status }}</div>     
         {% if project.isExternal %}
-        <a href="{{ project.link }}"><div class="project title">{{ project.title }}</div></a>
+        <a href="{{ project.link }}" aria-label="{{ project.title }}"><div class="project title">{{ project.title }}</div></a>
         {% else %}
-        <a href="{{ site.base }}{{ project.url }}"><div class="project title">{{ project.title }}</div></a>
+        <a href="{{ site.base }}{{ project.url }}" aria-label="{{ project.title }}"><div class="project title">{{ project.title }}</div></a>
         {% endif %}
 
         <div class="project description">{{ project.short_description | truncate: 75 }}</div>

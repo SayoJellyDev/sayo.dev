@@ -13,9 +13,9 @@ title: My Projects
         <div class="project status">{{ project.status }}</div>
         
         {% if project.isExternal %}
-        <a href="{{ project.link }}"><div class="project title">{{ project.title }}</div></a>
+        <a href="{{ project.link }}" aria-label="{{ project.title }}"><div class="project title">{{ project.title }}</div></a>
         {% else %}
-        <a href="{{ site.base }}{{ project.url }}"><div class="project title">{{ project.title }}</div></a>
+        <a href="{{ site.base }}{{ project.url }}" aria-label="{{ project.title }}"><div class="project title">{{ project.title }}</div></a>
         {% endif %}
 
         <div class="project description">{{ project.short_description | truncate: 75 }}</div>
@@ -33,9 +33,9 @@ title: My Projects
         <div class="project status">{{ project.status }}</div>
 
         {% if project.isExternal %}
-        <a href="{{ project.link }}"><div class="project title">{{ project.title }}</div></a>
+        <a href="{{ project.link }}" aria-label="{{ project.title }}"><div class="project title">{{ project.title }}</div></a>
         {% else %}
-        <a href="{{ site.base }}{{ project.url }}"><div class="project title">{{ project.title }}</div></a>
+        <a href="{{ site.base }}{{ project.url }}" aria-label="{{ project.title }}"><div class="project title">{{ project.title }}</div></a>
         {% endif %}
 
         <div class="project description">{{ project.short_description | truncate: 75 }}</div>
@@ -58,9 +58,9 @@ title: My Projects
     <div class="card post">
       <div class="background" style="background-image: url('{{ post.background-image }}');">       
         {% if post.isExternal %}
-        <a href="{{ project.link }}"><div class="project title">{{ post.title }}</div></a>
+        <a href="{{ project.link }}" aria-label="{{ post.title }}"><div class="project title">{{ post.title }}</div></a>
         {% else %}
-        <a href="{{ site.base }}{{ post.url }}"><div class="project title">{{ post.title }}</div></a>
+        <a href="{{ site.base }}{{ post.url }}" aria-label="{{ post.title }}"><div class="project title">{{ post.title }}</div></a>
         {% endif %}
         {% assign excerptParts = post.excerpt | split: "<!-- excerpt_start -->" %}
         <div class="project description">{{ excerptParts[1] | strip_html | truncate: 75 }}</div>
