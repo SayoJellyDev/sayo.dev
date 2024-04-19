@@ -5,17 +5,15 @@
 
     {% include page_meta.md %}
 
-
     <link rel="shortcut icon" href="{% if page.icon %}{{ page.icon }}{% else %}/assets/images/favicon.ico{% endif %}" type="image/x-icon">
-    <link rel="preload" href="/assets/css/global.css?v=0.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/global.css?v=0.1"></noscript>
+    <link rel="preload stylesheet" href="/assets/css/global.css?v=0.1" as="style">
     {% if page.layout == "project" %}
         <link rel="stylesheet" href="{{ page.css }}">
         <link rel="stylesheet" href="/assets/css/project.css">
     {% elsif page.layout == "redirect" %}
 
     {% else %}
-        <link rel="preload" rel="stylesheet" href="/assets/css/css.css?v=0.5">
+        <link rel="preload stylesheet" rel="stylesheet" href="/assets/css/css.css?v=0.6">
         <link rel="preload" fetchpriority="high" as="image" href="/assets/images/sayo-trimmed.webp" type="image/webp">
         <link rel="preconnect" href="https://fonts.gstatic.com">
     {% endif %}
