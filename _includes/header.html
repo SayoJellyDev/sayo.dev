@@ -15,7 +15,8 @@
     {% elsif page.layout == "redirect" %}
 
     {% else %}
-        <link rel="stylesheet" href="/assets/css/css.css?v=0.5">
+        <link rel="preload" rel="stylesheet" href="/assets/css/css.css?v=0.5">
+        <link rel="preload" fetchpriority="high" as="image" href="/assets/images/sayo-trimmed.webp" type="image/webp">
         <link rel="preconnect" href="https://fonts.gstatic.com">
     {% endif %}
 </head>
