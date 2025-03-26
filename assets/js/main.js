@@ -1,10 +1,18 @@
 var message_list = [
+    ["Haha, you just used your gacha luck (this is rare)", 1],
     ["I love you!", 1],
     ["Always watching you -.-", 2],
     ["Never gonna give you up..", 2],
     ["<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' class='link'>click this you won't</a>", 2],
+    ["Yareli deserves a buff and a tennogen skin.", 5],
     ["The Internet Waifu", 10],
     ["INTERNET YAMERO!", 10],
+    ["The Herta", 10],
+    ["March 7th", 10],
+
+    ["In the next pull you'll get a 5 star, trust...", 10],
+    ["Go support the best artist, rnna_7 on twitter!", 20],
+    
     //["There is an error in the footer of this website! Please fix it!", 30],
     ["What the dog doing?", 20],
     ["fetch_chatgpt_response()", 20],
@@ -15,6 +23,7 @@ var message_list = [
     ["1 + 1 = 2 (Just so you know <3)", 20],
     [":O", 20],
     ["A", 20],
+    ["bongo", 20],
     ["Loading screen text submissions at https://no.u/", 20],
     ["Getting a loading screen? Just a skill issue, I guess..", 30],
     ["What do I put here?", 30],
